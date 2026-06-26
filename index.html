@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Krasnovska PH — фотограф портретов и lifestyle</title>
+<meta name="description" content="Krasnovska PH — фотограф портретов и lifestyle в Щецине, Польша. Живые истории, мягкий свет, настоящие эмоции." />
+<meta name="theme-color" content="#FAF8F6" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --white: #FAF8F6;
+  --beige: #E8DDD8;
+  --beige-light: #F3ECE8;
+  --graphite: #2A2A2A;
+  --graphite-soft: #4A4A4A;
+  --muted: #8A8580;
+  --wine: #5C2233;
+  --wine-dark: #451828;
+  --line: #E2DAD4;
+  --radius: 8px;
+  --container: 76rem;
+  --header-h: 4.5rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  background: var(--white);
+  color: var(--graphite);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+ul { list-style: none; }
+
+:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.shell {
+  width: min(var(--container), calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Header ── */
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), backdrop-filter 0.4s;
+}
+
+.header.is-scrolled {
+  background: rgba(250, 248, 246, 0.88);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.nav-desktop a {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--graphite-soft);
+  transition: color 0.25s;
+}
+
+.nav-desktop a:hover,
+.nav-desktop a.is-active { color: var(--wine); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.clock-chip {
+  display: none;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.4375rem 0.875rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite-soft);
+}
+
+.clock-chip .time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: var(--graphite);
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.55);
+  transition: background 0.25s;
+}
+
+.burger:hover { background: rgba(255, 255, 255, 0.9); }
+
+.burger span {
+  display: block;
+  height: 1px;
+  background: var(--graphite);
+  transition: transform 0.35s var(--ease), opacity 0.25s;
+}
+
+.burger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger.is-open span:nth-child(2) { opacity: 0; }
+.burger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: var(--white);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s var(--ease), visibility 0.45s;
+}
+
+.mobile-nav.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  transform: translateY(12px);
+  opacity: 0;
+  transition: color 0.25s, transform 0.5s var(--ease), opacity 0.5s var(--ease);
+}
+
+.mobile-nav.is-open a {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-nav.is-open a:nth-child(1) { transition-delay: 0.05s; }
+.mobile-nav.is-open a:nth-child(2) { transition-delay: 0.1s; }
+.mobile-nav.is-open a:nth-child(3) { transition-delay: 0.15s; }
+.mobile-nav.is-open a:nth-child(4) { transition-delay: 0.2s; }
+.mobile-nav.is-open a:nth-child(5) { transition-delay: 0.25s; }
+.mobile-nav.is-open a:nth-child(6) { transition-delay: 0.3s; }
+
+.mobile-nav a:hover { color: var(--wine); }
+
+@media (min-width: 900px) {
+  .nav-desktop { display: flex; }
+  .clock-chip { display: flex; }
+  .burger { display: none; }
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s var(--ease);
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-wine {
+  background: var(--wine);
+  color: var(--white);
+}
+
+.btn-wine:hover { background: var(--wine-dark); }
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-dark {
+  background: var(--graphite);
+  color: var(--white);
+}
+
+.btn-dark:hover { background: #1a1a1a; }
+
+.btn-light {
+  border: 1px solid var(--line);
+  color: var(--graphite);
+  background: transparent;
+}
+
+.btn-light:hover {
+  border-color: var(--graphite);
+  background: var(--beige-light);
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 42% 28%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(42, 42, 42, 0.15) 0%, transparent 45%),
+    linear-gradient(to top, rgba(42, 42, 42, 0.55) 0%, transparent 42%),
+    linear-gradient(to bottom, rgba(250, 248, 246, 0.25) 0%, transparent 18%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  width: 100%;
+  padding: calc(var(--header-h) + 2rem) 1.25rem 3rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.hero-text-block {
+  max-width: 34rem;
+  margin-left: auto;
+  text-align: right;
+}
+
+.hero-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.875rem;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 7vw, 4.75rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.35);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.35; }
+  50% { transform: scaleY(0.6); opacity: 0.8; }
+}
+
+@media (min-width: 640px) {
+  .hero-content { padding-inline: 2rem; padding-bottom: 4rem; }
+}
+
+@media (max-width: 639px) {
+  .hero-media img { object-position: 50% 22%; }
+  .hero-text-block {
+    margin-left: 0;
+    text-align: left;
+    max-width: 16rem;
+    align-self: start;
+    margin-top: auto;
+    padding-bottom: 1rem;
+  }
+  .hero-actions { justify-content: flex-start; }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100svh;
+    padding-bottom: 4.5rem;
+  }
+  .hero-grid { flex: 0; }
+}
+
+/* ── Sections shared ── */
+section { padding-block: clamp(4.5rem, 10vw, 7.5rem); }
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-head.row {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--graphite);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ── About ── */
+.about { background: var(--white); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-width: 28rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.about-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+
+.about-watermark {
+  position: absolute;
+  top: -1.5rem;
+  right: -1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(5rem, 14vw, 9rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--beige);
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-copy p {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: var(--graphite-soft);
+  max-width: 36rem;
+}
+
+.about-copy p.lead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--graphite);
+}
+
+.about-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.stat-item .stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--wine);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-item .stat-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (min-width: 900px) {
+  .about-grid { grid-template-columns: 0.9fr 1.1fr; gap: 5rem; }
+  .about-visual { margin-left: auto; }
+}
+
+/* ── Portfolio ── */
+.portfolio { background: var(--beige-light); }
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--beige);
+}
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+.work-card:hover img { transform: scale(1.04); }
+
+.work-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(42, 42, 42, 0.35) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.work-card:hover::after { opacity: 1; }
+
+.work-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1.25rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  transform: translateY(100%);
+  transition: transform 0.45s var(--ease);
+}
+
+.work-card:hover .work-caption { transform: translateY(0); }
+
+.work-card.always-caption .work-caption {
+  transform: translateY(0);
+  background: linear-gradient(to top, rgba(42, 42, 42, 0.5) 0%, transparent 100%);
+}
+
+.work-card.always-caption::after { display: none; }
+
+.work-1 { grid-column: span 12; aspect-ratio: 16 / 10; }
+.work-2 { grid-column: span 12; aspect-ratio: 4 / 5; }
+.work-3 { grid-column: span 12; aspect-ratio: 3 / 4; }
+.work-4 { grid-column: span 12; aspect-ratio: 4 / 3; }
+.work-5 { grid-column: span 12; aspect-ratio: 3 / 4; }
+.work-6 { grid-column: span 12; aspect-ratio: 16 / 9; }
+
+@media (min-width: 640px) {
+  .work-1 { grid-column: span 7; aspect-ratio: 4 / 3; }
+  .work-2 { grid-column: span 5; aspect-ratio: 3 / 4; }
+  .work-3 { grid-column: span 5; aspect-ratio: 3 / 4; }
+  .work-4 { grid-column: span 7; aspect-ratio: 16 / 10; }
+  .work-5 { grid-column: span 6; aspect-ratio: 4 / 5; }
+  .work-6 { grid-column: span 6; aspect-ratio: 4 / 5; }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid { gap: 1.25rem; }
+}
+
+/* ── Services ── */
+.services { background: var(--white); }
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.35s;
+}
+
+.service-row:hover { background: var(--beige-light); }
+
+.service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.875rem;
+  color: var(--wine);
+  letter-spacing: 0.08em;
+}
+
+.service-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--graphite);
+  margin-bottom: 0.5rem;
+}
+
+.service-desc {
+  font-size: 0.9375rem;
+  color: var(--graphite-soft);
+  max-width: 32rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.service-meta strong {
+  font-weight: 500;
+  color: var(--graphite);
+}
+
+@media (min-width: 768px) {
+  .service-row {
+    grid-template-columns: 3rem 1fr 1.4fr;
+    align-items: start;
+    gap: 2rem;
+    padding: 2.5rem 1rem;
+  }
+}
+
+/* ── City ── */
+.city {
+  position: relative;
+  background: var(--graphite);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.city-bg-word {
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 18vw, 14rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.city-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: end;
+}
+
+.city-copy p {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 30rem;
+  margin-top: 1rem;
+}
+
+.city-live {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.city-live .live-time {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.city-live .live-date {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.city-live .live-mood {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .city-inner { grid-template-columns: 1.2fr 0.8fr; }
+  .city-live { max-width: 18rem; margin-left: auto; }
+}
+
+/* ── Contact ── */
+.contact { background: var(--white); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.25s;
+}
+
+.contact-link:hover { color: var(--wine); }
+
+.contact-link .link-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-link .link-value {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--graphite);
+  background: var(--beige-light);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--line);
+  background: var(--white);
+}
+
+.form-group textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.form-success {
+  display: none;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--beige-light);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.form-success.is-visible { display: block; }
+
+.form-success p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--wine);
+  margin-bottom: 0.25rem;
+}
+
+.form-success span {
+  font-size: 0.875rem;
+  color: var(--graphite-soft);
+}
+
+@media (min-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr 1.1fr; gap: 5rem; }
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (min-width: 640px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="shell header-inner">
+    <a href="#home" class="logo">Krasnovska PH</a>
+    <nav class="nav-desktop" aria-label="Основная навигация">
+      <a href="#home">Главная</a>
+      <a href="#about">Обо мне</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#services">Услуги</a>
+      <a href="#city">Город</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <div class="header-right">
+      <div class="clock-chip" aria-label="Местное время в Щецине">
+        <span>Щецин</span>
+        <span aria-hidden="true">·</span>
+        <span class="time" id="header-time">--:--</span>
+      </div>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация">
+  <a href="#home">Главная</a>
+  <a href="#about">Обо мне</a>
+  <a href="#portfolio">Портфолио</a>
+  <a href="#services">Услуги</a>
+  <a href="#city">Город</a>
+  <a href="#contact">Контакты</a>
+</nav>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <!-- Replace hero image: images/hero.jpg -->
+      <img src="images/hero.jpg" alt="Krasnovska — фотограф портретов и lifestyle с камерой в руках" width="1920" height="1280" />
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content shell">
+      <div class="hero-grid">
+        <div class="hero-text-block reveal is-visible">
+          <p class="hero-eyebrow">Щецин · Польша</p>
+          <h1 class="hero-title">Krasnovska PH</h1>
+          <p class="hero-subtitle">Фотограф портретов и lifestyle</p>
+          <p class="hero-tagline">Живые истории, мягкий свет, настоящие эмоции.</p>
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-wine">Смотреть портфолио</a>
+            <a href="#contact" class="btn btn-outline">Забронировать съёмку</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Листайте</span>
+      <span class="hero-scroll-line"></span>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="shell">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <span class="about-watermark" aria-hidden="true">PH</span>
+          <!-- Replace about image if desired -->
+          <img src="images/hero.jpg" alt="Krasnovska за работой с камерой" width="800" height="1000" loading="lazy" />
+        </div>
+        <div class="about-copy">
+          <div class="section-head reveal">
+            <span class="label">Обо мне</span>
+            <h2 class="section-title">Свет, чувство<br />и честные кадры.</h2>
+          </div>
+          <p class="lead reveal reveal-delay-1">Я фотограф портретов и lifestyle из Щецина — создаю снимки, которые ощущаются мягкими, естественными и по-настоящему личными.</p>
+          <p class="reveal reveal-delay-2">От камерных портретов и городских историй до съёмок для персонального бренда и love story — я работаю с женщинами, которые хотят фотографии, отражающие их настоящую сущность: не идеальный образ, а красивую правду.</p>
+          <p class="reveal reveal-delay-3">Каждая съёмка проходит с заботой: мягкая постановка, естественный свет и пространство для настоящих эмоций.</p>
+          <div class="about-stats reveal">
+            <div class="stat-item">
+              <div class="stat-num">Портреты</div>
+              <div class="stat-label">Сессии и editorials</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">Lifestyle</div>
+              <div class="stat-label">Город и локации</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">Брендинг</div>
+              <div class="stat-label">Для творческих женщин</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="shell">
+      <div class="section-head row reveal">
+        <div>
+          <span class="label">Портфолио</span>
+          <h2 class="section-title">Избранные работы</h2>
+        </div>
+        <a href="https://www.instagram.com/krasnovska_ph/" target="_blank" rel="noopener noreferrer" class="btn btn-light">@krasnovska_ph</a>
+      </div>
+      <div class="portfolio-grid">
+        <figure class="work-card work-1 reveal always-caption">
+          <!-- Replace: images/work-01.jpg -->
+          <img src="images/work-01.jpg" alt="Портретная сессия" width="1200" height="800" loading="lazy" />
+          <figcaption class="work-caption">Портретная сессия</figcaption>
+        </figure>
+        <figure class="work-card work-2 reveal reveal-delay-1 always-caption">
+          <!-- Replace: images/work-02.jpg -->
+          <img src="images/work-02.jpg" alt="Городская история" width="800" height="1000" loading="lazy" />
+          <figcaption class="work-caption">Городская история</figcaption>
+        </figure>
+        <figure class="work-card work-3 reveal reveal-delay-2 always-caption">
+          <!-- Replace: images/work-03.jpg -->
+          <img src="images/work-03.jpg" alt="Персональный брендинг" width="800" height="1000" loading="lazy" />
+          <figcaption class="work-caption">Персональный брендинг</figcaption>
+        </figure>
+        <figure class="work-card work-4 reveal always-caption">
+          <!-- Replace: images/work-04.jpg -->
+          <img src="images/work-04.jpg" alt="Портрет в мягком свете" width="1200" height="750" loading="lazy" />
+          <figcaption class="work-caption">Портрет в мягком свете</figcaption>
+        </figure>
+        <figure class="work-card work-5 reveal reveal-delay-1 always-caption">
+          <!-- Replace: images/work-05.jpg -->
+          <img src="images/work-05.jpg" alt="Love story" width="800" height="1000" loading="lazy" />
+          <figcaption class="work-caption">Love story</figcaption>
+        </figure>
+        <figure class="work-card work-6 reveal reveal-delay-2 always-caption">
+          <!-- Replace: images/work-06.jpg -->
+          <img src="images/work-06.jpg" alt="Редакционный стиль" width="1200" height="675" loading="lazy" />
+          <figcaption class="work-caption">Редакционный стиль</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="shell">
+      <div class="section-head reveal">
+        <span class="label">Услуги</span>
+        <h2 class="section-title">Съёмки с вниманием<br />к деталям</h2>
+      </div>
+      <div class="services-list">
+        <article class="service-row reveal">
+          <span class="service-num">01</span>
+          <div>
+            <h3 class="service-name">Портретная съёмка</h3>
+            <p class="service-desc">Камерная сессия, посвящённая вам — мягкий свет, деликатная постановка и кадры, которые передают вашу естественность и спокойную уверенность.</p>
+          </div>
+          <div class="service-meta">
+            <span><strong>Длительность</strong> 1–1,5 часа</span>
+            <span><strong>Вы получаете</strong> 25+ обработанных фото</span>
+          </div>
+        </article>
+        <article class="service-row reveal reveal-delay-1">
+          <span class="service-num">02</span>
+          <div>
+            <h3 class="service-name">Персональный брендинг</h3>
+            <p class="service-desc">Визуальный контент для вашего бренда — стильные, но живые снимки для соцсетей, сайта и профессиональных профилей.</p>
+          </div>
+          <div class="service-meta">
+            <span><strong>Длительность</strong> 2 часа</span>
+            <span><strong>Вы получаете</strong> 40+ обработанных фото</span>
+          </div>
+        </article>
+        <article class="service-row reveal reveal-delay-2">
+          <span class="service-num">03</span>
+          <div>
+            <h3 class="service-name">Love story</h3>
+            <p class="service-desc">Неспешная парная съёмка в городе или на природе — искренние моменты, нежные детали и история вашей связи.</p>
+          </div>
+          <div class="service-meta">
+            <span><strong>Длительность</strong> 1,5–2 часа</span>
+            <span><strong>Вы получаете</strong> 30+ обработанных фото</span>
+          </div>
+        </article>
+        <article class="service-row reveal reveal-delay-3">
+          <span class="service-num">04</span>
+          <div>
+            <h3 class="service-name">Съёмка мероприятий / lifestyle</h3>
+            <p class="service-desc">Документальная съёмка праздников, встреч или повседневной жизни с редакционным взглядом — честно, тепло и красиво по композиции.</p>
+          </div>
+          <div class="service-meta">
+            <span><strong>Длительность</strong> от 2 часов</span>
+            <span><strong>Вы получаете</strong> подборку обработанных фото</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="city" id="city">
+    <span class="city-bg-word" aria-hidden="true">Szczecin</span>
+    <div class="shell city-inner">
+      <div class="city-copy reveal">
+        <span class="label" style="color: rgba(255,255,255,0.45);">Локация</span>
+        <h2 class="section-title" style="color: var(--white);">Щецин, Польша</h2>
+        <p>Я работаю по всему Щецину — от исторических улочек и уютных кафе до парков, студий и локаций, которые вам близки. Каждое место становится частью вашей истории.</p>
+      </div>
+      <div class="city-live reveal reveal-delay-1">
+        <span class="label" style="color: rgba(255,255,255,0.45);">Местное время</span>
+        <div class="live-time" id="city-time">--:--</div>
+        <div class="live-date" id="city-date">—</div>
+        <p class="live-mood" id="city-mood">Золотой свет над Одрой.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="shell">
+      <div class="contact-grid">
+        <div>
+          <div class="section-head reveal">
+            <span class="label">Контакты</span>
+            <h2 class="section-title">Давайте создадим<br />что-то прекрасное</h2>
+          </div>
+          <div class="contact-links reveal reveal-delay-1">
+            <a href="https://www.instagram.com/krasnovska_ph/" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="link-label">Instagram</span>
+              <span class="link-value">@krasnovska_ph</span>
+            </a>
+            <!-- Replace Telegram handle -->
+            <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="link-label">Telegram</span>
+              <span class="link-value">@your_telegram</span>
+            </a>
+            <!-- Replace email -->
+            <a href="mailto:hello@example.com" class="contact-link">
+              <span class="link-label">Email</span>
+              <span class="link-value">hello@example.com</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <form class="contact-form reveal reveal-delay-2" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Имя</label>
+              <input type="text" id="name" name="name" placeholder="Ваше имя" required />
+            </div>
+            <div class="form-group">
+              <label for="social">Instagram / Telegram</label>
+              <input type="text" id="social" name="social" placeholder="@username" />
+            </div>
+            <div class="form-group">
+              <label for="message">Сообщение</label>
+              <textarea id="message" name="message" placeholder="Расскажите о вашей идее для съёмки…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-wine">Отправить заявку</button>
+          </form>
+          <div class="form-success" id="form-success" role="status">
+            <p>Заявка получена</p>
+            <span>Спасибо — скоро свяжусь с вами.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell footer-inner">
+    <span>Krasnovska PH</span>
+    <span>Портреты и lifestyle · Щецин</span>
+    <span>&copy; 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var TIMEZONE = 'Europe/Warsaw';
+  var CITY = 'Щецин';
+
+  var header = document.getElementById('header');
+  var headerTime = document.getElementById('header-time');
+  var cityTime = document.getElementById('city-time');
+  var cityDate = document.getElementById('city-date');
+  var cityMood = document.getElementById('city-mood');
+  var burger = document.getElementById('burger');
+  var mobileNav = document.getElementById('mobile-nav');
+  var contactForm = document.getElementById('contact-form');
+  var formSuccess = document.getElementById('form-success');
+
+  var moods = [
+    'Золотой свет над Одрой.',
+    'Мягкое утро в старом городе.',
+    'Тихие улицы, тёплые оттенки.',
+    'Городской воздух и открытое небо.',
+    'Вечернее сияние на воде.'
+  ];
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function updateClock() {
+    var now = new Date();
+    var timeStr = now.toLocaleTimeString('ru-RU', {
+      timeZone: TIMEZONE,
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+    var dateStr = now.toLocaleDateString('ru-RU', {
+      timeZone: TIMEZONE,
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+    if (headerTime) headerTime.textContent = timeStr;
+    if (cityTime) cityTime.textContent = timeStr;
+    if (cityDate) cityDate.textContent = dateStr + ' · ' + CITY;
+
+    if (cityMood) {
+      var hour = parseInt(now.toLocaleTimeString('ru-RU', {
+        timeZone: TIMEZONE,
+        hour: 'numeric',
+        hour12: false
+      }), 10);
+      if (hour >= 5 && hour < 10) cityMood.textContent = moods[1];
+      else if (hour >= 10 && hour < 17) cityMood.textContent = moods[2];
+      else if (hour >= 17 && hour < 21) cityMood.textContent = moods[0];
+      else cityMood.textContent = moods[4];
+    }
+  }
+
+  updateClock();
+  setInterval(updateClock, 30000);
+
+  function onScroll() {
+    if (window.scrollY > 40) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-desktop a');
+
+  function setActiveNav() {
+    var scrollPos = window.scrollY + 120;
+    sections.forEach(function (section) {
+      var top = section.offsetTop;
+      var height = section.offsetHeight;
+      var id = section.getAttribute('id');
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach(function (link) {
+          link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', setActiveNav, { passive: true });
+  setActiveNav();
+
+  function closeMobileNav() {
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Открыть меню');
+    mobileNav.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', function () {
+    var isOpen = burger.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', isOpen);
+    burger.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+    mobileNav.classList.toggle('is-open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    contactForm.style.display = 'none';
+    formSuccess.classList.add('is-visible');
+  });
+})();
+</script>
+</body>
+</html>
