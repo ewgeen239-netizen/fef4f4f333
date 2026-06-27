@@ -1,0 +1,2512 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Krasnovska PH — fotografia editorialna · Szczecin</title>
+<meta name="description" content="Krasnovska PH — studio fotografii portretowej i lifestyle w Szczecinie. Obrazy, do których się wraca. Portrety, branding, love story, reportaż." />
+<meta name="keywords" content="Krasnovska PH, fotograf Szczecin, portret editorialny, personal branding, love story, fotografia lifestyle, Poland photographer" />
+<meta name="author" content="Krasnovska PH" />
+<meta name="theme-color" content="#121110" />
+<link rel="canonical" href="https://krasnovskaph.up.railway.app/" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png" />
+<link rel="apple-touch-icon" href="images/krasnovskaph-favicon.png" />
+<meta property="og:title" content="Krasnovska PH — Photography for people who want to be remembered" />
+<meta property="og:description" content="Editorial portrait studio in Szczecin, Poland. Portraits. Stories. Presence." />
+<meta property="og:image" content="https://krasnovskaph.up.railway.app/images/preview.jpg?v=2" />
+<meta property="og:image:secure_url" content="https://krasnovskaph.up.railway.app/images/preview.jpg?v=2" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1672" />
+<meta property="og:image:height" content="941" />
+<meta property="og:url" content="https://krasnovskaph.up.railway.app/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Krasnovska PH" />
+<meta property="og:locale" content="pl_PL" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Krasnovska PH — Photography for people who want to be remembered" />
+<meta name="twitter:description" content="Editorial portrait studio in Szczecin, Poland. Portraits. Stories. Presence." />
+<meta name="twitter:image" content="https://krasnovskaph.up.railway.app/images/preview.jpg?v=2" />
+<script>
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('beforeunload', function () {
+  window.scrollTo(0, 0);
+});
+window.addEventListener('load', function () {
+  window.scrollTo(0, 0);
+});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --paper: #F2EDE4;
+  --paper-warm: #E8E0D4;
+  --ink: #121110;
+  --ink-soft: #3A3632;
+  --muted: #767068;
+  --line: #D4CCC0;
+  --line-dark: rgba(255, 255, 255, 0.12);
+  --cherry: #6B2234;
+  --cherry-dark: #4A1624;
+  --steel: #7A8289;
+  --silver: #B4BBC2;
+  --white: #FAF8F5;
+  --container: 78rem;
+  --header-h: 4.75rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.55;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+ul { list-style: none; }
+
+:focus-visible {
+  outline: 2px solid var(--cherry);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.shell {
+  width: min(var(--container), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .shell { width: min(var(--container), calc(100% - 3rem)); }
+}
+
+.meta {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.meta-light { color: rgba(255, 255, 255, 0.5); }
+
+/* ── Header ── */
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  transition: background 0.45s var(--ease), box-shadow 0.45s var(--ease), color 0.35s;
+}
+
+.header.is-scrolled {
+  background: rgba(242, 237, 228, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.header.is-over-dark {
+  color: var(--white);
+}
+
+.header.is-over-dark.is-scrolled {
+  color: var(--ink);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  justify-self: start;
+}
+
+.logo span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.5625rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.125rem;
+}
+
+.header.is-over-dark:not(.is-scrolled) .logo span { color: rgba(255, 255, 255, 0.45); }
+
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+  justify-self: center;
+}
+
+.nav-desktop a {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color 0.25s;
+  position: relative;
+}
+
+.header.is-over-dark:not(.is-scrolled) .nav-desktop a { color: rgba(255, 255, 255, 0.65); }
+
+.nav-desktop a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: var(--cherry);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease);
+}
+
+.nav-desktop a:hover,
+.nav-desktop a.is-active { color: var(--ink); }
+
+.header.is-over-dark:not(.is-scrolled) .nav-desktop a:hover,
+.header.is-over-dark:not(.is-scrolled) .nav-desktop a.is-active { color: var(--white); }
+
+.nav-desktop a.is-active::after,
+.nav-desktop a:hover::after { transform: scaleX(1); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-self: end;
+}
+
+.clock-chip {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--line);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: border-color 0.35s, color 0.35s;
+}
+
+.header.is-over-dark:not(.is-scrolled) .clock-chip {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.clock-chip .time {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.header.is-over-dark:not(.is-scrolled) .clock-chip .time { color: var(--white); }
+
+.header-cta {
+  display: none;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--white);
+  transition: background 0.3s, transform 0.3s var(--ease);
+}
+
+.header.is-over-dark:not(.is-scrolled) .header-cta {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.header-cta:hover { transform: translateY(-1px); background: var(--cherry); color: var(--white); }
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--line);
+  transition: border-color 0.35s;
+}
+
+.header.is-over-dark:not(.is-scrolled) .lang-switch { border-color: rgba(255, 255, 255, 0.2); }
+
+.lang-btn {
+  min-width: 2rem;
+  padding: 0.375rem 0.4375rem;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  transition: background 0.25s, color 0.25s;
+}
+
+.header.is-over-dark:not(.is-scrolled) .lang-btn { color: rgba(255, 255, 255, 0.45); }
+
+.lang-btn + .lang-btn { border-left: 1px solid var(--line); }
+.header.is-over-dark:not(.is-scrolled) .lang-btn + .lang-btn { border-left-color: rgba(255, 255, 255, 0.2); }
+
+.lang-btn.is-active {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.header.is-over-dark:not(.is-scrolled) .lang-btn.is-active {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.lang-btn:hover:not(.is-active) { color: var(--ink); }
+.header.is-over-dark:not(.is-scrolled) .lang-btn:hover:not(.is-active) { color: var(--white); }
+
+.mobile-lang {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mobile-lang .lang-btn {
+  border: 1px solid var(--line-dark);
+  min-width: 2.5rem;
+  padding: 0.5rem 0.625rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.mobile-lang .lang-btn + .lang-btn { border-left: 1px solid var(--line-dark); }
+
+.mobile-lang .lang-btn.is-active {
+  background: var(--white);
+  color: var(--ink);
+  border-color: var(--white);
+}
+
+@media (max-width: 959px) {
+  .header-cta { display: none; }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.625rem;
+  border: 1px solid var(--line);
+  transition: border-color 0.35s, background 0.35s;
+}
+
+.header.is-over-dark:not(.is-scrolled) .burger { border-color: rgba(255, 255, 255, 0.25); }
+
+.burger span {
+  display: block;
+  height: 1px;
+  background: currentColor;
+  transition: transform 0.35s var(--ease), opacity 0.25s;
+}
+
+.burger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger.is-open span:nth-child(2) { opacity: 0; }
+.burger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--ink);
+  color: var(--white);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s var(--ease), visibility 0.45s;
+}
+
+.mobile-nav.is-open { opacity: 1; visibility: visible; }
+
+.mobile-nav-top {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line-dark);
+  transform: translateY(16px);
+  opacity: 0;
+  transition: color 0.25s, transform 0.5s var(--ease), opacity 0.5s var(--ease);
+}
+
+.mobile-nav.is-open a { transform: translateY(0); opacity: 1; }
+.mobile-nav.is-open a:nth-child(1) { transition-delay: 0.05s; }
+.mobile-nav.is-open a:nth-child(2) { transition-delay: 0.1s; }
+.mobile-nav.is-open a:nth-child(3) { transition-delay: 0.15s; }
+.mobile-nav.is-open a:nth-child(4) { transition-delay: 0.2s; }
+.mobile-nav.is-open a:nth-child(5) { transition-delay: 0.25s; }
+
+.mobile-nav-num {
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  color: var(--steel);
+  min-width: 1.5rem;
+}
+
+.mobile-nav-label {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 8vw, 3rem);
+  line-height: 1;
+}
+
+.mobile-nav-bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+@media (min-width: 960px) {
+  .nav-desktop { display: flex; }
+  .clock-chip { display: flex; }
+  .header-cta { display: inline-flex; }
+  .burger { display: none; }
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 48% 22%;
+  transform: scale(1.02);
+  transition: transform 0.1s linear;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(18, 17, 16, 0.55) 0%, transparent 28%),
+    linear-gradient(to top, rgba(18, 17, 16, 0.82) 0%, rgba(18, 17, 16, 0.25) 45%, transparent 70%),
+    linear-gradient(to right, rgba(18, 17, 16, 0.35) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+  padding: calc(var(--header-h) + 1.5rem) 0 2rem;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.hero-top-left .meta { color: rgba(255, 255, 255, 0.55); margin-bottom: 0.5rem; }
+
+.hero-tag {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+.hero-top-right {
+  text-align: right;
+  display: none;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.hero-top-right span {
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.hero-top-right strong {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.75rem, 11vw, 7.5rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  max-width: 14ch;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero-manifesto {
+  max-width: 22rem;
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero-manifesto strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.hero-bottom {
+  display: grid;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-meta-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1.5rem;
+}
+
+.hero-meta-item .meta { color: rgba(255, 255, 255, 0.4); margin-bottom: 0.25rem; }
+
+.hero-meta-item p {
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-meta-item p.large {
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  letter-spacing: 0;
+}
+
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-scroll-line {
+  flex: 1;
+  max-width: 4rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  transform: translateX(-100%);
+  animation: scrollLine 2.4s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% { transform: translateX(-100%); }
+  50%, 100% { transform: translateX(100%); }
+}
+
+@media (min-width: 640px) {
+  .hero-top-right { display: flex; }
+  .hero-meta-strip { grid-template-columns: repeat(4, 1fr); }
+  .hero-bottom { grid-template-columns: 1fr auto; align-items: end; }
+}
+
+@media (max-width: 639px) {
+  .hero-media img { object-position: 50% 18%; }
+  .hero-title { max-width: none; }
+}
+
+/* ── Sections shared ── */
+section { padding-block: clamp(5rem, 12vw, 9rem); }
+
+.section-intro {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.section-intro.split {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.section-num {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--cherry);
+}
+
+.section-statement {
+  font-family: var(--serif);
+  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  max-width: 16ch;
+}
+
+.section-note {
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  max-width: 28rem;
+  align-self: end;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+@media (min-width: 900px) {
+  .section-intro.split {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+}
+
+/* ── Studio / About ── */
+.studio { background: var(--paper); }
+
+.studio-grid {
+  display: grid;
+  gap: 4rem;
+}
+
+.studio-visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.studio-img-main {
+  aspect-ratio: 3 / 4;
+  max-width: 22rem;
+  overflow: hidden;
+}
+
+.studio-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.studio-img-accent {
+  position: absolute;
+  bottom: -2rem;
+  right: -0.5rem;
+  width: 45%;
+  max-width: 11rem;
+  aspect-ratio: 4 / 5;
+  border: 4px solid var(--paper);
+  overflow: hidden;
+}
+
+.studio-img-accent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.studio-statements {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.studio-block {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.studio-block-num {
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  color: var(--steel);
+}
+
+.studio-block p {
+  font-family: var(--serif);
+  font-size: clamp(1.375rem, 3vw, 2rem);
+  line-height: 1.25;
+  max-width: 24ch;
+}
+
+.studio-block span {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.studio-footnote {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3rem;
+}
+
+.studio-footnote div .meta { margin-bottom: 0.375rem; }
+.studio-footnote div p { font-size: 0.875rem; color: var(--ink-soft); }
+
+@media (min-width: 900px) {
+  .studio-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .studio-visual { position: sticky; top: calc(var(--header-h) + 2rem); }
+}
+
+/* ── Archive / Portfolio ── */
+.archive { background: var(--ink); color: var(--white); }
+
+.archive .section-num { color: var(--silver); }
+.archive .section-statement { color: var(--white); }
+.archive .section-note { color: rgba(255, 255, 255, 0.55); }
+
+.archive-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-dark);
+  color: rgba(255, 255, 255, 0.55);
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.filter-btn:hover { color: var(--white); border-color: rgba(255, 255, 255, 0.35); }
+
+.filter-btn.is-active {
+  background: var(--white);
+  color: var(--ink);
+  border-color: var(--white);
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.75rem;
+}
+
+.archive-item {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+}
+
+.archive-item.is-hidden {
+  display: none;
+}
+
+.archive-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease), filter 0.5s;
+}
+
+@media (hover: hover) {
+  .archive-item:hover img { transform: scale(1.03); filter: brightness(0.92); }
+}
+
+.archive-item-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(18, 17, 16, 0.75) 0%, transparent 55%);
+}
+
+.archive-item-num {
+  font-size: 0.5625rem;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.375rem;
+}
+
+.archive-item-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.archive-item-cat {
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+@media (hover: hover) and (min-width: 960px) {
+  .archive-item-info {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s, transform 0.4s var(--ease);
+  }
+  .archive-item:hover .archive-item-info { opacity: 1; transform: translateY(0); }
+}
+
+.item-a { grid-column: span 12; aspect-ratio: 16 / 10; }
+.item-b { grid-column: span 12; aspect-ratio: 3 / 4; }
+.item-c { grid-column: span 12; aspect-ratio: 4 / 5; }
+.item-d { grid-column: span 12; aspect-ratio: 16 / 11; }
+.item-e { grid-column: span 12; aspect-ratio: 3 / 4; }
+.item-f { grid-column: span 12; aspect-ratio: 16 / 9; }
+
+@media (min-width: 640px) {
+  .archive-grid { gap: 1rem; }
+  .item-a { grid-column: span 8; aspect-ratio: 16 / 11; }
+  .item-b { grid-column: span 4; aspect-ratio: 3 / 4; margin-top: 3rem; }
+  .item-c { grid-column: span 5; aspect-ratio: 4 / 5; }
+  .item-d { grid-column: span 7; aspect-ratio: 16 / 10; margin-top: -2rem; }
+  .item-e { grid-column: span 6; aspect-ratio: 4 / 5; }
+  .item-f { grid-column: span 6; aspect-ratio: 16 / 10; margin-top: 2rem; }
+}
+
+@media (min-width: 1024px) {
+  .item-b { margin-top: 5rem; }
+  .item-d { margin-top: -4rem; }
+  .item-f { margin-top: 3.5rem; }
+}
+
+.archive-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line-dark);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.archive-footer p {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 24rem;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: gap 0.3s var(--ease);
+}
+
+.link-arrow:hover { gap: 1.125rem; color: var(--silver); }
+
+/* ── Offer / Services ── */
+.offer { background: var(--paper-warm); }
+
+.offer-list { border-top: 2px solid var(--ink); }
+
+.offer-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.35s;
+}
+
+@media (hover: hover) {
+  .offer-row:hover { background: rgba(255, 255, 255, 0.35); }
+}
+
+.offer-num {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--cherry);
+}
+
+.offer-name {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+
+.offer-desc {
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  max-width: 32rem;
+  margin-bottom: 1.25rem;
+}
+
+.offer-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+}
+
+.offer-detail .meta { margin-bottom: 0.25rem; }
+.offer-detail p { font-size: 0.8125rem; font-weight: 500; }
+
+.offer-price {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--cherry);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .offer-row {
+    grid-template-columns: 3rem 1fr auto;
+    align-items: start;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+  .offer-details { flex-direction: column; gap: 0.75rem; text-align: right; align-items: flex-end; }
+}
+
+/* ── Process ── */
+.process { background: var(--paper); }
+
+.process-steps {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.process-step-num {
+  font-family: var(--serif);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--line);
+}
+
+.process-step h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  max-width: 28rem;
+}
+
+.process-cta {
+  margin-top: 3.5rem;
+  padding: 2.5rem;
+  background: var(--ink);
+  color: var(--white);
+  display: grid;
+  gap: 2rem;
+}
+
+.process-cta-head .meta-light { margin-bottom: 0.75rem; }
+
+.process-cta-head p {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  max-width: 28ch;
+}
+
+.process-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.process-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid var(--line-dark);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.process-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.process-booking-note {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 768px) {
+  .process-steps { grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+  .process-step {
+    padding: 2rem 1.5rem 2rem 0;
+    border-bottom: none;
+    border-right: 1px solid var(--line);
+  }
+  .process-step:last-child { border-right: none; }
+  .process-cta { grid-template-columns: 1fr auto; align-items: end; }
+}
+
+/* ── Contact ── */
+.contact {
+  background: var(--ink);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-bg-text {
+  position: absolute;
+  top: 8%;
+  left: -5%;
+  font-family: var(--serif);
+  font-size: clamp(6rem, 22vw, 18rem);
+  line-height: 0.85;
+  color: rgba(255, 255, 255, 0.025);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.contact-gate {
+  margin-bottom: 3rem;
+}
+
+.contact-gate .meta-light { margin-bottom: 1.5rem; }
+
+.contact-gate h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  max-width: 12ch;
+  margin-bottom: 1.5rem;
+}
+
+.contact-gate-lead {
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 32rem;
+  line-height: 1.7;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-channel {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line-dark);
+  transition: color 0.25s;
+}
+
+.contact-channel:hover { color: var(--silver); }
+
+.contact-channel .meta-light { margin-bottom: 0.375rem; }
+.contact-channel .value { font-size: 1.125rem; }
+
+.contact-microcopy {
+  font-size: 0.75rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.38);
+  max-width: 20rem;
+}
+
+.contact-form-wrap {
+  border: 1px solid var(--line-dark);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem 0;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-dark);
+  border-radius: 0;
+  transition: border-color 0.25s;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23B4BBC2' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  padding-right: 1.5rem;
+}
+
+.form-group select option { background: var(--ink); color: var(--white); }
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255, 255, 255, 0.25); }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.btn-submit {
+  justify-self: start;
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--white);
+  color: var(--ink);
+  transition: background 0.3s, transform 0.3s var(--ease);
+}
+
+.btn-submit:hover {
+  background: var(--cherry);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.form-success {
+  display: none;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid var(--line-dark);
+}
+
+.form-success.is-visible { display: block; }
+
+.form-success h3 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+.form-success p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@media (min-width: 640px) {
+  .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 960px) {
+  .contact-grid { grid-template-columns: 0.9fr 1.1fr; gap: 5rem; align-items: start; }
+  .contact-form-wrap { padding: 2.5rem; }
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--ink);
+  color: var(--white);
+  border-top: 1px solid var(--line-dark);
+  padding: 3rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand .logo { color: var(--white); margin-bottom: 1rem; }
+.footer-brand .logo span { color: rgba(255, 255, 255, 0.4); }
+
+.footer-tagline {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 22ch;
+}
+
+.footer-col .meta-light { margin-bottom: 1rem; }
+
+.footer-col ul { display: flex; flex-direction: column; gap: 0.625rem; }
+
+.footer-col a {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.25s;
+}
+
+.footer-col a:hover { color: var(--white); }
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line-dark);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-live {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-live .time {
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (min-width: 768px) {
+  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="header is-over-dark" id="header">
+  <div class="shell header-inner">
+    <a href="#home" class="logo">
+      Krasnovska PH
+      <span data-i18n="logo.tagline">Visual diary · Szczecin</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Nawigacja główna" data-i18n-aria="nav.mainAria">
+      <a href="#about" data-i18n="nav.studio">Studio</a>
+      <a href="#portfolio" data-i18n="nav.archive">Archiwum</a>
+      <a href="#services" data-i18n="nav.offer">Oferta</a>
+      <a href="#process" data-i18n="nav.process">Proces</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Język" data-i18n-aria="lang.aria">
+        <button type="button" class="lang-btn" data-lang="pl" aria-pressed="false">PL</button>
+        <button type="button" class="lang-btn is-active" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" class="lang-btn" data-lang="uk" aria-pressed="false">UA</button>
+      </div>
+      <div class="clock-chip" aria-label="Czas lokalny w Szczecinie" data-i18n-aria="clock.aria">
+        <span>Szczecin</span>
+        <span aria-hidden="true">·</span>
+        <span class="time" id="header-time">--:--</span>
+      </div>
+      <a href="#contact" class="header-cta" data-i18n="nav.book">Rezerwacja</a>
+      <button class="burger" id="burger" aria-label="Otwórz menu" data-i18n-aria="nav.openMenu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Nawigacja mobilna" data-i18n-aria="nav.mobileAria">
+  <div class="mobile-nav-top">
+    <span class="meta meta-light" data-i18n="nav.menu">Menu</span>
+    <div class="mobile-lang lang-switch" role="group" aria-label="Język" data-i18n-aria="lang.aria">
+      <button type="button" class="lang-btn" data-lang="pl" aria-pressed="false">PL</button>
+      <button type="button" class="lang-btn is-active" data-lang="ru" aria-pressed="true">RU</button>
+      <button type="button" class="lang-btn" data-lang="uk" aria-pressed="false">UA</button>
+    </div>
+    <span class="time" id="mobile-time">--:--</span>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="#about"><span class="mobile-nav-num">01</span><span class="mobile-nav-label" data-i18n="nav.studio">Studio</span></a>
+    <a href="#portfolio"><span class="mobile-nav-num">02</span><span class="mobile-nav-label" data-i18n="nav.archive">Archiwum</span></a>
+    <a href="#services"><span class="mobile-nav-num">03</span><span class="mobile-nav-label" data-i18n="nav.offer">Oferta</span></a>
+    <a href="#process"><span class="mobile-nav-num">04</span><span class="mobile-nav-label" data-i18n="nav.process">Proces</span></a>
+    <a href="#contact"><span class="mobile-nav-num">05</span><span class="mobile-nav-label" data-i18n="nav.contact">Kontakt</span></a>
+  </div>
+  <div class="mobile-nav-bottom">
+    <span>Szczecin · Poland</span>
+    <a href="https://www.instagram.com/krasnovska_ph/" target="_blank" rel="noopener noreferrer">@krasnovska_ph</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-media" id="hero-media">
+      <img src="images/hero.jpg" alt="Krasnovska PH — fotograf portretowy w Szczecinie" data-i18n-alt="hero.imgAlt" width="1920" height="1280" />
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="shell hero-layout">
+      <div class="hero-top">
+        <div class="hero-top-left reveal is-visible">
+          <p class="meta" data-i18n="hero.eyebrow">Editorial portrait studio</p>
+          <p class="hero-tag" data-i18n="hero.tag">Portraits. Stories. Presence.</p>
+        </div>
+        <div class="hero-top-right reveal is-visible">
+          <span data-i18n="hero.selectedArchive">Selected archive</span>
+          <strong data-i18n="hero.works">06 works</strong>
+          <span data-i18n="hero.availability">Availability</span>
+          <strong id="hero-availability" data-i18n="hero.availabilityValue">Q3 · 2026</strong>
+        </div>
+      </div>
+      <div class="hero-main">
+        <h1 class="hero-title reveal is-visible" data-i18n-html="hero.title">
+          Photography for people who want to be <em>remembered</em>, not just seen.
+        </h1>
+        <p class="hero-manifesto reveal is-visible">
+          <strong data-i18n="hero.manifestoStrong">Nie robimy zdjęć na chwilę.</strong>
+          <span data-i18n="hero.manifesto"> Robimy obrazy, do których się wraca — z charakterem, światłem i obecnością.</span>
+        </p>
+      </div>
+      <div class="hero-bottom">
+        <div class="hero-meta-strip reveal is-visible">
+          <div class="hero-meta-item">
+            <p class="meta" data-i18n="hero.locationLabel">Lokalizacja</p>
+            <p data-i18n="hero.location">Szczecin / Poland / wherever the light makes sense</p>
+          </div>
+          <div class="hero-meta-item">
+            <p class="meta" data-i18n="hero.timeLabel">Czas lokalny</p>
+            <p class="large" id="hero-time">--:--</p>
+          </div>
+          <div class="hero-meta-item">
+            <p class="meta" data-i18n="hero.audienceLabel">Dla kogo</p>
+            <p data-i18n="hero.audience">For people, brands and couples who care how memory looks.</p>
+          </div>
+          <div class="hero-meta-item">
+            <p class="meta" data-i18n="hero.sessionLabel">Sesja</p>
+            <p data-i18n="hero.session">One session. A whole new way to see yourself.</p>
+          </div>
+        </div>
+        <a href="#about" class="hero-scroll reveal is-visible" aria-label="Przewiń do sekcji Studio" data-i18n-aria="hero.scrollAria">
+          <span class="hero-scroll-line" aria-hidden="true"></span>
+          <span data-i18n="nav.studio">Studio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="studio" id="about">
+    <div class="shell">
+      <div class="section-intro split reveal">
+        <div>
+          <span class="section-num" data-i18n="studio.num">01 — Studio</span>
+          <h2 class="section-statement" data-i18n="studio.title">Wizualna pamięć zamiast „ładnych zdjęć”.</h2>
+        </div>
+        <p class="section-note" data-i18n="studio.note">Krasnovska PH to osobiste studio fotografii portretowej i lifestyle. Pracuję z ludźmi, markami i parami, które wiedzą, że obraz zostaje na dłużej niż scroll.</p>
+      </div>
+      <div class="studio-grid">
+        <div class="studio-visual reveal">
+          <div class="studio-img-main">
+            <img src="images/preview.jpg" alt="Portret w stylu editorial — Krasnovska PH" data-i18n-alt="studio.imgAlt" width="800" height="1000" loading="lazy" />
+          </div>
+          <div class="studio-img-accent" aria-hidden="true">
+            <img src="images/work-04.jpg" alt="" width="400" height="500" loading="lazy" />
+          </div>
+        </div>
+        <div>
+          <div class="studio-statements">
+            <article class="studio-block reveal">
+              <span class="studio-block-num">I</span>
+              <p data-i18n="studio.block1">Światło, które buduje nastrój — nie tylko oświetla twarz.</p>
+              <span data-i18n="studio.block1sub">Naturalne, studyjne i miejskie. Zawsze z intencją.</span>
+            </article>
+            <article class="studio-block reveal reveal-delay-1">
+              <span class="studio-block-num">II</span>
+              <p data-i18n="studio.block2">Obecność przed obiektywem bez gry i bez presji.</p>
+              <span data-i18n="studio.block2sub">Delikatna reżyseria. Prawdziwy charakter.</span>
+            </article>
+            <article class="studio-block reveal reveal-delay-2">
+              <span class="studio-block-num">III</span>
+              <p data-i18n="studio.block3">Archiwum, które wygląda jak redakcyjna opowieść — nie album rodzinny.</p>
+              <span data-i18n="studio.block3sub">Portret · branding · love story · reportaż</span>
+            </article>
+          </div>
+          <div class="studio-footnote reveal reveal-delay-3">
+            <div>
+              <p class="meta" data-i18n="studio.base">Baza</p>
+              <p data-i18n="studio.baseVal">Szczecin, woj. zachodniopomorskie</p>
+            </div>
+            <div>
+              <p class="meta" data-i18n="studio.range">Zasięg</p>
+              <p data-i18n="studio.rangeVal">Polska · sesje w podróży po uzgodnieniu</p>
+            </div>
+            <div>
+              <p class="meta" data-i18n="studio.langs">Język sesji</p>
+              <p data-i18n="studio.langsVal">PL · EN · UA · RU</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="archive" id="portfolio">
+    <div class="shell">
+      <div class="section-intro split reveal">
+        <div>
+          <span class="section-num" data-i18n="archive.num">02 — Archiwum</span>
+          <h2 class="section-statement" data-i18n="archive.title">Selected works. Curated, not random.</h2>
+        </div>
+        <p class="section-note" data-i18n="archive.note">Wybrane kadry z ostatnich sesji — portret, branding, love story i reportaż. Każdy projekt to osobna historia światła.</p>
+      </div>
+      <div class="archive-filters reveal" role="tablist" aria-label="Filtruj archiwum" data-i18n-aria="archive.filterAria">
+        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true" data-i18n="archive.filterAll">Wszystko</button>
+        <button class="filter-btn" data-filter="portrait" role="tab" aria-selected="false" data-i18n="archive.filterPortrait">Portrait</button>
+        <button class="filter-btn" data-filter="brand" role="tab" aria-selected="false" data-i18n="archive.filterBrand">Brand</button>
+        <button class="filter-btn" data-filter="love" role="tab" aria-selected="false" data-i18n="archive.filterLove">Love</button>
+        <button class="filter-btn" data-filter="event" role="tab" aria-selected="false" data-i18n="archive.filterEvent">Event</button>
+      </div>
+      <div class="archive-grid" id="archive-grid">
+        <figure class="archive-item item-a reveal" data-category="portrait">
+          <img src="images/work-01.jpg" alt="Portret editorialny — sesja portretowa Krasnovska PH" data-i18n-alt="archive.w1alt" width="1200" height="800" loading="lazy" />
+          <figcaption class="archive-item-info">
+            <span class="archive-item-num">001</span>
+            <span class="archive-item-title" data-i18n="archive.w1title">Portret editorialny</span>
+            <span class="archive-item-cat" data-i18n="archive.w1cat">Portrait</span>
+          </figcaption>
+        </figure>
+        <figure class="archive-item item-b reveal reveal-delay-1" data-category="event">
+          <img src="images/work-02.jpg" alt="Miejska opowieść — reportaż lifestyle Szczecin" data-i18n-alt="archive.w2alt" width="800" height="1000" loading="lazy" />
+          <figcaption class="archive-item-info">
+            <span class="archive-item-num">002</span>
+            <span class="archive-item-title" data-i18n="archive.w2title">Miejska opowieść</span>
+            <span class="archive-item-cat" data-i18n="archive.w2cat">Event / Lifestyle</span>
+          </figcaption>
+        </figure>
+        <figure class="archive-item item-c reveal reveal-delay-2" data-category="brand">
+          <img src="images/work-03.jpg" alt="Personal branding — sesja dla marki osobistej" data-i18n-alt="archive.w3alt" width="800" height="1000" loading="lazy" />
+          <figcaption class="archive-item-info">
+            <span class="archive-item-num">003</span>
+            <span class="archive-item-title" data-i18n="archive.w3title">Personal branding</span>
+            <span class="archive-item-cat" data-i18n="archive.w3cat">Brand</span>
+          </figcaption>
+        </figure>
+        <figure class="archive-item item-d reveal" data-category="portrait">
+          <img src="images/work-04.jpg" alt="Portret w miękkim świetle — Krasnovska PH" data-i18n-alt="archive.w4alt" width="1200" height="750" loading="lazy" />
+          <figcaption class="archive-item-info">
+            <span class="archive-item-num">004</span>
+            <span class="archive-item-title" data-i18n="archive.w4title">Soft light portrait</span>
+            <span class="archive-item-cat" data-i18n="archive.w4cat">Portrait</span>
+          </figcaption>
+        </figure>
+        <figure class="archive-item item-e reveal reveal-delay-1" data-category="love">
+          <img src="images/work-05.jpg" alt="Love story — para w naturalnym świetle" data-i18n-alt="archive.w5alt" width="800" height="1000" loading="lazy" />
+          <figcaption class="archive-item-info">
+            <span class="archive-item-num">005</span>
+            <span class="archive-item-title" data-i18n="archive.w5title">Love story</span>
+            <span class="archive-item-cat" data-i18n="archive.w5cat">Love</span>
+          </figcaption>
+        </figure>
+        <figure class="archive-item item-f reveal reveal-delay-2" data-category="brand">
+          <img src="images/work-06.jpg" alt="Styl redakcyjny — sesja editorial Szczecin" data-i18n-alt="archive.w6alt" width="1200" height="675" loading="lazy" />
+          <figcaption class="archive-item-info">
+            <span class="archive-item-num">006</span>
+            <span class="archive-item-title" data-i18n="archive.w6title">Editorial mood</span>
+            <span class="archive-item-cat" data-i18n="archive.w6cat">Brand</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="archive-footer reveal">
+        <p data-i18n="archive.footer">Pełne portfolio i behind-the-scenes na Instagramie. Nowe projekty co kwartał.</p>
+        <a href="https://www.instagram.com/krasnovska_ph/" target="_blank" rel="noopener noreferrer" class="link-arrow">
+          @krasnovska_ph <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer" id="services">
+    <div class="shell">
+      <div class="section-intro split reveal">
+        <div>
+          <span class="section-num" data-i18n="offer.num">03 — Oferta</span>
+          <h2 class="section-statement" data-i18n="offer.title">Sesje z intencją i wyraźnym rezultatem.</h2>
+        </div>
+        <p class="section-note" data-i18n="offer.note">Każda oferta to kompletny proces — od briefu po gotowe archiwum. Ceny startowe, finalna wycena po rozmowie.</p>
+      </div>
+      <div class="offer-list">
+        <article class="offer-row reveal">
+          <span class="offer-num">01</span>
+          <div>
+            <h3 class="offer-name" data-i18n="offer.s1name">Portret editorialny</h3>
+            <p class="offer-desc" data-i18n="offer.s1desc">Sesja skoncentrowana na Tobie — światło, postawa i kadr, który wygląda jak okładka, nie jak zdjęcie z telefonu.</p>
+            <div class="offer-details">
+              <div class="offer-detail"><p class="meta" data-i18n="offer.timeLabel">Czas</p><p data-i18n="offer.s1time">1–1,5 h</p></div>
+              <div class="offer-detail"><p class="meta" data-i18n="offer.deliveryLabel">Dostawa</p><p data-i18n="offer.s1delivery">25+ zdjęć · galeria online · 14 dni</p></div>
+            </div>
+          </div>
+          <p class="offer-price" data-i18n="offer.s1price">od 450 zł</p>
+        </article>
+        <article class="offer-row reveal reveal-delay-1">
+          <span class="offer-num">02</span>
+          <div>
+            <h3 class="offer-name" data-i18n="offer.s2name">Personal branding</h3>
+            <p class="offer-desc" data-i18n="offer.s2desc">Wizualna tożsamość dla Twojej marki — spójne kadry do social media, strony i materiałów prasowych.</p>
+            <div class="offer-details">
+              <div class="offer-detail"><p class="meta" data-i18n="offer.timeLabel">Czas</p><p data-i18n="offer.s2time">2 h</p></div>
+              <div class="offer-detail"><p class="meta" data-i18n="offer.deliveryLabel">Dostawa</p><p data-i18n="offer.s2delivery">40+ zdjęć · 2 looki · 14 dni</p></div>
+            </div>
+          </div>
+          <p class="offer-price" data-i18n="offer.s2price">od 750 zł</p>
+        </article>
+        <article class="offer-row reveal reveal-delay-2">
+          <span class="offer-num">03</span>
+          <div>
+            <h3 class="offer-name" data-i18n="offer.s3name">Love story</h3>
+            <p class="offer-desc" data-i18n="offer.s3desc">Para w mieście lub naturze — bez sztywnej pozowanki. Historia bliskości, nie albumu ślubnego.</p>
+            <div class="offer-details">
+              <div class="offer-detail"><p class="meta" data-i18n="offer.timeLabel">Czas</p><p data-i18n="offer.s3time">1,5–2 h</p></div>
+              <div class="offer-detail"><p class="meta" data-i18n="offer.deliveryLabel">Dostawa</p><p data-i18n="offer.s3delivery">30+ zdjęć · galeria online · 14 dni</p></div>
+            </div>
+          </div>
+          <p class="offer-price" data-i18n="offer.s3price">od 600 zł</p>
+        </article>
+        <article class="offer-row reveal reveal-delay-3">
+          <span class="offer-num">04</span>
+          <div>
+            <h3 class="offer-name" data-i18n="offer.s4name">Events / lifestyle reportaż</h3>
+            <p class="offer-desc" data-i18n="offer.s4desc">Urodziny, spotkania, codzienność z redakcyjnym okiem — uczciwie, ciepło, bez nachalnej dokumentacji.</p>
+            <div class="offer-details">
+              <div class="offer-detail"><p class="meta" data-i18n="offer.timeLabel">Czas</p><p data-i18n="offer.s4time">od 2 h</p></div>
+              <div class="offer-detail"><p class="meta" data-i18n="offer.deliveryLabel">Dostawa</p><p data-i18n="offer.s4delivery">wybrane zdjęcia · wycena indywidualna</p></div>
+            </div>
+          </div>
+          <p class="offer-price" data-i18n="offer.s4price">od 900 zł</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="shell">
+      <div class="section-intro split reveal">
+        <div>
+          <span class="section-num" data-i18n="process.num">04 — Proces</span>
+          <h2 class="section-statement" data-i18n="process.title">Od pierwszej wiadomości do gotowego archiwum.</h2>
+        </div>
+        <p class="section-note" data-i18n="process.note">Prosty, przejrzysty flow — bez automatycznych odpowiedzi i bez presji. Każdy projekt zaczyna się rozmową.</p>
+      </div>
+      <div class="process-steps">
+        <article class="process-step reveal">
+          <span class="process-step-num">01</span>
+          <h3 data-i18n="process.s1title">Brief</h3>
+          <p data-i18n="process.s1desc">Piszesz, czego potrzebujesz. Ja pytam o cel, styl i termin. Bez formularzy-zagadek.</p>
+        </article>
+        <article class="process-step reveal reveal-delay-1">
+          <span class="process-step-num">02</span>
+          <h3 data-i18n="process.s2title">Mood &amp; location</h3>
+          <p data-i18n="process.s2desc">Wspólnie wybieramy nastrój, ubrania i miejsce. Szczecin ma ich więcej niż myślisz.</p>
+        </article>
+        <article class="process-step reveal reveal-delay-2">
+          <span class="process-step-num">03</span>
+          <h3 data-i18n="process.s3title">Session</h3>
+          <p data-i18n="process.s3desc">Sesja bez pośpiechu. Reżyseruję delikatnie — zostawiam przestrzeń na prawdziwe momenty.</p>
+        </article>
+        <article class="process-step reveal reveal-delay-3">
+          <span class="process-step-num">04</span>
+          <h3 data-i18n="process.s4title">Delivery</h3>
+          <p data-i18n="process.s4desc">Selekcja, obróbka, galeria online. Gotowe archiwum w ustalonym terminie.</p>
+        </article>
+      </div>
+      <div class="process-cta reveal">
+        <div class="process-cta-head">
+          <p class="meta meta-light" data-i18n="process.booking">Rezerwacja</p>
+          <p data-i18n="process.cta">Gotowa na sesję? Napisz — odpowiadam osobiście, zwykle w 24–48 h.</p>
+        </div>
+        <div>
+          <div class="process-links">
+            <a href="https://www.instagram.com/krasnovska_ph/" target="_blank" rel="noopener noreferrer" class="process-link">Instagram</a>
+            <!-- Replace Telegram handle below -->
+            <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer" class="process-link">Telegram</a>
+            <!-- Replace email below -->
+            <a href="mailto:hello@example.com" class="process-link">Email</a>
+            <a href="#contact" class="process-link" data-i18n="process.formLink">Formularz ↓</a>
+          </div>
+          <p class="process-booking-note" data-i18n="process.bookingNote">Slot na zewnętrzny booking (SimplyBook / Booksy / Fixly) — placeholder na późniejszą integrację.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <span class="contact-bg-text" aria-hidden="true" data-i18n="contact.bg">Kontakt</span>
+    <div class="shell">
+      <div class="contact-gate reveal">
+        <p class="meta meta-light" data-i18n="contact.gate">Jedna wiadomość. Jedna decyzja.</p>
+        <h2 data-i18n="contact.gateTitle">Let's make something worth keeping.</h2>
+        <p class="contact-gate-lead" data-i18n="contact.gateLead">Czytam każde zgłoszenie. Odpowiadam na te, które mają intencję. Bez auto-reply. Bez szablonów.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-side reveal reveal-delay-1">
+          <a href="https://www.instagram.com/krasnovska_ph/" target="_blank" rel="noopener noreferrer" class="contact-channel">
+            <p class="meta meta-light">Instagram</p>
+            <p class="value">@krasnovska_ph</p>
+          </a>
+          <!-- Replace Telegram handle -->
+          <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer" class="contact-channel">
+            <p class="meta meta-light">Telegram</p>
+            <p class="value">@your_telegram</p>
+          </a>
+          <!-- Replace email -->
+          <a href="mailto:hello@example.com" class="contact-channel">
+            <p class="meta meta-light">Email</p>
+            <p class="value">hello@example.com</p>
+          </a>
+          <p class="contact-microcopy" data-i18n="contact.microcopy">Bez presji — ale poważne zapytania traktuję priorytetowo. Odpowiedź zwykle w 24–48 h, pn–pt.</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="contact-form-wrap">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" data-i18n="form.name">Imię</label>
+                  <input type="text" id="name" name="name" placeholder="Twoje imię" data-i18n-placeholder="form.placeholderName" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-info" data-i18n="form.contact">Kontakt</label>
+                  <input type="text" id="contact-info" name="contact" placeholder="Email, IG lub Telegram" data-i18n-placeholder="form.placeholderContact" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="session-type" data-i18n="form.sessionType">Typ sesji</label>
+                  <select id="session-type" name="session-type" required>
+                    <option value="" disabled selected data-i18n="form.selectDefault">Wybierz</option>
+                    <option value="portrait" data-i18n="form.optionPortrait">Portret editorialny</option>
+                    <option value="brand" data-i18n="form.optionBrand">Personal branding</option>
+                    <option value="love" data-i18n="form.optionLove">Love story</option>
+                    <option value="event" data-i18n="form.optionEvent">Event / reportaż</option>
+                    <option value="other" data-i18n="form.optionOther">Inne</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="date-city" data-i18n="form.dateCity">Termin / miasto</label>
+                  <input type="text" id="date-city" name="date-city" placeholder="np. wrzesień · Szczecin" data-i18n-placeholder="form.placeholderDate" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message" data-i18n="form.message">Wiadomość</label>
+                <textarea id="message" name="message" placeholder="Krótko opisz, czego szukasz…" data-i18n-placeholder="form.placeholderMessage" required></textarea>
+              </div>
+              <button type="submit" class="btn-submit" data-i18n="form.submit">Wyślij zapytanie</button>
+            </form>
+          </div>
+          <div class="form-success" id="form-success" role="status">
+            <h3 data-i18n="form.successTitle">Wiadomość wysłana</h3>
+            <p data-i18n="form.successText">Dziękuję — wrócę do Ciebie w ciągu 24–48 h.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          Krasnovska PH
+          <span data-i18n="footer.brandTag">Photography with character</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">Nie tylko widziana. Zapamiętana.</p>
+      </div>
+      <div class="footer-col">
+        <p class="meta meta-light" data-i18n="footer.nav">Nawigacja</p>
+        <ul>
+          <li><a href="#about" data-i18n="nav.studio">Studio</a></li>
+          <li><a href="#portfolio" data-i18n="nav.archive">Archiwum</a></li>
+          <li><a href="#services" data-i18n="nav.offer">Oferta</a></li>
+          <li><a href="#process" data-i18n="nav.process">Proces</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="meta meta-light" data-i18n="footer.social">Social</p>
+        <ul>
+          <li><a href="https://www.instagram.com/krasnovska_ph/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <!-- Replace Telegram handle -->
+          <li><a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+          <!-- Replace email -->
+          <li><a href="mailto:hello@example.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">&copy; 2026 Krasnovska PH · Szczecin, Poland</span>
+      <div class="footer-live">
+        <span>Szczecin</span>
+        <span class="time" id="footer-time">--:--</span>
+        <span id="footer-date">—</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var TIMEZONE = 'Europe/Warsaw';
+  var LANG_KEY = 'kph-lang';
+  var LOCALE_MAP = { pl: 'pl-PL', ru: 'ru-RU', uk: 'uk-UA' };
+  var LOCALE = 'ru-RU';
+  var currentLang = 'ru';
+
+  var T = {
+    pl: {
+      'meta.title': 'Krasnovska PH — fotografia editorialna · Szczecin',
+      'meta.description': 'Krasnovska PH — studio fotografii portretowej i lifestyle w Szczecinie. Obrazy, do których się wraca.',
+      'logo.tagline': 'Visual diary · Szczecin',
+      'lang.aria': 'Wybierz język',
+      'nav.mainAria': 'Nawigacja główna',
+      'nav.mobileAria': 'Nawigacja mobilna',
+      'nav.menu': 'Menu',
+      'nav.studio': 'Studio',
+      'nav.archive': 'Archiwum',
+      'nav.offer': 'Oferta',
+      'nav.process': 'Proces',
+      'nav.contact': 'Kontakt',
+      'nav.book': 'Rezerwacja',
+      'nav.openMenu': 'Otwórz menu',
+      'nav.closeMenu': 'Zamknij menu',
+      'clock.aria': 'Czas lokalny w Szczecinie',
+      'hero.imgAlt': 'Krasnovska PH — fotograf portretowy w Szczecinie',
+      'hero.eyebrow': 'Editorial portrait studio',
+      'hero.tag': 'Portraits. Stories. Presence.',
+      'hero.selectedArchive': 'Selected archive',
+      'hero.works': '06 works',
+      'hero.availability': 'Availability',
+      'hero.availabilityValue': 'Q3 · 2026',
+      'hero.title': 'Photography for people who want to be <em>remembered</em>, not just seen.',
+      'hero.manifestoStrong': 'Nie robimy zdjęć na chwilę.',
+      'hero.manifesto': 'Robimy obrazy, do których się wraca — z charakterem, światłem i obecnością.',
+      'hero.locationLabel': 'Lokalizacja',
+      'hero.location': 'Szczecin / Poland / wherever the light makes sense',
+      'hero.timeLabel': 'Czas lokalny',
+      'hero.audienceLabel': 'Dla kogo',
+      'hero.audience': 'For people, brands and couples who care how memory looks.',
+      'hero.sessionLabel': 'Sesja',
+      'hero.session': 'One session. A whole new way to see yourself.',
+      'hero.scrollAria': 'Przewiń do sekcji Studio',
+      'studio.num': '01 — Studio',
+      'studio.title': 'Wizualna pamięć zamiast „ładnych zdjęć”.',
+      'studio.note': 'Krasnovska PH to osobiste studio fotografii portretowej i lifestyle. Pracuję z ludźmi, markami i parami, które wiedzą, że obraz zostaje na dłużej niż scroll.',
+      'studio.imgAlt': 'Portret w stylu editorial — Krasnovska PH',
+      'studio.block1': 'Światło, które buduje nastrój — nie tylko oświetla twarz.',
+      'studio.block1sub': 'Naturalne, studyjne i miejskie. Zawsze z intencją.',
+      'studio.block2': 'Obecność przed obiektywem bez gry i bez presji.',
+      'studio.block2sub': 'Delikatna reżyseria. Prawdziwy charakter.',
+      'studio.block3': 'Archiwum, które wygląda jak redakcyjna opowieść — nie album rodzinny.',
+      'studio.block3sub': 'Portret · branding · love story · reportaż',
+      'studio.base': 'Baza',
+      'studio.baseVal': 'Szczecin, woj. zachodniopomorskie',
+      'studio.range': 'Zasięg',
+      'studio.rangeVal': 'Polska · sesje w podróży po uzgodnieniu',
+      'studio.langs': 'Język sesji',
+      'studio.langsVal': 'PL · EN · UA · RU',
+      'archive.num': '02 — Archiwum',
+      'archive.title': 'Selected works. Curated, not random.',
+      'archive.note': 'Wybrane kadry z ostatnich sesji — portret, branding, love story i reportaż. Każdy projekt to osobna historia światła.',
+      'archive.filterAria': 'Filtruj archiwum',
+      'archive.filterAll': 'Wszystko',
+      'archive.filterPortrait': 'Portrait',
+      'archive.filterBrand': 'Brand',
+      'archive.filterLove': 'Love',
+      'archive.filterEvent': 'Event',
+      'archive.w1title': 'Portret editorialny',
+      'archive.w1cat': 'Portrait',
+      'archive.w1alt': 'Portret editorialny — sesja portretowa Krasnovska PH',
+      'archive.w2title': 'Miejska opowieść',
+      'archive.w2cat': 'Event / Lifestyle',
+      'archive.w2alt': 'Miejska opowieść — reportaż lifestyle Szczecin',
+      'archive.w3title': 'Personal branding',
+      'archive.w3cat': 'Brand',
+      'archive.w3alt': 'Personal branding — sesja dla marki osobistej',
+      'archive.w4title': 'Soft light portrait',
+      'archive.w4cat': 'Portrait',
+      'archive.w4alt': 'Portret w miękkim świetle — Krasnovska PH',
+      'archive.w5title': 'Love story',
+      'archive.w5cat': 'Love',
+      'archive.w5alt': 'Love story — para w naturalnym świetle',
+      'archive.w6title': 'Editorial mood',
+      'archive.w6cat': 'Brand',
+      'archive.w6alt': 'Styl redakcyjny — sesja editorial Szczecin',
+      'archive.footer': 'Pełne portfolio i behind-the-scenes na Instagramie. Nowe projekty co kwartał.',
+      'offer.num': '03 — Oferta',
+      'offer.title': 'Sesje z intencją i wyraźnym rezultatem.',
+      'offer.note': 'Każda oferta to kompletny proces — od briefu po gotowe archiwum. Ceny startowe, finalna wycena po rozmowie.',
+      'offer.timeLabel': 'Czas',
+      'offer.deliveryLabel': 'Dostawa',
+      'offer.s1name': 'Portret editorialny',
+      'offer.s1desc': 'Sesja skoncentrowana na Tobie — światło, postawa i kadr, który wygląda jak okładka, nie jak zdjęcie z telefonu.',
+      'offer.s1time': '1–1,5 h',
+      'offer.s1delivery': '25+ zdjęć · galeria online · 14 dni',
+      'offer.s1price': 'od 450 zł',
+      'offer.s2name': 'Personal branding',
+      'offer.s2desc': 'Wizualna tożsamość dla Twojej marki — spójne kadry do social media, strony i materiałów prasowych.',
+      'offer.s2time': '2 h',
+      'offer.s2delivery': '40+ zdjęć · 2 looki · 14 dni',
+      'offer.s2price': 'od 750 zł',
+      'offer.s3name': 'Love story',
+      'offer.s3desc': 'Para w mieście lub naturze — bez sztywnej pozowanki. Historia bliskości, nie albumu ślubnego.',
+      'offer.s3time': '1,5–2 h',
+      'offer.s3delivery': '30+ zdjęć · galeria online · 14 dni',
+      'offer.s3price': 'od 600 zł',
+      'offer.s4name': 'Events / lifestyle reportaż',
+      'offer.s4desc': 'Urodziny, spotkania, codzienność z redakcyjnym okiem — uczciwie, ciepło, bez nachalnej dokumentacji.',
+      'offer.s4time': 'od 2 h',
+      'offer.s4delivery': 'wybrane zdjęcia · wycena indywidualna',
+      'offer.s4price': 'od 900 zł',
+      'process.num': '04 — Proces',
+      'process.title': 'Od pierwszej wiadomości do gotowego archiwum.',
+      'process.note': 'Prosty, przejrzysty flow — bez automatycznych odpowiedzi i bez presji. Każdy projekt zaczyna się rozmową.',
+      'process.s1title': 'Brief',
+      'process.s1desc': 'Piszesz, czego potrzebujesz. Ja pytam o cel, styl i termin. Bez formularzy-zagadek.',
+      'process.s2title': 'Mood & location',
+      'process.s2desc': 'Wspólnie wybieramy nastrój, ubrania i miejsce. Szczecin ma ich więcej niż myślisz.',
+      'process.s3title': 'Session',
+      'process.s3desc': 'Sesja bez pośpiechu. Reżyseruję delikatnie — zostawiam przestrzeń na prawdziwe momenty.',
+      'process.s4title': 'Delivery',
+      'process.s4desc': 'Selekcja, obróbka, galeria online. Gotowe archiwum w ustalonym terminie.',
+      'process.booking': 'Rezerwacja',
+      'process.cta': 'Gotowa na sesję? Napisz — odpowiadam osobiście, zwykle w 24–48 h.',
+      'process.formLink': 'Formularz ↓',
+      'process.bookingNote': 'Slot na zewnętrzny booking (SimplyBook / Booksy / Fixly) — placeholder na późniejszą integrację.',
+      'contact.bg': 'Kontakt',
+      'contact.gate': 'Jedna wiadomość. Jedna decyzja.',
+      'contact.gateTitle': 'Let\'s make something worth keeping.',
+      'contact.gateLead': 'Czytam każde zgłoszenie. Odpowiadam na te, które mają intencję. Bez auto-reply. Bez szablonów.',
+      'contact.microcopy': 'Bez presji — ale poważne zapytania traktuję priorytetowo. Odpowiedź zwykle w 24–48 h, pn–pt.',
+      'form.name': 'Imię',
+      'form.contact': 'Kontakt',
+      'form.sessionType': 'Typ sesji',
+      'form.dateCity': 'Termin / miasto',
+      'form.message': 'Wiadomość',
+      'form.placeholderName': 'Twoje imię',
+      'form.placeholderContact': 'Email, IG lub Telegram',
+      'form.placeholderDate': 'np. wrzesień · Szczecin',
+      'form.placeholderMessage': 'Krótko opisz, czego szukasz…',
+      'form.selectDefault': 'Wybierz',
+      'form.optionPortrait': 'Portret editorialny',
+      'form.optionBrand': 'Personal branding',
+      'form.optionLove': 'Love story',
+      'form.optionEvent': 'Event / reportaż',
+      'form.optionOther': 'Inne',
+      'form.submit': 'Wyślij zapytanie',
+      'form.successTitle': 'Wiadomość wysłana',
+      'form.successText': 'Dziękuję — wrócę do Ciebie w ciągu 24–48 h.',
+      'footer.brandTag': 'Photography with character',
+      'footer.tagline': 'Nie tylko widziana. Zapamiętana.',
+      'footer.nav': 'Nawigacja',
+      'footer.social': 'Social',
+      'footer.copyright': '© 2026 Krasnovska PH · Szczecin, Poland'
+    },
+    ru: {
+      'meta.title': 'Krasnovska PH — editorial фотография · Щецин',
+      'meta.description': 'Krasnovska PH — портретное и lifestyle фото в Щецине. Образы, к которым хочется возвращаться.',
+      'logo.tagline': 'Visual diary · Szczecin',
+      'lang.aria': 'Выбор языка',
+      'nav.mainAria': 'Основная навигация',
+      'nav.mobileAria': 'Мобильная навигация',
+      'nav.menu': 'Меню',
+      'nav.studio': 'Студия',
+      'nav.archive': 'Архив',
+      'nav.offer': 'Услуги',
+      'nav.process': 'Процесс',
+      'nav.contact': 'Контакт',
+      'nav.book': 'Запись',
+      'nav.openMenu': 'Открыть меню',
+      'nav.closeMenu': 'Закрыть меню',
+      'clock.aria': 'Местное время в Щецине',
+      'hero.imgAlt': 'Krasnovska PH — портретный фотограф в Щецине',
+      'hero.eyebrow': 'Editorial portrait studio',
+      'hero.tag': 'Portraits. Stories. Presence.',
+      'hero.selectedArchive': 'Selected archive',
+      'hero.works': '06 works',
+      'hero.availability': 'Availability',
+      'hero.availabilityValue': 'Q3 · 2026',
+      'hero.title': 'Фотография для тех, кто хочет быть <em>запомненным</em>, а не просто увиденным.',
+      'hero.manifestoStrong': 'Мы не делаем фото на один раз.',
+      'hero.manifesto': 'Мы создаём образы, к которым возвращаются — с характером, светом и присутствием.',
+      'hero.locationLabel': 'Локация',
+      'hero.location': 'Щецин / Польша / wherever the light makes sense',
+      'hero.timeLabel': 'Местное время',
+      'hero.audienceLabel': 'Для кого',
+      'hero.audience': 'For people, brands and couples who care how memory looks.',
+      'hero.sessionLabel': 'Сессия',
+      'hero.session': 'One session. A whole new way to see yourself.',
+      'hero.scrollAria': 'Прокрутить к разделу Студия',
+      'studio.num': '01 — Студия',
+      'studio.title': 'Визуальная память вместо «красивых фото».',
+      'studio.note': 'Krasnovska PH — личная портретная и lifestyle студия. Работаю с людьми, брендами и парами, которые понимают: образ остаётся дольше, чем лента.',
+      'studio.imgAlt': 'Editorial портрет — Krasnovska PH',
+      'studio.block1': 'Свет, который создаёт настроение — а не просто освещает лицо.',
+      'studio.block1sub': 'Натуральный, студийный, городской. Всегда с намерением.',
+      'studio.block2': 'Присутствие перед камерой без игры и без давления.',
+      'studio.block2sub': 'Деликатная режиссура. Настоящий характер.',
+      'studio.block3': 'Архив, который выглядит как редакционная история — не семейный альбом.',
+      'studio.block3sub': 'Портрет · branding · love story · репортаж',
+      'studio.base': 'База',
+      'studio.baseVal': 'Щецин, Западное Поморье',
+      'studio.range': 'География',
+      'studio.rangeVal': 'Польша · выездные сессии по договорённости',
+      'studio.langs': 'Язык сессии',
+      'studio.langsVal': 'PL · EN · UA · RU',
+      'archive.num': '02 — Архив',
+      'archive.title': 'Selected works. Curated, not random.',
+      'archive.note': 'Избранные кадры последних сессий — портрет, branding, love story и репортаж. Каждый проект — отдельная история света.',
+      'archive.filterAria': 'Фильтр архива',
+      'archive.filterAll': 'Всё',
+      'archive.filterPortrait': 'Portrait',
+      'archive.filterBrand': 'Brand',
+      'archive.filterLove': 'Love',
+      'archive.filterEvent': 'Event',
+      'archive.w1title': 'Editorial портрет',
+      'archive.w1cat': 'Portrait',
+      'archive.w1alt': 'Editorial портрет — Krasnovska PH',
+      'archive.w2title': 'Городская история',
+      'archive.w2cat': 'Event / Lifestyle',
+      'archive.w2alt': 'Городская история — lifestyle репортаж, Щецин',
+      'archive.w3title': 'Personal branding',
+      'archive.w3cat': 'Brand',
+      'archive.w3alt': 'Personal branding — сессия для личного бренда',
+      'archive.w4title': 'Soft light portrait',
+      'archive.w4cat': 'Portrait',
+      'archive.w4alt': 'Портрет в мягком свете — Krasnovska PH',
+      'archive.w5title': 'Love story',
+      'archive.w5cat': 'Love',
+      'archive.w5alt': 'Love story — пара в естественном свете',
+      'archive.w6title': 'Editorial mood',
+      'archive.w6cat': 'Brand',
+      'archive.w6alt': 'Editorial стиль — сессия в Щецине',
+      'archive.footer': 'Полное портфолио и behind-the-scenes в Instagram. Новые проекты каждый квартал.',
+      'offer.num': '03 — Услуги',
+      'offer.title': 'Сессии с намерением и понятным результатом.',
+      'offer.note': 'Каждая услуга — полный процесс от brief до готового архива. Стартовые цены, финальная смета после разговора.',
+      'offer.timeLabel': 'Время',
+      'offer.deliveryLabel': 'Результат',
+      'offer.s1name': 'Editorial портрет',
+      'offer.s1desc': 'Сессия о вас — свет, поза и кадр, который выглядит как обложка, а не как снимок с телефона.',
+      'offer.s1time': '1–1,5 ч',
+      'offer.s1delivery': '25+ фото · онлайн-галерея · 14 дней',
+      'offer.s1price': 'от 450 zł',
+      'offer.s2name': 'Personal branding',
+      'offer.s2desc': 'Визуальная идентичность вашего бренда — цельные кадры для соцсетей, сайта и прессы.',
+      'offer.s2time': '2 ч',
+      'offer.s2delivery': '40+ фото · 2 образа · 14 дней',
+      'offer.s2price': 'от 750 zł',
+      'offer.s3name': 'Love story',
+      'offer.s3desc': 'Пара в городе или на природе — без натянутой позировки. История близости, не свадебный альбом.',
+      'offer.s3time': '1,5–2 ч',
+      'offer.s3delivery': '30+ фото · онлайн-галерея · 14 дней',
+      'offer.s3price': 'от 600 zł',
+      'offer.s4name': 'Events / lifestyle репортаж',
+      'offer.s4desc': 'Дни рождения, встречи, повседневность с редакционным взглядом — честно, тепло, без навязчивой съёмки.',
+      'offer.s4time': 'от 2 ч',
+      'offer.s4delivery': 'отбор фото · индивидуальная смета',
+      'offer.s4price': 'от 900 zł',
+      'process.num': '04 — Процесс',
+      'process.title': 'От первого сообщения до готового архива.',
+      'process.note': 'Простой, прозрачный flow — без автоответов и без давления. Каждый проект начинается с разговора.',
+      'process.s1title': 'Brief',
+      'process.s1desc': 'Вы пишете, что нужно. Я уточняю цель, стиль и срок. Без загадочных форм.',
+      'process.s2title': 'Mood & location',
+      'process.s2desc': 'Вместе выбираем настроение, образы и место. В Щецине их больше, чем кажется.',
+      'process.s3title': 'Session',
+      'process.s3desc': 'Сессия без спешки. Деликатно режиссирую — оставляю пространство для настоящих моментов.',
+      'process.s4title': 'Delivery',
+      'process.s4desc': 'Отбор, обработка, онлайн-галерея. Готовый архив в согласованный срок.',
+      'process.booking': 'Запись',
+      'process.cta': 'Готовы к сессии? Напишите — отвечаю лично, обычно за 24–48 ч.',
+      'process.formLink': 'Форма ↓',
+      'process.bookingNote': 'Слот для внешнего booking (SimplyBook / Booksy / Fixly) — placeholder для интеграции.',
+      'contact.bg': 'Контакт',
+      'contact.gate': 'Одно сообщение. Одно решение.',
+      'contact.gateTitle': 'Let\'s make something worth keeping.',
+      'contact.gateLead': 'Читаю каждую заявку. Отвечаю на те, где есть намерение. Без auto-reply. Без шаблонов.',
+      'contact.microcopy': 'Без давления — но серьёзные запросы в приоритете. Ответ обычно за 24–48 ч, пн–пт.',
+      'form.name': 'Имя',
+      'form.contact': 'Контакт',
+      'form.sessionType': 'Тип сессии',
+      'form.dateCity': 'Дата / город',
+      'form.message': 'Сообщение',
+      'form.placeholderName': 'Ваше имя',
+      'form.placeholderContact': 'Email, IG или Telegram',
+      'form.placeholderDate': 'напр. сентябрь · Щецин',
+      'form.placeholderMessage': 'Кратко опишите, что ищете…',
+      'form.selectDefault': 'Выберите',
+      'form.optionPortrait': 'Editorial портрет',
+      'form.optionBrand': 'Personal branding',
+      'form.optionLove': 'Love story',
+      'form.optionEvent': 'Event / репортаж',
+      'form.optionOther': 'Другое',
+      'form.submit': 'Отправить запрос',
+      'form.successTitle': 'Сообщение отправлено',
+      'form.successText': 'Спасибо — вернусь к вам в течение 24–48 ч.',
+      'footer.brandTag': 'Photography with character',
+      'footer.tagline': 'Не просто увиденная. Запомненная.',
+      'footer.nav': 'Навигация',
+      'footer.social': 'Social',
+      'footer.copyright': '© 2026 Krasnovska PH · Szczecin, Poland'
+    },
+    uk: {
+      'meta.title': 'Krasnovska PH — editorial фотографія · Щецин',
+      'meta.description': 'Krasnovska PH — портретна та lifestyle студія в Щецині. Образи, до яких хочеться повертатися.',
+      'logo.tagline': 'Visual diary · Szczecin',
+      'lang.aria': 'Вибір мови',
+      'nav.mainAria': 'Основна навігація',
+      'nav.mobileAria': 'Мобільна навігація',
+      'nav.menu': 'Меню',
+      'nav.studio': 'Студія',
+      'nav.archive': 'Архів',
+      'nav.offer': 'Послуги',
+      'nav.process': 'Процес',
+      'nav.contact': 'Контакт',
+      'nav.book': 'Запис',
+      'nav.openMenu': 'Відкрити меню',
+      'nav.closeMenu': 'Закрити меню',
+      'clock.aria': 'Місцевий час у Щецині',
+      'hero.imgAlt': 'Krasnovska PH — портретний фотограф у Щецині',
+      'hero.eyebrow': 'Editorial portrait studio',
+      'hero.tag': 'Portraits. Stories. Presence.',
+      'hero.selectedArchive': 'Selected archive',
+      'hero.works': '06 works',
+      'hero.availability': 'Availability',
+      'hero.availabilityValue': 'Q3 · 2026',
+      'hero.title': 'Фотографія для тих, хто хоче бути <em>запам\u2019ятаним</em>, а не просто побаченим.',
+      'hero.manifestoStrong': 'Ми не робимо фото на один раз.',
+      'hero.manifesto': 'Ми створюємо образи, до яких повертаються — з характером, світлом і присутністю.',
+      'hero.locationLabel': 'Локація',
+      'hero.location': 'Щецин / Польща / wherever the light makes sense',
+      'hero.timeLabel': 'Місцевий час',
+      'hero.audienceLabel': 'Для кого',
+      'hero.audience': 'For people, brands and couples who care how memory looks.',
+      'hero.sessionLabel': 'Сесія',
+      'hero.session': 'One session. A whole new way to see yourself.',
+      'hero.scrollAria': 'Прокрутити до розділу Студія',
+      'studio.num': '01 — Студія',
+      'studio.title': 'Візуальна пам\u2019ять замість «гарних фото».',
+      'studio.note': 'Krasnovska PH — особиста портретна та lifestyle студія. Працюю з людьми, брендами та парами, які розуміють: образ залишається довше, ніж стрічка.',
+      'studio.imgAlt': 'Editorial портрет — Krasnovska PH',
+      'studio.block1': 'Світло, яке створює настрій — а не просто освітлює обличчя.',
+      'studio.block1sub': 'Натуральне, студійне, міське. Завжди з наміром.',
+      'studio.block2': 'Присутність перед камерою без гри і без тиску.',
+      'studio.block2sub': 'Делікатна режисура. Справжній характер.',
+      'studio.block3': 'Архів, який виглядає як редакційна історія — не сімейний альбом.',
+      'studio.block3sub': 'Портрет · branding · love story · репортаж',
+      'studio.base': 'База',
+      'studio.baseVal': 'Щецин, Західнопоморське воєводство',
+      'studio.range': 'Географія',
+      'studio.rangeVal': 'Польща · виїзні сесії за домовленістю',
+      'studio.langs': 'Мова сесії',
+      'studio.langsVal': 'PL · EN · UA · RU',
+      'archive.num': '02 — Архів',
+      'archive.title': 'Selected works. Curated, not random.',
+      'archive.note': 'Обрані кадри останніх сесій — портрет, branding, love story і репортаж. Кожен проєкт — окрема історія світла.',
+      'archive.filterAria': 'Фільтр архіву',
+      'archive.filterAll': 'Усе',
+      'archive.filterPortrait': 'Portrait',
+      'archive.filterBrand': 'Brand',
+      'archive.filterLove': 'Love',
+      'archive.filterEvent': 'Event',
+      'archive.w1title': 'Editorial портрет',
+      'archive.w1cat': 'Portrait',
+      'archive.w1alt': 'Editorial портрет — Krasnovska PH',
+      'archive.w2title': 'Міська історія',
+      'archive.w2cat': 'Event / Lifestyle',
+      'archive.w2alt': 'Міська історія — lifestyle репортаж, Щецин',
+      'archive.w3title': 'Personal branding',
+      'archive.w3cat': 'Brand',
+      'archive.w3alt': 'Personal branding — сесія для особистого бренду',
+      'archive.w4title': 'Soft light portrait',
+      'archive.w4cat': 'Portrait',
+      'archive.w4alt': 'Портрет у м\u2019якому світлі — Krasnovska PH',
+      'archive.w5title': 'Love story',
+      'archive.w5cat': 'Love',
+      'archive.w5alt': 'Love story — пара в природному світлі',
+      'archive.w6title': 'Editorial mood',
+      'archive.w6cat': 'Brand',
+      'archive.w6alt': 'Editorial стиль — сесія в Щецині',
+      'archive.footer': 'Повне портфоліо та behind-the-scenes в Instagram. Нові проєкти щокварталу.',
+      'offer.num': '03 — Послуги',
+      'offer.title': 'Сесії з наміром і зрозумілим результатом.',
+      'offer.note': 'Кожна послуга — повний процес від brief до готового архіву. Стартові ціни, фінальна оцінка після розмови.',
+      'offer.timeLabel': 'Час',
+      'offer.deliveryLabel': 'Результат',
+      'offer.s1name': 'Editorial портрет',
+      'offer.s1desc': 'Сесія про вас — світло, поза і кадр, який виглядає як обкладинка, а не як знімок з телефону.',
+      'offer.s1time': '1–1,5 год',
+      'offer.s1delivery': '25+ фото · онлайн-галерея · 14 днів',
+      'offer.s1price': 'від 450 zł',
+      'offer.s2name': 'Personal branding',
+      'offer.s2desc': 'Візуальна ідентичність вашого бренду — цілісні кадри для соцмереж, сайту та преси.',
+      'offer.s2time': '2 год',
+      'offer.s2delivery': '40+ фото · 2 образи · 14 днів',
+      'offer.s2price': 'від 750 zł',
+      'offer.s3name': 'Love story',
+      'offer.s3desc': 'Пара в місті або на природі — без натягнутої позування. Історія близькості, не весільний альбом.',
+      'offer.s3time': '1,5–2 год',
+      'offer.s3delivery': '30+ фото · онлайн-галерея · 14 днів',
+      'offer.s3price': 'від 600 zł',
+      'offer.s4name': 'Events / lifestyle репортаж',
+      'offer.s4desc': 'Дні народження, зустрічі, буденність з редакційним поглядом — чесно, тепло, без нав\u2019язливої зйомки.',
+      'offer.s4time': 'від 2 год',
+      'offer.s4delivery': 'відбір фото · індивідуальна оцінка',
+      'offer.s4price': 'від 900 zł',
+      'process.num': '04 — Процес',
+      'process.title': 'Від першого повідомлення до готового архіву.',
+      'process.note': 'Простий, прозорий flow — без автоВідповідей і без тиску. Кожен проєкт починається з розмови.',
+      'process.s1title': 'Brief',
+      'process.s1desc': 'Ви пишете, що потрібно. Я уточнюю мету, стиль і термін. Без загадкових форм.',
+      'process.s2title': 'Mood & location',
+      'process.s2desc': 'Разом обираємо настрій, образи та місце. У Щецині їх більше, ніж здається.',
+      'process.s3title': 'Session',
+      'process.s3desc': 'Сесія без поспіху. Делікатно режисую — залишаю простір для справжніх моментів.',
+      'process.s4title': 'Delivery',
+      'process.s4desc': 'Відбір, обробка, онлайн-галерея. Готовий архів у погоджений термін.',
+      'process.booking': 'Запис',
+      'process.cta': 'Готові до сесії? Напишіть — відповідаю особисто, зазвичай за 24–48 год.',
+      'process.formLink': 'Форма ↓',
+      'process.bookingNote': 'Слот для зовнішнього booking (SimplyBook / Booksy / Fixly) — placeholder для інтеграції.',
+      'contact.bg': 'Контакт',
+      'contact.gate': 'Одне повідомлення. Одне рішення.',
+      'contact.gateTitle': 'Let\'s make something worth keeping.',
+      'contact.gateLead': 'Читаю кожну заявку. Відповідаю на ті, де є намір. Без auto-reply. Без шаблонів.',
+      'contact.microcopy': 'Без тиску — але серйозні запити в пріоритеті. Відповідь зазвичай за 24–48 год, пн–пт.',
+      'form.name': 'Ім\u2019я',
+      'form.contact': 'Контакт',
+      'form.sessionType': 'Тип сесії',
+      'form.dateCity': 'Дата / місто',
+      'form.message': 'Повідомлення',
+      'form.placeholderName': 'Ваше ім\u2019я',
+      'form.placeholderContact': 'Email, IG або Telegram',
+      'form.placeholderDate': 'напр. вересень · Щецин',
+      'form.placeholderMessage': 'Коротко опишіть, що шукаєте…',
+      'form.selectDefault': 'Оберіть',
+      'form.optionPortrait': 'Editorial портрет',
+      'form.optionBrand': 'Personal branding',
+      'form.optionLove': 'Love story',
+      'form.optionEvent': 'Event / репортаж',
+      'form.optionOther': 'Інше',
+      'form.submit': 'Надіслати запит',
+      'form.successTitle': 'Повідомлення надіслано',
+      'form.successText': 'Дякую — повернуся до вас протягом 24–48 год.',
+      'footer.brandTag': 'Photography with character',
+      'footer.tagline': 'Не просто побачена. Запам\u2019ятана.',
+      'footer.nav': 'Навігація',
+      'footer.social': 'Social',
+      'footer.copyright': '© 2026 Krasnovska PH · Szczecin, Poland'
+    }
+  };
+
+  var header = document.getElementById('header');
+  var headerTime = document.getElementById('header-time');
+  var heroTime = document.getElementById('hero-time');
+  var mobileTime = document.getElementById('mobile-time');
+  var footerTime = document.getElementById('footer-time');
+  var footerDate = document.getElementById('footer-date');
+  var burger = document.getElementById('burger');
+  var mobileNav = document.getElementById('mobile-nav');
+  var contactForm = document.getElementById('contact-form');
+  var formSuccess = document.getElementById('form-success');
+  var heroMedia = document.getElementById('hero-media');
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var archiveItems = document.querySelectorAll('.archive-item');
+  var contactSection = document.getElementById('contact');
+  var heroSection = document.getElementById('home');
+  var langBtns = document.querySelectorAll('.lang-btn');
+  var metaDescription = document.querySelector('meta[name="description"]');
+
+  function t(key) {
+    var pack = T[currentLang] || T.ru;
+    return pack[key] !== undefined ? pack[key] : (T.pl[key] || key);
+  }
+
+  function detectLanguage() {
+    try {
+      var saved = localStorage.getItem(LANG_KEY);
+      if (saved && T[saved]) return saved;
+    } catch (e) {}
+    var browser = (navigator.language || 'ru').slice(0, 2).toLowerCase();
+    if (browser === 'uk') return 'uk';
+    if (browser === 'ru') return 'ru';
+    if (browser === 'pl') return 'pl';
+    return 'ru';
+  }
+
+  function applyLanguage(lang) {
+    if (!T[lang]) return;
+    currentLang = lang;
+    LOCALE = LOCALE_MAP[lang] || 'ru-RU';
+
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+
+    document.documentElement.lang = lang === 'uk' ? 'uk' : lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (T[lang][key] !== undefined) el.textContent = T[lang][key];
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-html');
+      if (T[lang][key] !== undefined) el.innerHTML = T[lang][key];
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (T[lang][key] !== undefined) el.setAttribute('placeholder', T[lang][key]);
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (T[lang][key] !== undefined) el.setAttribute('aria-label', T[lang][key]);
+    });
+
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-alt');
+      if (T[lang][key] !== undefined) el.setAttribute('alt', T[lang][key]);
+    });
+
+    if (T[lang]['meta.title']) document.title = T[lang]['meta.title'];
+    if (metaDescription && T[lang]['meta.description']) {
+      metaDescription.setAttribute('content', T[lang]['meta.description']);
+    }
+
+    langBtns.forEach(function (btn) {
+      var active = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    if (burger && !burger.classList.contains('is-open')) {
+      burger.setAttribute('aria-label', t('nav.openMenu'));
+    }
+
+    updateClock();
+  }
+
+  function updateClock() {
+    var now = new Date();
+    var timeStr = now.toLocaleTimeString(LOCALE, {
+      timeZone: TIMEZONE,
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+    var dateStr = now.toLocaleDateString(LOCALE, {
+      timeZone: TIMEZONE,
+      weekday: 'short',
+      day: 'numeric',
+      month: 'short'
+    });
+
+    if (headerTime) headerTime.textContent = timeStr;
+    if (heroTime) heroTime.textContent = timeStr;
+    if (mobileTime) mobileTime.textContent = timeStr;
+    if (footerTime) footerTime.textContent = timeStr;
+    if (footerDate) footerDate.textContent = dateStr;
+  }
+
+  applyLanguage(detectLanguage());
+  setInterval(updateClock, 30000);
+
+  langBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLanguage(btn.getAttribute('data-lang'));
+      closeMobileNav();
+    });
+  });
+
+  function onScroll() {
+    var y = window.scrollY;
+
+    if (y > 48) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+
+    var heroBottom = heroSection ? heroSection.offsetHeight - 120 : 0;
+    var contactTop = contactSection ? contactSection.offsetTop - 80 : Infinity;
+
+    if (y < heroBottom || y >= contactTop) {
+      header.classList.add('is-over-dark');
+    } else {
+      header.classList.remove('is-over-dark');
+    }
+
+    if (heroMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var img = heroMedia.querySelector('img');
+      if (img) {
+        var shift = Math.min(y * 0.08, 60);
+        img.style.transform = 'scale(1.02) translateY(' + shift + 'px)';
+      }
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-desktop a');
+
+  function setActiveNav() {
+    var scrollPos = window.scrollY + 140;
+    sections.forEach(function (section) {
+      var top = section.offsetTop;
+      var height = section.offsetHeight;
+      var id = section.getAttribute('id');
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach(function (link) {
+          link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', setActiveNav, { passive: true });
+  setActiveNav();
+
+  function closeMobileNav() {
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', t('nav.openMenu'));
+    mobileNav.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', function () {
+    var isOpen = burger.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', isOpen);
+    burger.setAttribute('aria-label', isOpen ? t('nav.closeMenu') : t('nav.openMenu'));
+    mobileNav.classList.toggle('is-open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  mobileNav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = btn.getAttribute('data-filter');
+
+      filterBtns.forEach(function (b) {
+        b.classList.toggle('is-active', b === btn);
+        b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+      });
+
+      archiveItems.forEach(function (item) {
+        var cat = item.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          item.classList.remove('is-hidden');
+        } else {
+          item.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    contactForm.closest('.contact-form-wrap').style.display = 'none';
+    formSuccess.classList.add('is-visible');
+  });
+})();
+</script>
+</body>
+</html>
