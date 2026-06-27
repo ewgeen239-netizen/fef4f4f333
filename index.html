@@ -12,8 +12,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png" />
 <link rel="apple-touch-icon" href="images/krasnovskaph-favicon.png" />
-<meta property="og:title" content="Krasnovska PH — Photography for people who want to be remembered" />
-<meta property="og:description" content="Editorial portrait studio in Szczecin, Poland. Portraits. Stories. Presence." />
+<meta property="og:title" content="Krasnovska PH — portrety, które zostają" />
+<meta property="og:description" content="Editorial portrait studio w Szczecinie. Portret, branding, love story i lifestyle z charakterem." />
 <meta property="og:image" content="https://krasnovskaph.up.railway.app/images/preview.jpg?v=2" />
 <meta property="og:image:secure_url" content="https://krasnovskaph.up.railway.app/images/preview.jpg?v=2" />
 <meta property="og:image:type" content="image/jpeg" />
@@ -24,9 +24,17 @@
 <meta property="og:site_name" content="Krasnovska PH" />
 <meta property="og:locale" content="pl_PL" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Krasnovska PH — Photography for people who want to be remembered" />
-<meta name="twitter:description" content="Editorial portrait studio in Szczecin, Poland. Portraits. Stories. Presence." />
+<meta name="twitter:title" content="Krasnovska PH — portrety, które zostają" />
+<meta name="twitter:description" content="Editorial portrait studio w Szczecinie. Portret, branding, love story i lifestyle z charakterem." />
 <meta name="twitter:image" content="https://krasnovskaph.up.railway.app/images/preview.jpg?v=2" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-274WWTYNR5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-274WWTYNR5');
+</script>
 <script>
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
@@ -532,7 +540,7 @@ ul { list-style: none; }
   line-height: 0.92;
   letter-spacing: 0.01em;
   color: var(--white);
-  max-width: 14ch;
+  max-width: 17ch;
 }
 
 .hero-title em {
@@ -541,7 +549,7 @@ ul { list-style: none; }
 }
 
 .hero-manifesto {
-  max-width: 22rem;
+  max-width: 28rem;
   font-size: clamp(0.9375rem, 2vw, 1.0625rem);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.72);
@@ -622,9 +630,35 @@ ul { list-style: none; }
   .hero-bottom { grid-template-columns: 1fr auto; align-items: end; }
 }
 
+@media (min-width: 900px) {
+  .hero-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+    align-items: end;
+    gap: 1.5rem 3rem;
+  }
+  .hero-title { max-width: 18ch; }
+  .hero-manifesto {
+    justify-self: end;
+    margin-bottom: 0.5rem;
+  }
+}
+
 @media (max-width: 639px) {
   .hero-media img { object-position: 50% 18%; }
   .hero-title { max-width: none; }
+}
+
+html[lang="ru"] .hero-title,
+html[lang="uk"] .hero-title {
+  font-size: clamp(2.625rem, 9vw, 6.5rem);
+  line-height: 0.96;
+  max-width: 18ch;
+}
+
+html[lang="ru"] .hero-manifesto,
+html[lang="uk"] .hero-manifesto {
+  max-width: 30rem;
 }
 
 /* ── Sections shared ── */
@@ -654,13 +688,13 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
   font-weight: 400;
   line-height: 1.02;
   letter-spacing: 0.01em;
-  max-width: 16ch;
+  max-width: 19ch;
 }
 
 .section-note {
   font-size: 0.9375rem;
   color: var(--ink-soft);
-  max-width: 28rem;
+  max-width: 36rem;
   align-self: end;
 }
 
@@ -678,9 +712,15 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
 
 @media (min-width: 900px) {
   .section-intro.split {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
     align-items: end;
   }
+}
+
+html[lang="ru"] .section-statement,
+html[lang="uk"] .section-statement {
+  font-size: clamp(2.125rem, 4.7vw, 4rem);
+  max-width: 22ch;
 }
 
 /* ── Studio / About ── */
@@ -750,7 +790,7 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
   font-family: var(--serif);
   font-size: clamp(1.375rem, 3vw, 2rem);
   line-height: 1.25;
-  max-width: 24ch;
+  max-width: 34ch;
 }
 
 .studio-block span {
@@ -1126,7 +1166,7 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
   font-family: var(--serif);
   font-size: clamp(2.5rem, 7vw, 5.5rem);
   line-height: 0.95;
-  max-width: 12ch;
+  max-width: 16ch;
   margin-bottom: 1.5rem;
 }
 
@@ -1431,18 +1471,18 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       </div>
       <div class="hero-main">
         <h1 class="hero-title reveal is-visible" data-i18n-html="hero.title">
-          Photography for people who want to be <em>remembered</em>, not just seen.
+          Portrety, które nie proszą o uwagę. One <em>zostają</em>.
         </h1>
         <p class="hero-manifesto reveal is-visible">
-          <strong data-i18n="hero.manifestoStrong">Nie robimy zdjęć na chwilę.</strong>
-          <span data-i18n="hero.manifesto"> Robimy obrazy, do których się wraca — z charakterem, światłem i obecnością.</span>
+          <strong data-i18n="hero.manifestoStrong">Fotografia bez przypadkowych póz.</strong>
+          <span data-i18n="hero.manifesto"> Światło, ruch i cisza prowadzą do kadrów, które wyglądają jak wspomnienie z przyszłości.</span>
         </p>
       </div>
       <div class="hero-bottom">
         <div class="hero-meta-strip reveal is-visible">
           <div class="hero-meta-item">
             <p class="meta" data-i18n="hero.locationLabel">Lokalizacja</p>
-            <p data-i18n="hero.location">Szczecin / Poland / wherever the light makes sense</p>
+            <p data-i18n="hero.location">Szczecin / Polska / tam, gdzie światło robi swoje</p>
           </div>
           <div class="hero-meta-item">
             <p class="meta" data-i18n="hero.timeLabel">Czas lokalny</p>
@@ -1450,11 +1490,11 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
           </div>
           <div class="hero-meta-item">
             <p class="meta" data-i18n="hero.audienceLabel">Dla kogo</p>
-            <p data-i18n="hero.audience">For people, brands and couples who care how memory looks.</p>
+            <p data-i18n="hero.audience">Dla ludzi, marek i par, które chcą obecności, nie kolejnego contentu.</p>
           </div>
           <div class="hero-meta-item">
             <p class="meta" data-i18n="hero.sessionLabel">Sesja</p>
-            <p data-i18n="hero.session">One session. A whole new way to see yourself.</p>
+            <p data-i18n="hero.session">Jedna sesja. Nowy sposób, żeby zobaczyć siebie.</p>
           </div>
         </div>
         <a href="#about" class="hero-scroll reveal is-visible" aria-label="Przewiń do sekcji Studio" data-i18n-aria="hero.scrollAria">
@@ -1470,9 +1510,9 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       <div class="section-intro split reveal">
         <div>
           <span class="section-num" data-i18n="studio.num">01 — Studio</span>
-          <h2 class="section-statement" data-i18n="studio.title">Wizualna pamięć zamiast „ładnych zdjęć”.</h2>
+          <h2 class="section-statement" data-i18n="studio.title">Nie fotografuję twarzy. Buduję obecność.</h2>
         </div>
-        <p class="section-note" data-i18n="studio.note">Krasnovska PH to osobiste studio fotografii portretowej i lifestyle. Pracuję z ludźmi, markami i parami, które wiedzą, że obraz zostaje na dłużej niż scroll.</p>
+        <p class="section-note" data-i18n="studio.note">Krasnovska PH to portret, branding i lifestyle w Szczecinie. Pracuję spokojnie, blisko i z wyczuciem — tak, żeby zdjęcia wyglądały jak Ty, tylko odważniej.</p>
       </div>
       <div class="studio-grid">
         <div class="studio-visual reveal">
@@ -1487,17 +1527,17 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
           <div class="studio-statements">
             <article class="studio-block reveal">
               <span class="studio-block-num">I</span>
-              <p data-i18n="studio.block1">Światło, które buduje nastrój — nie tylko oświetla twarz.</p>
-              <span data-i18n="studio.block1sub">Naturalne, studyjne i miejskie. Zawsze z intencją.</span>
+              <p data-i18n="studio.block1">Światło nie jest dekoracją. Ono ustawia charakter.</p>
+              <span data-i18n="studio.block1sub">Naturalne, studyjne albo miejskie — zawsze z powodem.</span>
             </article>
             <article class="studio-block reveal reveal-delay-1">
               <span class="studio-block-num">II</span>
-              <p data-i18n="studio.block2">Obecność przed obiektywem bez gry i bez presji.</p>
-              <span data-i18n="studio.block2sub">Delikatna reżyseria. Prawdziwy charakter.</span>
+              <p data-i18n="studio.block2">Pozowanie przestaje być problemem, gdy pojawia się kontakt.</p>
+              <span data-i18n="studio.block2sub">Prowadzę delikatnie. Zostawiam miejsce na prawdę.</span>
             </article>
             <article class="studio-block reveal reveal-delay-2">
               <span class="studio-block-num">III</span>
-              <p data-i18n="studio.block3">Archiwum, które wygląda jak redakcyjna opowieść — nie album rodzinny.</p>
+              <p data-i18n="studio.block3">Na końcu nie dostajesz folderu zdjęć. Dostajesz swój wizualny zapis.</p>
               <span data-i18n="studio.block3sub">Portret · branding · love story · reportaż</span>
             </article>
           </div>
@@ -1525,9 +1565,9 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       <div class="section-intro split reveal">
         <div>
           <span class="section-num" data-i18n="archive.num">02 — Archiwum</span>
-          <h2 class="section-statement" data-i18n="archive.title">Selected works. Curated, not random.</h2>
+          <h2 class="section-statement" data-i18n="archive.title">Wybrane kadry. Bez przypadkowej siatki.</h2>
         </div>
-        <p class="section-note" data-i18n="archive.note">Wybrane kadry z ostatnich sesji — portret, branding, love story i reportaż. Każdy projekt to osobna historia światła.</p>
+        <p class="section-note" data-i18n="archive.note">Kilka historii zamiast pełnego katalogu. Portret, branding, love story i reportaż — każda seria ma własne tempo, światło i powód.</p>
       </div>
       <div class="archive-filters reveal" role="tablist" aria-label="Filtruj archiwum" data-i18n-aria="archive.filterAria">
         <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true" data-i18n="archive.filterAll">Wszystko</button>
@@ -1600,9 +1640,9 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       <div class="section-intro split reveal">
         <div>
           <span class="section-num" data-i18n="offer.num">03 — Oferta</span>
-          <h2 class="section-statement" data-i18n="offer.title">Sesje z intencją i wyraźnym rezultatem.</h2>
+          <h2 class="section-statement" data-i18n="offer.title">Sesje, które mają cel i zostawiają ślad.</h2>
         </div>
-        <p class="section-note" data-i18n="offer.note">Każda oferta to kompletny proces — od briefu po gotowe archiwum. Ceny startowe, finalna wycena po rozmowie.</p>
+        <p class="section-note" data-i18n="offer.note">Nie sprzedaję “pakietu zdjęć”. Prowadzę proces: pomysł, nastrój, sesja, selekcja i gotowe archiwum, które można pokazać bez tłumaczenia.</p>
       </div>
       <div class="offer-list">
         <article class="offer-row reveal">
@@ -1662,9 +1702,9 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       <div class="section-intro split reveal">
         <div>
           <span class="section-num" data-i18n="process.num">04 — Proces</span>
-          <h2 class="section-statement" data-i18n="process.title">Od pierwszej wiadomości do gotowego archiwum.</h2>
+          <h2 class="section-statement" data-i18n="process.title">Spokojna droga od pomysłu do obrazu.</h2>
         </div>
-        <p class="section-note" data-i18n="process.note">Prosty, przejrzysty flow — bez automatycznych odpowiedzi i bez presji. Każdy projekt zaczyna się rozmową.</p>
+        <p class="section-note" data-i18n="process.note">Bez chaosu, bez pośpiechu i bez sztucznej pewności. Najpierw rozumiemy, po co powstają zdjęcia. Dopiero potem wybieramy miejsce, światło i tempo.</p>
       </div>
       <div class="process-steps">
         <article class="process-step reveal">
@@ -1712,9 +1752,9 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
     <span class="contact-bg-text" aria-hidden="true" data-i18n="contact.bg">Kontakt</span>
     <div class="shell">
       <div class="contact-gate reveal">
-        <p class="meta meta-light" data-i18n="contact.gate">Jedna wiadomość. Jedna decyzja.</p>
-        <h2 data-i18n="contact.gateTitle">Let's make something worth keeping.</h2>
-        <p class="contact-gate-lead" data-i18n="contact.gateLead">Czytam każde zgłoszenie. Odpowiadam na te, które mają intencję. Bez auto-reply. Bez szablonów.</p>
+        <p class="meta meta-light" data-i18n="contact.gate">Jeśli obraz ma zostać — zacznijmy od wiadomości.</p>
+        <h2 data-i18n="contact.gateTitle">Zróbmy coś, do czego chce się wracać.</h2>
+        <p class="contact-gate-lead" data-i18n="contact.gateLead">Napisz krótko, czego szukasz i po co mają powstać zdjęcia. Odpowiadam osobiście, bez auto-reply i bez sztucznego tonu.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-side reveal reveal-delay-1">
@@ -1858,26 +1898,26 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'hero.works': '06 works',
       'hero.availability': 'Availability',
       'hero.availabilityValue': 'Q3 · 2026',
-      'hero.title': 'Photography for people who want to be <em>remembered</em>, not just seen.',
-      'hero.manifestoStrong': 'Nie robimy zdjęć na chwilę.',
-      'hero.manifesto': 'Robimy obrazy, do których się wraca — z charakterem, światłem i obecnością.',
+      'hero.title': 'Portrety, które nie proszą o uwagę. One <em>zostają</em>.',
+      'hero.manifestoStrong': 'Fotografia bez przypadkowych póz.',
+      'hero.manifesto': 'Światło, ruch i cisza prowadzą do kadrów, które wyglądają jak wspomnienie z przyszłości.',
       'hero.locationLabel': 'Lokalizacja',
-      'hero.location': 'Szczecin / Poland / wherever the light makes sense',
+      'hero.location': 'Szczecin / Polska / tam, gdzie światło robi swoje',
       'hero.timeLabel': 'Czas lokalny',
       'hero.audienceLabel': 'Dla kogo',
-      'hero.audience': 'For people, brands and couples who care how memory looks.',
+      'hero.audience': 'Dla ludzi, marek i par, które chcą obecności, nie kolejnego contentu.',
       'hero.sessionLabel': 'Sesja',
-      'hero.session': 'One session. A whole new way to see yourself.',
+      'hero.session': 'Jedna sesja. Nowy sposób, żeby zobaczyć siebie.',
       'hero.scrollAria': 'Przewiń do sekcji Studio',
       'studio.num': '01 — Studio',
-      'studio.title': 'Wizualna pamięć zamiast „ładnych zdjęć”.',
-      'studio.note': 'Krasnovska PH to osobiste studio fotografii portretowej i lifestyle. Pracuję z ludźmi, markami i parami, które wiedzą, że obraz zostaje na dłużej niż scroll.',
+      'studio.title': 'Nie fotografuję twarzy. Buduję obecność.',
+      'studio.note': 'Krasnovska PH to portret, branding i lifestyle w Szczecinie. Pracuję spokojnie, blisko i z wyczuciem — tak, żeby zdjęcia wyglądały jak Ty, tylko odważniej.',
       'studio.imgAlt': 'Portret w stylu editorial — Krasnovska PH',
-      'studio.block1': 'Światło, które buduje nastrój — nie tylko oświetla twarz.',
-      'studio.block1sub': 'Naturalne, studyjne i miejskie. Zawsze z intencją.',
-      'studio.block2': 'Obecność przed obiektywem bez gry i bez presji.',
-      'studio.block2sub': 'Delikatna reżyseria. Prawdziwy charakter.',
-      'studio.block3': 'Archiwum, które wygląda jak redakcyjna opowieść — nie album rodzinny.',
+      'studio.block1': 'Światło nie jest dekoracją. Ono ustawia charakter.',
+      'studio.block1sub': 'Naturalne, studyjne albo miejskie — zawsze z powodem.',
+      'studio.block2': 'Pozowanie przestaje być problemem, gdy pojawia się kontakt.',
+      'studio.block2sub': 'Prowadzę delikatnie. Zostawiam miejsce na prawdę.',
+      'studio.block3': 'Na końcu nie dostajesz folderu zdjęć. Dostajesz swój wizualny zapis.',
       'studio.block3sub': 'Portret · branding · love story · reportaż',
       'studio.base': 'Baza',
       'studio.baseVal': 'Szczecin, woj. zachodniopomorskie',
@@ -1886,8 +1926,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'studio.langs': 'Język sesji',
       'studio.langsVal': 'PL · EN · UA · RU',
       'archive.num': '02 — Archiwum',
-      'archive.title': 'Selected works. Curated, not random.',
-      'archive.note': 'Wybrane kadry z ostatnich sesji — portret, branding, love story i reportaż. Każdy projekt to osobna historia światła.',
+      'archive.title': 'Wybrane kadry. Bez przypadkowej siatki.',
+      'archive.note': 'Kilka historii zamiast pełnego katalogu. Portret, branding, love story i reportaż — każda seria ma własne tempo, światło i powód.',
       'archive.filterAria': 'Filtruj archiwum',
       'archive.filterAll': 'Wszystko',
       'archive.filterPortrait': 'Portrait',
@@ -1914,8 +1954,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'archive.w6alt': 'Styl redakcyjny — sesja editorial Szczecin',
       'archive.footer': 'Pełne portfolio i behind-the-scenes na Instagramie. Nowe projekty co kwartał.',
       'offer.num': '03 — Oferta',
-      'offer.title': 'Sesje z intencją i wyraźnym rezultatem.',
-      'offer.note': 'Każda oferta to kompletny proces — od briefu po gotowe archiwum. Ceny startowe, finalna wycena po rozmowie.',
+      'offer.title': 'Sesje, które mają cel i zostawiają ślad.',
+      'offer.note': 'Nie sprzedaję “pakietu zdjęć”. Prowadzę proces: pomysł, nastrój, sesja, selekcja i gotowe archiwum, które można pokazać bez tłumaczenia.',
       'offer.timeLabel': 'Czas',
       'offer.deliveryLabel': 'Dostawa',
       'offer.s1name': 'Portret editorialny',
@@ -1939,8 +1979,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'offer.s4delivery': 'wybrane zdjęcia · wycena indywidualna',
       'offer.s4price': 'od 900 zł',
       'process.num': '04 — Proces',
-      'process.title': 'Od pierwszej wiadomości do gotowego archiwum.',
-      'process.note': 'Prosty, przejrzysty flow — bez automatycznych odpowiedzi i bez presji. Każdy projekt zaczyna się rozmową.',
+      'process.title': 'Spokojna droga od pomysłu do obrazu.',
+      'process.note': 'Bez chaosu, bez pośpiechu i bez sztucznej pewności. Najpierw rozumiemy, po co powstają zdjęcia. Dopiero potem wybieramy miejsce, światło i tempo.',
       'process.s1title': 'Brief',
       'process.s1desc': 'Piszesz, czego potrzebujesz. Ja pytam o cel, styl i termin. Bez formularzy-zagadek.',
       'process.s2title': 'Mood & location',
@@ -1954,9 +1994,9 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'process.formLink': 'Formularz ↓',
       'process.bookingNote': 'Slot na zewnętrzny booking (SimplyBook / Booksy / Fixly) — placeholder na późniejszą integrację.',
       'contact.bg': 'Kontakt',
-      'contact.gate': 'Jedna wiadomość. Jedna decyzja.',
-      'contact.gateTitle': 'Let\'s make something worth keeping.',
-      'contact.gateLead': 'Czytam każde zgłoszenie. Odpowiadam na te, które mają intencję. Bez auto-reply. Bez szablonów.',
+      'contact.gate': 'Jeśli obraz ma zostać — zacznijmy od wiadomości.',
+      'contact.gateTitle': 'Zróbmy coś, do czego chce się wracać.',
+      'contact.gateLead': 'Napisz krótko, czego szukasz i po co mają powstać zdjęcia. Odpowiadam osobiście, bez auto-reply i bez sztucznego tonu.',
       'contact.microcopy': 'Bez presji — ale poważne zapytania traktuję priorytetowo. Odpowiedź zwykle w 24–48 h, pn–pt.',
       'form.name': 'Imię',
       'form.contact': 'Kontakt',
@@ -2006,26 +2046,26 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'hero.works': '06 works',
       'hero.availability': 'Availability',
       'hero.availabilityValue': 'Q3 · 2026',
-      'hero.title': 'Фотография для тех, кто хочет быть <em>запомненным</em>, а не просто увиденным.',
-      'hero.manifestoStrong': 'Мы не делаем фото на один раз.',
-      'hero.manifesto': 'Мы создаём образы, к которым возвращаются — с характером, светом и присутствием.',
+      'hero.title': 'Портреты, которые <em>остаются</em>.',
+      'hero.manifestoStrong': 'Не поза. Не случайность.',
+      'hero.manifesto': 'Свет, тишина, характер — и кадр, который работает дольше ленты.',
       'hero.locationLabel': 'Локация',
-      'hero.location': 'Щецин / Польша / wherever the light makes sense',
+      'hero.location': 'Щецин / Польша / там, где свет делает кадр живым',
       'hero.timeLabel': 'Местное время',
       'hero.audienceLabel': 'Для кого',
-      'hero.audience': 'For people, brands and couples who care how memory looks.',
+      'hero.audience': 'Для людей, брендов и пар, которым нужно не ещё одно фото, а присутствие.',
       'hero.sessionLabel': 'Сессия',
-      'hero.session': 'One session. A whole new way to see yourself.',
+      'hero.session': 'Одна сессия. Новый способ увидеть себя.',
       'hero.scrollAria': 'Прокрутить к разделу Студия',
       'studio.num': '01 — Студия',
-      'studio.title': 'Визуальная память вместо «красивых фото».',
-      'studio.note': 'Krasnovska PH — личная портретная и lifestyle студия. Работаю с людьми, брендами и парами, которые понимают: образ остаётся дольше, чем лента.',
+      'studio.title': 'Не лица. Присутствие.',
+      'studio.note': 'Krasnovska PH — портрет, branding и lifestyle в Щецине. Спокойная съёмка без зажатости: ближе к человеку, смелее к образу.',
       'studio.imgAlt': 'Editorial портрет — Krasnovska PH',
-      'studio.block1': 'Свет, который создаёт настроение — а не просто освещает лицо.',
-      'studio.block1sub': 'Натуральный, студийный, городской. Всегда с намерением.',
-      'studio.block2': 'Присутствие перед камерой без игры и без давления.',
-      'studio.block2sub': 'Деликатная режиссура. Настоящий характер.',
-      'studio.block3': 'Архив, который выглядит как редакционная история — не семейный альбом.',
+      'studio.block1': 'Свет не украшает. Свет задаёт характер.',
+      'studio.block1sub': 'Натуральный, студийный или городской — всегда с причиной.',
+      'studio.block2': 'Позирование исчезает, когда появляется контакт.',
+      'studio.block2sub': 'Я направляю мягко. Оставляю место настоящему.',
+      'studio.block3': 'В финале не папка фото. В финале — личный визуальный архив.',
       'studio.block3sub': 'Портрет · branding · love story · репортаж',
       'studio.base': 'База',
       'studio.baseVal': 'Щецин, Западное Поморье',
@@ -2034,8 +2074,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'studio.langs': 'Язык сессии',
       'studio.langsVal': 'PL · EN · UA · RU',
       'archive.num': '02 — Архив',
-      'archive.title': 'Selected works. Curated, not random.',
-      'archive.note': 'Избранные кадры последних сессий — портрет, branding, love story и репортаж. Каждый проект — отдельная история света.',
+      'archive.title': 'Избранные кадры. Не случайная сетка.',
+      'archive.note': 'Несколько историй вместо каталога. Портрет, branding, love story и репортаж — у каждой серии свой ритм и причина.',
       'archive.filterAria': 'Фильтр архива',
       'archive.filterAll': 'Всё',
       'archive.filterPortrait': 'Portrait',
@@ -2062,8 +2102,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'archive.w6alt': 'Editorial стиль — сессия в Щецине',
       'archive.footer': 'Полное портфолио и behind-the-scenes в Instagram. Новые проекты каждый квартал.',
       'offer.num': '03 — Услуги',
-      'offer.title': 'Сессии с намерением и понятным результатом.',
-      'offer.note': 'Каждая услуга — полный процесс от brief до готового архива. Стартовые цены, финальная смета после разговора.',
+      'offer.title': 'Съёмки, у которых есть цель и послевкусие.',
+      'offer.note': 'Не “пакет фотографий”, а процесс: идея, настроение, съёмка, отбор и архив, который говорит сам.',
       'offer.timeLabel': 'Время',
       'offer.deliveryLabel': 'Результат',
       'offer.s1name': 'Editorial портрет',
@@ -2087,8 +2127,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'offer.s4delivery': 'отбор фото · индивидуальная смета',
       'offer.s4price': 'от 900 zł',
       'process.num': '04 — Процесс',
-      'process.title': 'От первого сообщения до готового архива.',
-      'process.note': 'Простой, прозрачный flow — без автоответов и без давления. Каждый проект начинается с разговора.',
+      'process.title': 'Спокойный путь от идеи до образа.',
+      'process.note': 'Без хаоса и спешки. Сначала смысл. Потом место, свет и темп.',
       'process.s1title': 'Brief',
       'process.s1desc': 'Вы пишете, что нужно. Я уточняю цель, стиль и срок. Без загадочных форм.',
       'process.s2title': 'Mood & location',
@@ -2102,9 +2142,9 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'process.formLink': 'Форма ↓',
       'process.bookingNote': 'Слот для внешнего booking (SimplyBook / Booksy / Fixly) — placeholder для интеграции.',
       'contact.bg': 'Контакт',
-      'contact.gate': 'Одно сообщение. Одно решение.',
-      'contact.gateTitle': 'Let\'s make something worth keeping.',
-      'contact.gateLead': 'Читаю каждую заявку. Отвечаю на те, где есть намерение. Без auto-reply. Без шаблонов.',
+      'contact.gate': 'Если кадр должен остаться — начнём с сообщения.',
+      'contact.gateTitle': 'Сделаем историю, к которой хочется вернуться.',
+      'contact.gateLead': 'Напишите коротко: что ищете, где и зачем. Отвечаю лично — без auto-reply и шаблонного тона.',
       'contact.microcopy': 'Без давления — но серьёзные запросы в приоритете. Ответ обычно за 24–48 ч, пн–пт.',
       'form.name': 'Имя',
       'form.contact': 'Контакт',
@@ -2154,26 +2194,26 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'hero.works': '06 works',
       'hero.availability': 'Availability',
       'hero.availabilityValue': 'Q3 · 2026',
-      'hero.title': 'Фотографія для тих, хто хоче бути <em>запам\u2019ятаним</em>, а не просто побаченим.',
-      'hero.manifestoStrong': 'Ми не робимо фото на один раз.',
-      'hero.manifesto': 'Ми створюємо образи, до яких повертаються — з характером, світлом і присутністю.',
+      'hero.title': 'Портрети, які <em>залишаються</em>.',
+      'hero.manifestoStrong': 'Не поза. Не випадковість.',
+      'hero.manifesto': 'Світло, тиша, характер — і кадр, що працює довше за стрічку.',
       'hero.locationLabel': 'Локація',
-      'hero.location': 'Щецин / Польща / wherever the light makes sense',
+      'hero.location': 'Щецин / Польща / там, де світло робить кадр живим',
       'hero.timeLabel': 'Місцевий час',
       'hero.audienceLabel': 'Для кого',
-      'hero.audience': 'For people, brands and couples who care how memory looks.',
+      'hero.audience': 'Для людей, брендів і пар, яким потрібне не ще одне фото, а присутність.',
       'hero.sessionLabel': 'Сесія',
-      'hero.session': 'One session. A whole new way to see yourself.',
+      'hero.session': 'Одна сесія. Новий спосіб побачити себе.',
       'hero.scrollAria': 'Прокрутити до розділу Студія',
       'studio.num': '01 — Студія',
-      'studio.title': 'Візуальна пам\u2019ять замість «гарних фото».',
-      'studio.note': 'Krasnovska PH — особиста портретна та lifestyle студія. Працюю з людьми, брендами та парами, які розуміють: образ залишається довше, ніж стрічка.',
+      'studio.title': 'Не обличчя. Присутність.',
+      'studio.note': 'Krasnovska PH — портрет, branding і lifestyle у Щецині. Спокійна зйомка без скутості: ближче до людини, сміливіше до образу.',
       'studio.imgAlt': 'Editorial портрет — Krasnovska PH',
-      'studio.block1': 'Світло, яке створює настрій — а не просто освітлює обличчя.',
-      'studio.block1sub': 'Натуральне, студійне, міське. Завжди з наміром.',
-      'studio.block2': 'Присутність перед камерою без гри і без тиску.',
-      'studio.block2sub': 'Делікатна режисура. Справжній характер.',
-      'studio.block3': 'Архів, який виглядає як редакційна історія — не сімейний альбом.',
+      'studio.block1': 'Світло не прикрашає. Світло задає характер.',
+      'studio.block1sub': 'Натуральне, студійне або міське — завжди з причиною.',
+      'studio.block2': 'Позування зникає, коли з\u2019являється контакт.',
+      'studio.block2sub': 'Я направляю м\u2019яко. Залишаю місце справжньому.',
+      'studio.block3': 'У фіналі не папка фото. У фіналі — особистий візуальний архів.',
       'studio.block3sub': 'Портрет · branding · love story · репортаж',
       'studio.base': 'База',
       'studio.baseVal': 'Щецин, Західнопоморське воєводство',
@@ -2182,8 +2222,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'studio.langs': 'Мова сесії',
       'studio.langsVal': 'PL · EN · UA · RU',
       'archive.num': '02 — Архів',
-      'archive.title': 'Selected works. Curated, not random.',
-      'archive.note': 'Обрані кадри останніх сесій — портрет, branding, love story і репортаж. Кожен проєкт — окрема історія світла.',
+      'archive.title': 'Обрані кадри. Не випадкова сітка.',
+      'archive.note': 'Кілька історій замість каталогу. Портрет, branding, love story і репортаж — у кожної серії свій ритм і причина.',
       'archive.filterAria': 'Фільтр архіву',
       'archive.filterAll': 'Усе',
       'archive.filterPortrait': 'Portrait',
@@ -2210,8 +2250,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'archive.w6alt': 'Editorial стиль — сесія в Щецині',
       'archive.footer': 'Повне портфоліо та behind-the-scenes в Instagram. Нові проєкти щокварталу.',
       'offer.num': '03 — Послуги',
-      'offer.title': 'Сесії з наміром і зрозумілим результатом.',
-      'offer.note': 'Кожна послуга — повний процес від brief до готового архіву. Стартові ціни, фінальна оцінка після розмови.',
+      'offer.title': 'Зйомки, у яких є мета і післясмак.',
+      'offer.note': 'Не “пакет фотографій”, а процес: ідея, настрій, зйомка, відбір і архів, що говорить сам.',
       'offer.timeLabel': 'Час',
       'offer.deliveryLabel': 'Результат',
       'offer.s1name': 'Editorial портрет',
@@ -2235,8 +2275,8 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'offer.s4delivery': 'відбір фото · індивідуальна оцінка',
       'offer.s4price': 'від 900 zł',
       'process.num': '04 — Процес',
-      'process.title': 'Від першого повідомлення до готового архіву.',
-      'process.note': 'Простий, прозорий flow — без автоВідповідей і без тиску. Кожен проєкт починається з розмови.',
+      'process.title': 'Спокійний шлях від ідеї до образу.',
+      'process.note': 'Без хаосу і поспіху. Спершу сенс. Потім місце, світло і темп.',
       'process.s1title': 'Brief',
       'process.s1desc': 'Ви пишете, що потрібно. Я уточнюю мету, стиль і термін. Без загадкових форм.',
       'process.s2title': 'Mood & location',
@@ -2250,9 +2290,9 @@ section { padding-block: clamp(5rem, 12vw, 9rem); }
       'process.formLink': 'Форма ↓',
       'process.bookingNote': 'Слот для зовнішнього booking (SimplyBook / Booksy / Fixly) — placeholder для інтеграції.',
       'contact.bg': 'Контакт',
-      'contact.gate': 'Одне повідомлення. Одне рішення.',
-      'contact.gateTitle': 'Let\'s make something worth keeping.',
-      'contact.gateLead': 'Читаю кожну заявку. Відповідаю на ті, де є намір. Без auto-reply. Без шаблонів.',
+      'contact.gate': 'Якщо кадр має залишитися — почнімо з повідомлення.',
+      'contact.gateTitle': 'Зробімо історію, до якої хочеться повернутися.',
+      'contact.gateLead': 'Напишіть коротко: що шукаєте, де і навіщо. Відповідаю особисто — без auto-reply і шаблонного тону.',
       'contact.microcopy': 'Без тиску — але серйозні запити в пріоритеті. Відповідь зазвичай за 24–48 год, пн–пт.',
       'form.name': 'Ім\u2019я',
       'form.contact': 'Контакт',
