@@ -119,6 +119,13 @@ async function handleLead(req, res) {
 async function serveStatic(req, res) {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const pathname = url.pathname === '/' ? '/index.html' : url.pathname;
+
+  if (pathname !== '/index.html' && !pathname.startsWith('/images/')) {
+    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Not found');
+    return;
+  }
+
   const safePath = normalize(decodeURIComponent(pathname)).replace(/^(\.\.[/\\])+/, '');
   const filePath = join(root, safePath);
 
@@ -136,12 +143,8 @@ async function serveStatic(req, res) {
     });
     res.end(body);
   } catch {
-    const body = await readFile(join(root, 'index.html'));
-    res.writeHead(200, {
-      'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'no-cache'
-    });
-    res.end(body);
+    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Not found');
   }
 }
 
