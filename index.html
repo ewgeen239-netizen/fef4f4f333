@@ -2344,6 +2344,13 @@ html[lang="uk"] .section-statement {
     return pack[key] !== undefined ? pack[key] : (T.pl[key] || key);
   }
 
+  function trackEvent(name, params) {
+    if (typeof window.gtag !== 'function') return;
+    var payload = params || {};
+    payload.language = currentLang;
+    window.gtag('event', name, payload);
+  }
+
   function detectLanguage() {
     try {
       var saved = localStorage.getItem(LANG_KEY);
@@ -2435,9 +2442,58 @@ html[lang="uk"] .section-statement {
 
   langBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      applyLanguage(btn.getAttribute('data-lang'));
+      var nextLang = btn.getAttribute('data-lang');
+      trackEvent('language_change', {
+        event_category: 'engagement',
+        event_label: nextLang
+      });
+      applyLanguage(nextLang);
       closeMobileNav();
     });
+  });
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a') : null;
+    if (!link) return;
+
+    var href = link.getAttribute('href') || '';
+    var label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80);
+
+    if (href.indexOf('instagram.com') !== -1) {
+      trackEvent('social_click', {
+        event_category: 'lead',
+        event_label: 'Instagram',
+        link_url: href
+      });
+    } else if (href.indexOf('t.me/') !== -1) {
+      trackEvent('social_click', {
+        event_category: 'lead',
+        event_label: 'Telegram',
+        link_url: href
+      });
+    } else if (href.indexOf('mailto:') === 0) {
+      trackEvent('contact_click', {
+        event_category: 'lead',
+        event_label: 'Email',
+        link_url: href
+      });
+    } else if (href === '#contact') {
+      trackEvent('booking_cta_click', {
+        event_category: 'lead',
+        event_label: label || 'Contact CTA'
+      });
+    } else if (href.charAt(0) === '#') {
+      trackEvent('internal_nav_click', {
+        event_category: 'navigation',
+        event_label: href
+      });
+    } else if (href) {
+      trackEvent('external_link_click', {
+        event_category: 'navigation',
+        event_label: label,
+        link_url: href
+      });
+    }
   });
 
   function onScroll() {
@@ -2525,6 +2581,10 @@ html[lang="uk"] .section-statement {
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       var filter = btn.getAttribute('data-filter');
+      trackEvent('portfolio_filter_click', {
+        event_category: 'engagement',
+        event_label: filter
+      });
 
       filterBtns.forEach(function (b) {
         b.classList.toggle('is-active', b === btn);
@@ -2544,6 +2604,11 @@ html[lang="uk"] .section-statement {
 
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
+    trackEvent('contact_form_submit', {
+      event_category: 'lead',
+      session_type: contactForm.elements['session-type'] ? contactForm.elements['session-type'].value : '',
+      date_city_filled: contactForm.elements['date-city'] && contactForm.elements['date-city'].value ? 'yes' : 'no'
+    });
     contactForm.closest('.contact-form-wrap').style.display = 'none';
     formSuccess.classList.add('is-visible');
   });
