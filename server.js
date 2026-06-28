@@ -6,6 +6,7 @@ const root = process.cwd();
 const port = Number(process.env.PORT || 3000);
 const botToken = process.env.TELEGRAM_BOT_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
+const defaultSiteOrigin = process.env.SITE_ORIGIN || 'https://krasnovskaph.up.railway.app';
 
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8',
@@ -40,6 +41,42 @@ function trimField(value, max = 800) {
   return String(value || '').trim().slice(0, max);
 }
 
+function getServiceDetails(sessionType) {
+  const services = {
+    portrait: {
+      label: 'Фотосессия',
+      price: '200 zł / час',
+      photo: '/images/lead-portrait.png'
+    },
+    brand: {
+      label: 'Фотосессия',
+      price: '200 zł / час',
+      photo: '/images/lead-portrait.png'
+    },
+    event: {
+      label: 'Фотосессия',
+      price: '200 zł / час',
+      photo: '/images/lead-portrait.png'
+    },
+    other: {
+      label: 'Фотосессия',
+      price: '200 zł / час',
+      photo: '/images/lead-portrait.png'
+    },
+    love: {
+      label: 'Love story / семейная',
+      price: '250 zł / час',
+      photo: '/images/lead-love-family.png'
+    }
+  };
+
+  return services[sessionType] || {
+    label: sessionType || 'Не выбрано',
+    price: 'Уточнить',
+    photo: '/images/lead-portrait.png'
+  };
+}
+
 async function readJsonBody(req) {
   let raw = '';
   for await (const chunk of req) {
@@ -58,45 +95,80 @@ async function sendTelegramLead(data) {
   const contact = trimField(data.contact, 180);
   const sessionType = trimField(data.sessionType, 120) || 'not selected';
   const dateCity = trimField(data.dateCity, 160) || 'not specified';
-  const message = trimField(data.message, 1200);
+  const fullMessage = trimField(data.message, 1200);
+  const message = fullMessage.length > 360 ? `${fullMessage.slice(0, 360).trim()}...` : fullMessage;
   const language = trimField(data.language, 20) || 'unknown';
   const page = trimField(data.page, 300);
   const referrer = trimField(data.referrer, 300) || 'direct';
+  const service = getServiceDetails(sessionType);
+  const photoUrl = new URL(service.photo, defaultSiteOrigin).toString();
 
-  if (!name || !contact || !message) {
+  if (!name || !contact || !fullMessage) {
     const err = new Error('missing_required_fields');
     err.statusCode = 400;
     throw err;
   }
 
   const text = [
-    '<b>New Krasnovska PH booking request</b>',
+    '📸 <b>Новая заявка Krasnovska PH</b>',
+    '━━━━━━━━━━━━━━',
     '',
-    `<b>Name:</b> ${escapeHtml(name)}`,
-    `<b>Contact:</b> ${escapeHtml(contact)}`,
-    `<b>Session:</b> ${escapeHtml(sessionType)}`,
-    `<b>Date / city:</b> ${escapeHtml(dateCity)}`,
-    `<b>Language:</b> ${escapeHtml(language)}`,
+    `✨ <b>Услуга:</b> ${escapeHtml(service.label)}`,
+    `💰 <b>Цена:</b> ${escapeHtml(service.price)}`,
+    `🗂 <b>Тип из формы:</b> ${escapeHtml(sessionType)}`,
     '',
-    `<b>Message:</b>\n${escapeHtml(message)}`,
+    `👤 <b>Имя:</b> ${escapeHtml(name)}`,
+    `📲 <b>Контакт:</b> ${escapeHtml(contact)}`,
+    `📍 <b>Дата / город:</b> ${escapeHtml(dateCity)}`,
+    `🌐 <b>Язык сайта:</b> ${escapeHtml(language)}`,
     '',
-    `<b>Page:</b> ${escapeHtml(page)}`,
-    `<b>Referrer:</b> ${escapeHtml(referrer)}`
+    `💬 <b>Сообщение:</b>\n${escapeHtml(message)}`,
+    '',
+    `🔗 <b>Страница:</b> ${escapeHtml(page)}`,
+    `↩️ <b>Источник:</b> ${escapeHtml(referrer)}`
   ].join('\n');
 
-  const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+  const photoResponse = await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       chat_id: chatId,
-      text,
+      photo: photoUrl,
+      caption: text,
       parse_mode: 'HTML',
       disable_web_page_preview: true
     })
   });
 
-  if (!response.ok) {
-    throw new Error(`telegram_send_failed_${response.status}`);
+  if (photoResponse.ok) {
+    if (fullMessage !== message) {
+      await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: `💬 <b>Полное сообщение клиента:</b>\n${escapeHtml(fullMessage)}`,
+          parse_mode: 'HTML',
+          disable_web_page_preview: true
+        })
+      });
+    }
+    return;
+  }
+
+  const messageResponse = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: `${text}\n\n🖼 <b>Фото услуги:</b> ${escapeHtml(photoUrl)}`,
+      parse_mode: 'HTML',
+      disable_web_page_preview: true
+    })
+  });
+
+  if (!messageResponse.ok) {
+    throw new Error(`telegram_send_failed_${messageResponse.status}`);
   }
 }
 
