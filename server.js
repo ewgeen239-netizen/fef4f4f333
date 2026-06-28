@@ -118,9 +118,17 @@ async function handleLead(req, res) {
 
 async function serveStatic(req, res) {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  const pathname = url.pathname === '/' ? '/index.html' : url.pathname;
+  const routes = {
+    '/': '/index.html',
+    '/studio': '/studio.html',
+    '/portfolio': '/portfolio.html',
+    '/services': '/services.html',
+    '/process': '/process.html',
+    '/contact': '/contact.html'
+  };
+  const pathname = routes[url.pathname] || url.pathname;
 
-  if (pathname !== '/index.html' && !pathname.startsWith('/images/')) {
+  if (!pathname.endsWith('.html') && !pathname.startsWith('/images/')) {
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('Not found');
     return;
@@ -139,7 +147,7 @@ async function serveStatic(req, res) {
     const body = await readFile(filePath);
     res.writeHead(200, {
       'Content-Type': mimeTypes[extname(filePath)] || 'application/octet-stream',
-      'Cache-Control': pathname === '/index.html' ? 'no-cache' : 'public, max-age=31536000, immutable'
+      'Cache-Control': pathname.endsWith('.html') ? 'no-cache' : 'public, max-age=31536000, immutable'
     });
     res.end(body);
   } catch {
