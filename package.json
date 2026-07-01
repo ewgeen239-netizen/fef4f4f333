@@ -4,9 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "esbuild speed-insights.src.js --bundle --format=iife --outfile=speed-insights.js --minify"
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
   }
 }

@@ -200,7 +200,7 @@ async function serveStatic(req, res) {
   };
   const pathname = routes[url.pathname] || url.pathname;
 
-  if (!pathname.endsWith('.html') && !pathname.startsWith('/images/')) {
+  if (!pathname.endsWith('.html') && !pathname.startsWith('/images/') && !pathname.endsWith('.js')) {
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('Not found');
     return;
