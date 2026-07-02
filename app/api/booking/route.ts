@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { bookingSchema } from "@/lib/validations/booking";
 import { rateLimit, clientIp } from "@/lib/rate-limit";
 import { sendBookingEmails, sendTelegram } from "@/lib/notify";
+import { hasDatabase } from "@/lib/slots";
 
 export const runtime = "nodejs";
 
@@ -35,6 +36,22 @@ export async function POST(req: Request) {
   // Honeypot tripped → pretend success, persist nothing.
   if (data.company && data.company.length > 0) {
     return NextResponse.json({ ok: true });
+  }
+
+  const payload = {
+    name: data.name,
+    contact: data.contact,
+    sessionType: data.sessionType,
+    date: data.date,
+    timeSlot: data.timeSlot,
+    location: data.location || null,
+    message: data.message || null,
+  };
+
+  // No database configured → email-only mode: notify without persistence.
+  if (!hasDatabase()) {
+    await Promise.allSettled([sendBookingEmails(payload), sendTelegram(payload)]);
+    return NextResponse.json({ ok: true, mode: "email" }, { status: 201 });
   }
 
   const dateOnly = new Date(`${data.date}T00:00:00.000Z`);
@@ -71,15 +88,6 @@ export async function POST(req: Request) {
     });
 
     // Fire-and-forget notifications (don't block the response on email).
-    const payload = {
-      name: booking.name,
-      contact: booking.contact,
-      sessionType: booking.sessionType,
-      date: data.date,
-      timeSlot: booking.timeSlot,
-      location: booking.location,
-      message: booking.message,
-    };
     await Promise.allSettled([sendBookingEmails(payload), sendTelegram(payload)]);
 
     return NextResponse.json({ ok: true, id: booking.id }, { status: 201 });
