@@ -41,7 +41,7 @@ export default async function StudioPage({
                 sizes="(max-width:768px) 100vw, 40vw"
                 placeholder="blur"
                 blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoQAAkAA4BaJQBOgCHw7s3ldGH4AP5A2s9o0+BYydErWdOTX4VSeNHqLOFubuyG7qhb168OyHC6TkBtfjfCRdsqLGoAAA=="
-                className="object-cover object-center"
+                className="object-cover object-[22%_center]"
               />
             </div>
           </Reveal>
