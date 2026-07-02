@@ -5,6 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/animation/Reveal";
 import ReservationForm from "@/components/booking/ReservationForm";
 import CalcomEmbed from "@/components/booking/CalcomEmbed";
+import { CONTACT } from "@/lib/contact";
 
 const MONTHS: Record<Locale, string[]> = {
   en: ["January","February","March","April","May","June","July","August","September","October","November","December"],
@@ -63,10 +64,20 @@ export default async function ContactPage({
             <Reveal>
               <h2 className="text-[11px] uppercase tracking-editorial text-brass">{d.title}</h2>
               <ul className="mt-6 space-y-2 text-lg">
-                <li><a href={`mailto:${d.email}`} className="hover:text-brass">{d.email}</a></li>
-                <li><a href={`tel:${d.phone.replace(/\s/g, "")}`} className="hover:text-brass">{d.phone}</a></li>
-                <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-brass">Instagram {d.instagram}</a></li>
-                <li><a href="https://t.me" target="_blank" rel="noopener noreferrer" className="hover:text-brass">Telegram {d.telegram}</a></li>
+                <li><a href={CONTACT.email.href} className="transition-colors hover:text-brass">{CONTACT.email.label}</a></li>
+                <li><a href={CONTACT.phone.href} className="transition-colors hover:text-brass">{CONTACT.phone.label}</a></li>
+                <li>
+                  <a href={CONTACT.instagram.href} target="_blank" rel="noopener noreferrer" className="group inline-flex items-baseline gap-2 transition-colors hover:text-brass">
+                    <span className="text-[11px] uppercase tracking-editorial text-brass-dim">Instagram</span>
+                    {CONTACT.instagram.label}
+                  </a>
+                </li>
+                <li>
+                  <a href={CONTACT.telegram.href} target="_blank" rel="noopener noreferrer" className="group inline-flex items-baseline gap-2 transition-colors hover:text-brass">
+                    <span className="text-[11px] uppercase tracking-editorial text-brass-dim">Telegram</span>
+                    {CONTACT.telegram.label}
+                  </a>
+                </li>
               </ul>
               <p className="mt-8 text-bone-dim">{d.address}</p>
             </Reveal>

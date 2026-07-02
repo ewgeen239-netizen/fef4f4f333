@@ -12,8 +12,8 @@ export function hasDatabase(): boolean {
   return Boolean(process.env.DATABASE_URL);
 }
 
-/** Open slots for a given month (0-based), future weekdays only.
- *  Mirrors prisma/seed.ts so both modes behave the same. */
+/** Open slots for a given month (0-based). Visual-request mode: every future
+ *  day is available (incl. weekends); only past days are closed. */
 export function generateMonthSlots(year: number, month0: number): Record<string, string[]> {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -23,9 +23,7 @@ export function generateMonthSlots(year: number, month0: number): Record<string,
 
   for (let d = 1; d <= daysInMonth; d++) {
     const date = new Date(year, month0, d);
-    if (date < today) continue; // past
-    const day = date.getDay();
-    if (day === 0 || day === 6) continue; // weekend
+    if (date < today) continue; // past days closed
     map[toISODate(date)] = [...SLOTS];
   }
   return map;

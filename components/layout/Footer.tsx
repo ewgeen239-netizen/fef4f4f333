@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import LocalTime from "@/components/ui/LocalTime";
+import { CONTACT } from "@/lib/contact";
 
 const NAV = [
   { key: "studio", href: "/studio" },
@@ -53,18 +54,23 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-bone transition-colors hover:text-brass">
-                  Instagram {dict.contact.details.instagram}
+                <a href={CONTACT.instagram.href} target="_blank" rel="noopener noreferrer" className="text-bone transition-colors hover:text-brass">
+                  Instagram — {CONTACT.instagram.label}
                 </a>
               </li>
               <li>
-                <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="text-bone transition-colors hover:text-brass">
-                  Telegram {dict.contact.details.telegram}
+                <a href={CONTACT.telegram.href} target="_blank" rel="noopener noreferrer" className="text-bone transition-colors hover:text-brass">
+                  Telegram — {CONTACT.telegram.label}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${dict.contact.details.email}`} className="text-bone transition-colors hover:text-brass">
-                  {dict.contact.details.email}
+                <a href={CONTACT.phone.href} className="text-bone transition-colors hover:text-brass">
+                  {CONTACT.phone.label}
+                </a>
+              </li>
+              <li>
+                <a href={CONTACT.email.href} className="text-bone transition-colors hover:text-brass">
+                  {CONTACT.email.label}
                 </a>
               </li>
             </ul>
