@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { getSiteUrl } from "./site";
 
 type NotifyPayload = {
   name: string;
@@ -69,27 +70,68 @@ export async function sendBookingEmails(p: NotifyPayload): Promise<void> {
   results.forEach((r) => r.status === "rejected" && console.error("[notify]", r.reason));
 }
 
-/** Optional Telegram duplicate. Never throws. */
+// Per session-type: label + cover image (public/images/booking/<photo>.jpg).
+const TG_TYPE: Record<string, { label: string; photo: string; emoji: string }> = {
+  PERSONAL: { label: "Личная съёмка", photo: "personal", emoji: "📸" },
+  LOVE_FAMILY: { label: "Love story · Семейная", photo: "love-family", emoji: "🤍" },
+};
+
+// Always granted access to booking notifications (in addition to TELEGRAM_CHAT_ID).
+const TG_EXTRA_RECIPIENTS = ["1125751090"];
+
+/** Telegram notification: type-matched cover photo + detailed caption, sent to
+ *  every recipient. Never throws. */
 export async function sendTelegram(p: NotifyPayload): Promise<void> {
   const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chat = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chat) return;
+  if (!token) return;
 
-  const text =
-    `📸 *Nowa rezerwacja*\n\n` +
-    `*${p.name}*\n${p.contact}\n\n` +
-    `${p.sessionType} — ${p.date} ${p.timeSlot}\n` +
-    `${p.location ? `📍 ${p.location}\n` : ""}` +
-    `${p.message ? `\n_${p.message}_` : ""}`;
+  const envIds = (process.env.TELEGRAM_CHAT_ID ?? "")
+    .split(/[\s,]+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+  const recipients = [...new Set([...envIds, ...TG_EXTRA_RECIPIENTS])];
+  if (recipients.length === 0) return;
 
-  try {
-    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+  const t = TG_TYPE[p.sessionType] ?? { label: p.sessionType, photo: "", emoji: "📸" };
+
+  // Minimalist detailed caption (HTML — user text escaped).
+  const caption =
+    `${t.emoji} <b>Новая заявка</b>\n` +
+    `<i>${esc(t.label)}</i>\n\n` +
+    `👤 ${esc(p.name)}\n` +
+    `✉️ ${esc(p.contact)}\n` +
+    `📅 ${esc(p.date)} · ${esc(p.timeSlot)}\n` +
+    `📍 ${esc(p.location || "—")}` +
+    (p.message ? `\n\n💬 ${esc(p.message)}` : "");
+
+  const site = getSiteUrl();
+  const photoUrl =
+    t.photo && site.startsWith("https://")
+      ? `${site}/images/booking/${t.photo}.jpg`
+      : null;
+
+  const api = (method: string, body: unknown) =>
+    fetch(`https://api.telegram.org/bot${token}/${method}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: chat, text, parse_mode: "Markdown" }),
+      body: JSON.stringify(body),
     });
-  } catch (e) {
-    console.error("[telegram]", e);
+
+  for (const chat of recipients) {
+    try {
+      if (photoUrl) {
+        const r = await api("sendPhoto", {
+          chat_id: chat,
+          photo: photoUrl,
+          caption,
+          parse_mode: "HTML",
+        });
+        if (r.ok) continue; // fell through to text only if photo failed
+      }
+      await api("sendMessage", { chat_id: chat, text: caption, parse_mode: "HTML" });
+    } catch (e) {
+      console.error("[telegram]", e);
+    }
   }
 }
 
