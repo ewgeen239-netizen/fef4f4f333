@@ -40,11 +40,11 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         style={{ y: textY }}
         className="relative z-10 flex h-full flex-col justify-end px-5 pb-24 sm:px-8"
       >
-        <h1 className="font-serif text-display text-balance">
+        <h1 className="max-w-4xl font-serif text-headline text-balance">
           {words.map((w, i) => (
-            <span key={i} className="mask-line mr-[0.25em] inline-block">
+            <span key={i} className="mask-line mr-[0.22em] inline-block">
               <motion.span
-                className="inline-block"
+                className={`inline-block ${i === words.length - 1 ? "italic text-brass" : ""}`}
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ delay: 0.35 + i * 0.09, duration: 1, ease: [0.22, 1, 0.36, 1] }}
@@ -59,7 +59,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.9 }}
-          className="mt-8 max-w-md text-base text-bone-dim text-pretty"
+          className="mt-7 max-w-xl text-sm leading-relaxed text-bone-dim text-pretty sm:text-base"
         >
           {dict.home.heroSub}
         </motion.p>

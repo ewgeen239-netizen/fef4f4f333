@@ -27,24 +27,24 @@
     "ogAlt": "Krasnovska PH — fotografia editorialna"
   },
   "home": {
-    "tagline": "Światło, cisza, obecność.",
-    "heroSub": "Editorialna fotografia z duszą — dla ludzi i marek, które cenią szczegół.",
+    "tagline": "Światło zapamięta cię prawdziwym.",
+    "heroSub": "Editorialna fotografia portretowa, love story i rodzinna w Szczecinie. Sesje bez pośpiechu, miękkie naturalne światło i kadry, w których chce się zostać — kilka sesji miesięcznie, każda budowana wokół Twojej historii.",
     "selectedWorks": "Wybrane prace",
     "selectedIndex": "Archiwum",
     "forWho": {
       "title": "Dla kogo",
-      "body": "Dla tych, którzy chcą zobaczyć siebie prawdziwie — bez pozy, bez pośpiechu. Osób prywatnych, par, twórców i marek budujących spójny wizerunek."
+      "body": "Dla tych, którzy wolą być zobaczeni niż ustawieni — osób, par i rodzin, które chcą szczerych zdjęć o cichym, ponadczasowym nastroju, bez sztywnej miny do obiektywu."
     },
     "session": {
       "title": "Sesja",
-      "body": "Powolny, uważny proces. Rozmowa, światło naturalne, kadr, który zostaje. Każda sesja jest projektowana indywidualnie."
+      "body": "Zaczynamy od rozmowy i moodboardu, potem zdjęcia w świetle dnia — w studiu lub plenerze, który kochasz. Prowadzę pozowanie i dobór stylizacji przez całą sesję — nie musisz myśleć, co zrobić z rękami."
     },
     "locationBlock": {
       "title": "Miejsce",
-      "body": "Studio w sercu Szczecina oraz plenery w regionie. Możliwe sesje wyjazdowe na terenie Polski i Europy."
+      "body": "Baza w sercu Szczecina, praca na wybrzeżu i w regionie — sesje wyjazdowe w Polsce i Europie na życzenie."
     },
-    "ctaTitle": "Zarezerwujmy Twój termin",
-    "ctaBody": "Kilka sesji miesięcznie. Wybierz dzień i godzinę."
+    "ctaTitle": "Zróbmy coś, co zostanie na lata.",
+    "ctaBody": "Wybierz termin i opowiedz swoją historię — odpowiadam w 24 godziny."
   },
   "studio": {
     "kicker": "Studio",

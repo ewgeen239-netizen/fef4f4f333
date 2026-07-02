@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import { locales, isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import LenisProvider from "@/components/providers/LenisProvider";
+import ScrollTop from "@/components/providers/ScrollTop";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/animation/CustomCursor";
-import Grain from "@/components/ui/Grain";
+import PageWatermark from "@/components/ui/PageWatermark";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -60,7 +61,8 @@ export default async function LocaleLayout({
 
   return (
     <LenisProvider>
-      <Grain />
+      <ScrollTop />
+      <PageWatermark lang={lang as Locale} navItems={dict.nav.items} />
       <CustomCursor />
       <Header lang={lang} dict={dict} />
       <main id="main">{children}</main>
