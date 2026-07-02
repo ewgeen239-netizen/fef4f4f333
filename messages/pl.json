@@ -1,0 +1,184 @@
+{
+  "common": {
+    "bookSession": "Zarezerwuj sesję",
+    "viewWork": "Zobacz prace",
+    "getInTouch": "Skontaktuj się",
+    "availability": "Q3 · 2026",
+    "location": "Szczecin",
+    "loading": "Ładowanie…",
+    "sending": "Wysyłanie…",
+    "backHome": "Powrót"
+  },
+  "nav": {
+    "menu": "Menu",
+    "close": "Zamknij",
+    "items": {
+      "home": "Strona główna",
+      "studio": "Studio",
+      "portfolio": "Portfolio",
+      "services": "Oferta",
+      "process": "Proces",
+      "contact": "Kontakt"
+    }
+  },
+  "meta": {
+    "title": "Krasnovska PH — Fotografia editorialna, Szczecin",
+    "description": "Kameralne studio fotograficzne w Szczecinie. Sesje indywidualne, love story i rodzinne. Rezerwacja online.",
+    "ogAlt": "Krasnovska PH — fotografia editorialna"
+  },
+  "home": {
+    "tagline": "Światło, cisza, obecność.",
+    "heroSub": "Editorialna fotografia z duszą — dla ludzi i marek, które cenią szczegół.",
+    "selectedWorks": "Wybrane prace",
+    "selectedIndex": "Archiwum",
+    "forWho": {
+      "title": "Dla kogo",
+      "body": "Dla tych, którzy chcą zobaczyć siebie prawdziwie — bez pozy, bez pośpiechu. Osób prywatnych, par, twórców i marek budujących spójny wizerunek."
+    },
+    "session": {
+      "title": "Sesja",
+      "body": "Powolny, uważny proces. Rozmowa, światło naturalne, kadr, który zostaje. Każda sesja jest projektowana indywidualnie."
+    },
+    "locationBlock": {
+      "title": "Miejsce",
+      "body": "Studio w sercu Szczecina oraz plenery w regionie. Możliwe sesje wyjazdowe na terenie Polski i Europy."
+    },
+    "ctaTitle": "Zarezerwujmy Twój termin",
+    "ctaBody": "Kilka sesji miesięcznie. Wybierz dzień i godzinę."
+  },
+  "studio": {
+    "kicker": "Studio",
+    "title": "Fotografia jako forma uwagi",
+    "intro": "Jestem fotografem editorialnym z siedzibą w Szczecinie. Pracuję powoli i blisko — tak, by obraz mówił więcej niż słowa.",
+    "approachTitle": "Podejście",
+    "approach": "Naturalne światło, minimalna reżyseria, maksymalna obecność. Nie ustawiam — obserwuję i czekam na moment, w którym człowiek staje się sobą.",
+    "philosophyTitle": "Filozofia",
+    "philosophy": "Wierzę w quiet luxury: mniej, ale lepiej. Kadr pozbawiony szumu. Emocja, która nie krzyczy.",
+    "stats": [
+      { "value": "8", "label": "lat praktyki" },
+      { "value": "260+", "label": "zrealizowanych sesji" },
+      { "value": "12", "label": "krajów" },
+      { "value": "100%", "label": "obróbki autorskiej" }
+    ]
+  },
+  "portfolio": {
+    "kicker": "Archiwum",
+    "title": "Portfolio",
+    "intro": "Wybór prac z ostatnich lat. Filtruj według kategorii.",
+    "filters": {
+      "all": "Wszystko",
+      "portrait": "Portret",
+      "branding": "Branding",
+      "loveStory": "Love story",
+      "reportage": "Reportaż",
+      "lifestyle": "Lifestyle"
+    },
+    "close": "Zamknij",
+    "prev": "Poprzednie",
+    "next": "Następne"
+  },
+  "services": {
+    "kicker": "Oferta",
+    "title": "Cennik",
+    "intro": "Dwa przejrzyste pakiety. Każdy można dopasować.",
+    "perHour": "/ godz.",
+    "includes": "W pakiecie",
+    "book": "Zarezerwuj",
+    "studioNote": "Wynajem studia płatny osobno.",
+    "packages": {
+      "personal": {
+        "name": "Sesja indywidualna",
+        "description": "Sesja indywidualna — jedna osoba.",
+        "items": [
+          "25 zdjęć w obróbce autorskiej z retuszem + czarno-białe",
+          "25 zdjęć w korekcji kolorystycznej",
+          "wszystkie oryginały",
+          "pomoc w pozowaniu, doborze stylizacji, studia, lokalizacji i rekwizytów",
+          "termin realizacji 2–3 tygodnie"
+        ]
+      },
+      "love-family": {
+        "name": "Love story i rodzinna",
+        "description": "Sesja love story lub rodzinna.",
+        "items": [
+          "35 zdjęć w obróbce autorskiej z retuszem + czarno-białe",
+          "20 zdjęć w korekcji kolorystycznej",
+          "wszystkie oryginały",
+          "pomoc w pozowaniu, doborze stylizacji, studia, lokalizacji i rekwizytów",
+          "termin realizacji 2–3 tygodnie"
+        ]
+      }
+    }
+  },
+  "process": {
+    "kicker": "Proces",
+    "title": "Jak pracujemy",
+    "intro": "Sześć kroków od pierwszej wiadomości do gotowych kadrów.",
+    "steps": [
+      { "n": "01", "title": "Zapytanie", "body": "Piszesz przez formularz. Poznaję Twoją historię i oczekiwania." },
+      { "n": "02", "title": "Konsultacja", "body": "Rozmowa o wizji, lokalizacji i stylistyce. Ustalamy moodboard." },
+      { "n": "03", "title": "Sesja", "body": "Dzień zdjęciowy. Naturalne światło, spokój, obecność." },
+      { "n": "04", "title": "Selekcja", "body": "Wybieram najlepsze kadry i przesyłam Ci galerię podglądową." },
+      { "n": "05", "title": "Retusz", "body": "Autorska obróbka — spójna, subtelna, ponadczasowa." },
+      { "n": "06", "title": "Dostawa", "body": "Finalne zdjęcia w galerii online w wysokiej rozdzielczości." }
+    ],
+    "faqTitle": "Częste pytania",
+    "faq": [
+      { "q": "Jak szybko otrzymam zdjęcia?", "a": "Galeria podglądowa w 3–5 dni, finał w 2–3 tygodnie w zależności od pakietu." },
+      { "q": "Czy pomagasz w wyborze lokalizacji?", "a": "Tak — na etapie konsultacji proponuję miejsca dopasowane do klimatu sesji." },
+      { "q": "Co jeśli pogoda nie dopisze?", "a": "Bezpłatnie przekładamy termin na najbliższy dogodny dzień." },
+      { "q": "Czy mogę zamówić dodatkowe zdjęcia?", "a": "Tak, każde dodatkowe ujęcie w obróbce można dokupić po sesji." }
+    ]
+  },
+  "contact": {
+    "kicker": "Rezerwacja",
+    "title": "Zarezerwuj sesję",
+    "intro": "Wybierz termin i wypełnij formularz. Odpowiadam w ciągu 24 godzin.",
+    "calendarTitle": "Wybierz termin",
+    "noSlots": "Brak wolnych terminów w tym dniu.",
+    "pickDate": "Wybierz dzień, aby zobaczyć godziny.",
+    "form": {
+      "name": "Imię i nazwisko",
+      "contact": "E-mail lub telefon",
+      "sessionType": "Rodzaj sesji",
+      "date": "Data",
+      "timeSlot": "Godzina",
+      "location": "Lokalizacja (opcjonalnie)",
+      "message": "Wiadomość",
+      "submit": "Wyślij rezerwację",
+      "selectType": "Wybierz…",
+      "types": {
+        "PERSONAL": "Sesja indywidualna",
+        "LOVE_FAMILY": "Love story i rodzinna"
+      }
+    },
+    "success": {
+      "title": "Dziękuję.",
+      "body": "Rezerwacja przyjęta. Potwierdzenie trafiło na Twój adres — odezwę się wkrótce."
+    },
+    "error": "Coś poszło nie tak. Spróbuj ponownie lub napisz na hello@krasnovska.ph.",
+    "details": {
+      "title": "Kontakt bezpośredni",
+      "email": "hello@krasnovska.ph",
+      "phone": "+48 500 000 000",
+      "instagram": "@krasnovska.ph",
+      "telegram": "@krasnovskaph",
+      "address": "al. Wojska Polskiego, Szczecin"
+    },
+    "validation": {
+      "name": "Podaj imię (min. 2 znaki).",
+      "contact": "Podaj poprawny e-mail lub telefon.",
+      "sessionType": "Wybierz rodzaj sesji.",
+      "date": "Wybierz datę.",
+      "timeSlot": "Wybierz godzinę."
+    }
+  },
+  "footer": {
+    "tagline": "Editorialna fotografia — Szczecin",
+    "nav": "Nawigacja",
+    "social": "Media",
+    "rights": "Wszystkie prawa zastrzeżone.",
+    "localTime": "Czas lokalny",
+    "credits": "Projekt i kod"
+  }
+}

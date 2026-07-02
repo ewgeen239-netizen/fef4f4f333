@@ -1,0 +1,70 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { locales, isLocale, type Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
+import LenisProvider from "@/components/providers/LenisProvider";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import CustomCursor from "@/components/animation/CustomCursor";
+import Grain from "@/components/ui/Grain";
+
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  const url = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+  return {
+    title: { default: dict.meta.title, template: "%s — Krasnovska PH" },
+    description: dict.meta.description,
+    alternates: {
+      canonical: `${url}/${lang}`,
+      languages: Object.fromEntries(locales.map((l) => [l, `${url}/${l}`])),
+    },
+    openGraph: {
+      type: "website",
+      locale: lang,
+      title: dict.meta.title,
+      description: dict.meta.description,
+      url: `${url}/${lang}`,
+      siteName: "Krasnovska PH",
+      images: [{ url: "/images/og.jpg", width: 1200, height: 630, alt: dict.meta.ogAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: ["/images/og.jpg"],
+    },
+  };
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const dict = await getDictionary(lang as Locale);
+
+  return (
+    <LenisProvider>
+      <Grain />
+      <CustomCursor />
+      <Header lang={lang} dict={dict} />
+      <main id="main">{children}</main>
+      <Footer lang={lang} dict={dict} />
+    </LenisProvider>
+  );
+}

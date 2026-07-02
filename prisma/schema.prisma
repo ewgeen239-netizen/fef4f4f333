@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+enum SessionType {
+  PERSONAL
+  LOVE_FAMILY
+}
+
+/// Self-hosted calendar: one row per bookable slot on a given date.
+model Availability {
+  id        String   @id @default(cuid())
+  date      DateTime @db.Date
+  timeSlot  String // "10:00", "13:30" …
+  isBooked  Boolean  @default(false)
+  booking   Booking?
+  createdAt DateTime @default(now())
+
+  @@unique([date, timeSlot])
+  @@index([date, isBooked])
+}
+
+model Booking {
+  id          String        @id @default(cuid())
+  name        String
+  contact     String // email or phone
+  sessionType SessionType
+  date        DateTime      @db.Date
+  timeSlot    String
+  location    String?
+  message     String?
+  status      BookingStatus @default(PENDING)
+
+  // Link to the reserved slot (self-hosted flow). Null for Cal.com bookings.
+  availability   Availability? @relation(fields: [availabilityId], references: [id])
+  availabilityId String?       @unique
+
+  // Cal.com provenance (webhook flow)
+  externalId String? @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([date])
+  @@index([status])
+}

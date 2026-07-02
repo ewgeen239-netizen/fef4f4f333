@@ -1,0 +1,184 @@
+{
+  "common": {
+    "bookSession": "Book a session",
+    "viewWork": "View work",
+    "getInTouch": "Get in touch",
+    "availability": "Q3 · 2026",
+    "location": "Szczecin",
+    "loading": "Loading…",
+    "sending": "Sending…",
+    "backHome": "Back"
+  },
+  "nav": {
+    "menu": "Menu",
+    "close": "Close",
+    "items": {
+      "home": "Home",
+      "studio": "Studio",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "process": "Process",
+      "contact": "Contact"
+    }
+  },
+  "meta": {
+    "title": "Krasnovska PH — Editorial photography, Szczecin",
+    "description": "Intimate photography studio in Szczecin. Personal, love story & family sessions. Book online.",
+    "ogAlt": "Krasnovska PH — editorial photography"
+  },
+  "home": {
+    "tagline": "Light, quiet, presence.",
+    "heroSub": "Editorial photography with soul — for people who value the detail.",
+    "selectedWorks": "Selected works",
+    "selectedIndex": "Archive",
+    "forWho": {
+      "title": "Who it's for",
+      "body": "For those who want to see themselves truly — no posing, no rush. Individuals, couples and families building an honest image."
+    },
+    "session": {
+      "title": "The session",
+      "body": "A slow, attentive process. Conversation, natural light, a frame that stays. Every session is designed individually."
+    },
+    "locationBlock": {
+      "title": "The place",
+      "body": "A studio in the heart of Szczecin plus locations across the region. Travel sessions across Poland and Europe on request."
+    },
+    "ctaTitle": "Let's reserve your date",
+    "ctaBody": "A few sessions each month. Pick a day and time."
+  },
+  "studio": {
+    "kicker": "Studio",
+    "title": "Photography as a form of attention",
+    "intro": "I'm an editorial photographer based in Szczecin. I work slowly and close — so the image says more than words.",
+    "approachTitle": "Approach",
+    "approach": "Natural light, minimal direction, maximum presence. I don't stage — I observe and wait for the moment a person becomes themselves.",
+    "philosophyTitle": "Philosophy",
+    "philosophy": "I believe in quiet luxury: less, but better. A frame free of noise. Emotion that doesn't shout.",
+    "stats": [
+      { "value": "8", "label": "years of practice" },
+      { "value": "260+", "label": "sessions delivered" },
+      { "value": "12", "label": "countries" },
+      { "value": "100%", "label": "hand-crafted editing" }
+    ]
+  },
+  "portfolio": {
+    "kicker": "Archive",
+    "title": "Portfolio",
+    "intro": "A selection of work from recent years. Filter by category.",
+    "filters": {
+      "all": "All",
+      "portrait": "Portrait",
+      "branding": "Branding",
+      "loveStory": "Love story",
+      "reportage": "Reportage",
+      "lifestyle": "Lifestyle"
+    },
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "services": {
+    "kicker": "Services",
+    "title": "Price list",
+    "intro": "Two clear packages. Each one can be tailored to you.",
+    "perHour": "/ hour",
+    "includes": "Included",
+    "book": "Book",
+    "studioNote": "Studio rental is billed separately.",
+    "packages": {
+      "personal": {
+        "name": "Personal session",
+        "description": "An individual session — one person.",
+        "items": [
+          "25 retouched photos with retouching + B&W",
+          "25 colour-graded photos",
+          "all originals",
+          "help with posing, styling, studios, locations and props",
+          "delivery in 2–3 weeks"
+        ]
+      },
+      "love-family": {
+        "name": "Love story & family",
+        "description": "A love story or family session.",
+        "items": [
+          "35 retouched photos with retouching + B&W",
+          "20 colour-graded photos",
+          "all originals",
+          "help with posing, styling, studios, locations and props",
+          "delivery in 2–3 weeks"
+        ]
+      }
+    }
+  },
+  "process": {
+    "kicker": "Process",
+    "title": "How we work",
+    "intro": "Six steps from the first message to finished frames.",
+    "steps": [
+      { "n": "01", "title": "Inquiry", "body": "You write via the form. I learn your story and expectations." },
+      { "n": "02", "title": "Consultation", "body": "A talk about the vision, location and styling. We build a moodboard." },
+      { "n": "03", "title": "Session", "body": "The shoot day. Natural light, calm, presence." },
+      { "n": "04", "title": "Selection", "body": "I pick the best frames and send you a preview gallery." },
+      { "n": "05", "title": "Retouching", "body": "Hand-crafted editing — coherent, subtle, timeless." },
+      { "n": "06", "title": "Delivery", "body": "Final photos in a high-resolution online gallery." }
+    ],
+    "faqTitle": "Frequent questions",
+    "faq": [
+      { "q": "How fast will I get the photos?", "a": "Preview gallery in 3–5 days, finals in 2–3 weeks depending on the package." },
+      { "q": "Do you help choose a location?", "a": "Yes — during the consultation I suggest places that fit the mood of the session." },
+      { "q": "What if the weather turns?", "a": "We reschedule free of charge to the nearest convenient day." },
+      { "q": "Can I order extra photos?", "a": "Yes, each additional edited frame can be purchased after the session." }
+    ]
+  },
+  "contact": {
+    "kicker": "Reservation",
+    "title": "Book a session",
+    "intro": "Pick a date and fill in the form. I reply within 24 hours.",
+    "calendarTitle": "Pick a date",
+    "noSlots": "No open slots on this day.",
+    "pickDate": "Pick a day to see the times.",
+    "form": {
+      "name": "Full name",
+      "contact": "E-mail or phone",
+      "sessionType": "Session type",
+      "date": "Date",
+      "timeSlot": "Time",
+      "location": "Location (optional)",
+      "message": "Message",
+      "submit": "Send request",
+      "selectType": "Choose…",
+      "types": {
+        "PERSONAL": "Personal session",
+        "LOVE_FAMILY": "Love story & family"
+      }
+    },
+    "success": {
+      "title": "Thank you.",
+      "body": "Your request is received. A confirmation was sent to you — I'll be in touch soon."
+    },
+    "error": "Something went wrong. Try again or write to hello@krasnovska.ph.",
+    "details": {
+      "title": "Direct contact",
+      "email": "hello@krasnovska.ph",
+      "phone": "+48 500 000 000",
+      "instagram": "@krasnovska.ph",
+      "telegram": "@krasnovskaph",
+      "address": "al. Wojska Polskiego, Szczecin"
+    },
+    "validation": {
+      "name": "Enter a name (min. 2 characters).",
+      "contact": "Enter a valid e-mail or phone.",
+      "sessionType": "Choose a session type.",
+      "date": "Pick a date.",
+      "timeSlot": "Pick a time."
+    }
+  },
+  "footer": {
+    "tagline": "Editorial photography — Szczecin",
+    "nav": "Navigation",
+    "social": "Social",
+    "rights": "All rights reserved.",
+    "localTime": "Local time",
+    "credits": "Design & code"
+  }
+}
