@@ -15,9 +15,7 @@ async function main() {
   for (let i = 1; i <= DAYS_AHEAD; i++) {
     const d = new Date(today);
     d.setDate(today.getDate() + i);
-    const day = d.getDay();
-    if (day === 0 || day === 6) continue; // skip weekends
-    for (const timeSlot of SLOTS) rows.push({ date: d, timeSlot });
+    for (const timeSlot of SLOTS) rows.push({ date: d, timeSlot }); // all days
   }
 
   await prisma.availability.createMany({ data: rows, skipDuplicates: true });
