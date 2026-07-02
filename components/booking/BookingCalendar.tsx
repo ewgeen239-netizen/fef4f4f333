@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { toISODate } from "@/lib/utils";
 import { cn } from "@/lib/utils";
@@ -138,15 +138,15 @@ export default function BookingCalendar({
       <div className="mt-8 min-h-[64px]">
         <AnimatePresence mode="wait">
           {loading ? (
-            <motion.p key="l" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-sm text-bone-dim">
+            <m.p key="l" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-sm text-bone-dim">
               {labels.loading}
-            </motion.p>
+            </m.p>
           ) : !activeDate ? (
-            <motion.p key="p" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-sm text-bone-dim">
+            <m.p key="p" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-sm text-bone-dim">
               {labels.pickDate}
-            </motion.p>
+            </m.p>
           ) : activeSlots && activeSlots.length > 0 ? (
-            <motion.div
+            <m.div
               key={activeDate}
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -172,11 +172,11 @@ export default function BookingCalendar({
                   </button>
                 );
               })}
-            </motion.div>
+            </m.div>
           ) : (
-            <motion.p key="n" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-sm text-bone-dim">
+            <m.p key="n" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-sm text-bone-dim">
               {labels.noSlots}
-            </motion.p>
+            </m.p>
           )}
         </AnimatePresence>
       </div>

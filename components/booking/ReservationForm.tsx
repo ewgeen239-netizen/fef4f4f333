@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { bookingSchema, type BookingInput } from "@/lib/validations/booking";
@@ -82,13 +82,13 @@ export default function ReservationForm({
 
   if (state === "success") {
     return (
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="flex min-h-[420px] flex-col items-center justify-center border border-brass/30 p-12 text-center"
       >
-        <motion.span
+        <m.span
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 15 }}
@@ -96,10 +96,10 @@ export default function ReservationForm({
           aria-hidden
         >
           ✓
-        </motion.span>
+        </m.span>
         <h3 className="font-serif text-4xl">{dict.success.title}</h3>
         <p className="mt-4 max-w-sm text-bone-dim text-pretty">{dict.success.body}</p>
-      </motion.div>
+      </m.div>
     );
   }
 
@@ -190,7 +190,7 @@ export default function ReservationForm({
 
         <AnimatePresence>
           {state === "error" && (
-            <motion.p
+            <m.p
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -198,7 +198,7 @@ export default function ReservationForm({
               role="alert"
             >
               {dict.error}
-            </motion.p>
+            </m.p>
           )}
         </AnimatePresence>
 

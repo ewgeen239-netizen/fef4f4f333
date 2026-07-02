@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { m, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
 /** Brass ring cursor that grows over [data-cursor="hover"] targets.
@@ -34,12 +34,12 @@ export default function CustomCursor() {
   if (!enabled) return null;
 
   return (
-    <motion.div
+    <m.div
       aria-hidden
       className="pointer-events-none fixed left-0 top-0 z-[80] mix-blend-difference"
       style={{ x: sx, y: sy }}
     >
-      <motion.span
+      <m.span
         className="block -translate-x-1/2 -translate-y-1/2 rounded-full border border-bone"
         animate={{
           width: active ? 56 : 14,
@@ -48,6 +48,6 @@ export default function CustomCursor() {
         }}
         transition={{ type: "spring", stiffness: 250, damping: 22 }}
       />
-    </motion.div>
+    </m.div>
   );
 }

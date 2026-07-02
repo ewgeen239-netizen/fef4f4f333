@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -33,7 +33,7 @@ export default function Faq({ items }: { items: Item[] }) {
             </button>
             <AnimatePresence initial={false}>
               {isOpen && (
-                <motion.div
+                <m.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -41,7 +41,7 @@ export default function Faq({ items }: { items: Item[] }) {
                   className="overflow-hidden"
                 >
                   <p className="max-w-2xl pb-6 text-bone-dim text-pretty">{it.a}</p>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>

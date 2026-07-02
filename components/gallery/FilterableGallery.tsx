@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import { AnimatePresence, LayoutGroup, m } from "framer-motion";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { works, type Category, type Work } from "@/lib/portfolio";
@@ -42,7 +42,7 @@ export default function FilterableGallery({
           >
             {filters[key]}
             {active === key && (
-              <motion.span
+              <m.span
                 layoutId="filter-underline"
                 className="absolute -bottom-1 left-0 h-px w-full bg-brass"
               />
@@ -53,10 +53,10 @@ export default function FilterableGallery({
 
       {/* Masonry-ish columns */}
       <LayoutGroup>
-        <motion.div layout className="columns-2 gap-3 sm:gap-6 lg:columns-3">
+        <m.div layout className="columns-2 gap-3 sm:gap-6 lg:columns-3">
           <AnimatePresence mode="popLayout">
             {visible.map((w, i) => (
-              <motion.button
+              <m.button
                 key={w.id}
                 layout
                 initial={{ opacity: 0, scale: 0.96 }}
@@ -85,10 +85,10 @@ export default function FilterableGallery({
                   <span className="block font-serif text-lg leading-tight text-bone">{w.title}</span>
                   <span className="mt-1 block text-[10px] uppercase tracking-editorial text-brass">{w.meta}</span>
                 </span>
-              </motion.button>
+              </m.button>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </m.div>
       </LayoutGroup>
 
       {/* Lightbox operates on the full works list for prev/next continuity */}

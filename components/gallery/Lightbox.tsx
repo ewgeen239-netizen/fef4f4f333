@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useEffect } from "react";
 import type { Work } from "@/lib/portfolio";
@@ -50,7 +50,7 @@ export default function Lightbox({
   return (
     <AnimatePresence>
       {open && work && (
-        <motion.div
+        <m.div
           className="fixed inset-0 z-[90] flex items-center justify-center bg-ink/95 p-4 backdrop-blur-sm sm:p-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -82,7 +82,7 @@ export default function Lightbox({
             →
           </button>
 
-          <motion.div
+          <m.div
             key={work.id}
             className="relative max-h-[85vh] w-full max-w-4xl"
             initial={{ opacity: 0, scale: 0.98 }}
@@ -110,8 +110,8 @@ export default function Lightbox({
                 {String((index ?? 0) + 1).padStart(2, "0")} / {String(works.length).padStart(2, "0")}
               </span>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

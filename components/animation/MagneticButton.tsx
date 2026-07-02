@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
+import { m, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { useRef, type ReactNode, type MouseEvent } from "react";
 import { cn } from "@/lib/utils";
@@ -48,13 +48,13 @@ export default function MagneticButton({
   );
 
   const inner = (
-    <motion.span style={{ x: sx, y: sy }} className={base}>
+    <m.span style={{ x: sx, y: sy }} className={base}>
       {children}
-    </motion.span>
+    </m.span>
   );
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={handleMove}
       onMouseLeave={reset}
@@ -70,6 +70,6 @@ export default function MagneticButton({
           {inner}
         </button>
       )}
-    </motion.div>
+    </m.div>
   );
 }

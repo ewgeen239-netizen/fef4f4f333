@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -141,7 +141,7 @@ export default function Header({ lang, dict }: { lang: Locale; dict: Dictionary 
       {/* Mobile dropdown menu */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.nav
+          <m.nav
             id="mobile-nav"
             aria-label={dict.nav.menu}
             className="overflow-hidden border-t border-white/10 md:hidden"
@@ -184,7 +184,7 @@ export default function Header({ lang, dict }: { lang: Locale; dict: Dictionary 
             <div className="px-5 pb-5 pt-2 text-[11px] uppercase tracking-editorial text-bone-dim">
               <LocalTime prefix={dict.common.location} />
             </div>
-          </motion.nav>
+          </m.nav>
         )}
       </AnimatePresence>
     </header>
