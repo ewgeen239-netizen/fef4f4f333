@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { getSiteUrl } from "@/lib/site";
 import LenisProvider from "@/components/providers/LenisProvider";
 import ScrollTop from "@/components/providers/ScrollTop";
 import Header from "@/components/layout/Header";
@@ -21,7 +22,7 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const dict = await getDictionary(lang);
-  const url = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const url = getSiteUrl();
 
   return {
     title: { default: dict.meta.title, template: "%s — Krasnovska PH" },

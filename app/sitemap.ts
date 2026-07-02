@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n/config";
+import { getSiteUrl } from "@/lib/site";
 
 const ROUTES = ["", "/studio", "/portfolio", "/services", "/process", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const base = getSiteUrl();
   const now = new Date();
 
   return locales.flatMap((lang) =>
