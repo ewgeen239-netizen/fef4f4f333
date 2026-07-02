@@ -29,6 +29,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           alt={dict.meta.ogAlt}
           fill
           priority
+          quality={68}
           sizes="100vw"
           className="object-cover object-[18%_center] sm:object-center"
         />

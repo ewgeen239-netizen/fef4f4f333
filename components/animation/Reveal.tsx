@@ -1,21 +1,26 @@
 "use client";
 
-import { m, useReducedMotion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 type Direction = "up" | "down" | "left" | "right" | "none";
+type Tag = "div" | "section" | "span" | "li";
 
-const offset = (d: Direction) => {
+const transformFor = (d: Direction) => {
   switch (d) {
-    case "up": return { y: 40 };
-    case "down": return { y: -40 };
-    case "left": return { x: 40 };
-    case "right": return { x: -40 };
-    default: return {};
+    case "up": return "translateY(40px)";
+    case "down": return "translateY(-40px)";
+    case "left": return "translateX(40px)";
+    case "right": return "translateX(-40px)";
+    default: return "none";
   }
 };
 
-/** Scroll-reveal: fade + slide. Set `mask` for an editorial line-wipe. */
+const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+/** Scroll-reveal (fade / slide / mask) with zero animation-library cost —
+ *  a single IntersectionObserver toggles a CSS transition. Honors
+ *  prefers-reduced-motion. */
 export default function Reveal({
   children,
   direction = "up",
@@ -29,53 +34,66 @@ export default function Reveal({
   delay?: number;
   className?: string;
   mask?: boolean;
-  as?: "div" | "section" | "span" | "li";
+  as?: Tag;
 }) {
-  const reduce = useReducedMotion();
-  const M = m[as] as typeof m.div;
+  const ref = useRef<HTMLElement | null>(null);
+  const [shown, setShown] = useState(false);
 
-  const variants: Variants = {
-    hidden: reduce ? { opacity: 0 } : { opacity: 0, ...offset(direction) },
-    show: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay },
-    },
-  };
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShown(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "-10% 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const Comp = as as "div";
 
   if (mask) {
+    const Inner = as === "span" ? "span" : "span";
     return (
-      <span className="mask-line">
-        <M
-          className={className}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-10% 0px" }}
-          variants={{
-            hidden: { y: reduce ? 0 : "110%", opacity: reduce ? 0 : 1 },
-            show: {
-              y: 0,
-              opacity: 1,
-              transition: { duration: 1, ease: [0.22, 1, 0.36, 1], delay },
-            },
+      <span
+        ref={ref as React.Ref<HTMLSpanElement>}
+        className="mask-line"
+      >
+        <Inner
+          className={cn("block will-change-transform", className)}
+          style={{
+            transform: shown ? "translateY(0)" : "translateY(110%)",
+            transition: `transform 1s ${EASE}`,
+            transitionDelay: `${delay}s`,
           }}
         >
           {children}
-        </M>
+        </Inner>
       </span>
     );
   }
 
   return (
-    <M
+    <Comp
+      ref={ref as React.Ref<HTMLDivElement>}
       className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-10% 0px" }}
-      variants={variants}
+      style={{
+        opacity: shown ? 1 : 0,
+        transform: shown ? "none" : transformFor(direction),
+        transition: `opacity 0.9s ${EASE}, transform 0.9s ${EASE}`,
+        transitionDelay: `${delay}s`,
+      }}
     >
       {children}
-    </M>
+    </Comp>
   );
 }
