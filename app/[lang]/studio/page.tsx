@@ -35,12 +35,12 @@ export default async function StudioPage({
           <Reveal className="md:col-span-5" direction="right">
             <div className="relative aspect-[4/5] overflow-hidden bg-ink-soft">
               <Image
-                src="/images/studio-me.webp"
+                src="/images/hero.webp"
                 alt="Krasnovska PH — portret"
                 fill
                 sizes="(max-width:768px) 100vw, 40vw"
                 placeholder="blur"
-                blurDataURL="data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JZwDKACG813lstP1z0lAA/u6lScbXJMncAemaScN7OLpGqmiR7PRi+8xiqxFfn4mnPTPR4akQPLIIlMJG4AAA"
+                blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoQAAkAA4BaJQBOgCHw7s3ldGH4AP5A2s9o0+BYydErWdOTX4VSeNHqLOFubuyG7qhb168OyHC6TkBtfjfCRdsqLGoAAA=="
                 className="object-cover object-center"
               />
             </div>
