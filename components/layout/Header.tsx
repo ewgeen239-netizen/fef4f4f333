@@ -19,6 +19,13 @@ const NAV = [
   { key: "contact", href: "/contact" },
 ] as const;
 
+const LANG_LABEL: Record<Locale, string> = {
+  en: "Language",
+  pl: "Język",
+  ru: "Язык",
+  ua: "Мова",
+};
+
 export default function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const pathname = usePathname();
   const reduce = useReducedMotion();
@@ -143,6 +150,14 @@ export default function Header({ lang, dict }: { lang: Locale; dict: Dictionary 
             exit={reduce ? { opacity: 0 } : { height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
+            {/* Language — its own drawer section, before the page tabs */}
+            <div className="border-b border-white/10 px-5 py-5">
+              <span className="mb-3 block text-[10px] uppercase tracking-editorial text-brass-dim">
+                {LANG_LABEL[lang]}
+              </span>
+              <LanguageSwitcher current={lang} className="gap-3 text-sm" />
+            </div>
+
             <ul className="px-5 py-4">
               {NAV.map((item, i) => {
                 const href = `${base}${item.href}`;
@@ -166,9 +181,8 @@ export default function Header({ lang, dict }: { lang: Locale; dict: Dictionary 
                 );
               })}
             </ul>
-            <div className="flex items-center justify-between px-5 pb-5 pt-2 text-[11px] uppercase tracking-editorial text-bone-dim">
+            <div className="px-5 pb-5 pt-2 text-[11px] uppercase tracking-editorial text-bone-dim">
               <LocalTime prefix={dict.common.location} />
-              <LanguageSwitcher current={lang} />
             </div>
           </motion.nav>
         )}
