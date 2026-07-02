@@ -30,7 +30,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[18%_center] sm:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/20 to-ink" />
       </motion.div>
