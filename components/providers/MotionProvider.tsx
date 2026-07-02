@@ -1,11 +1,12 @@
 "use client";
 
-import { LazyMotion, domMax } from "framer-motion";
+import { LazyMotion, domAnimation } from "framer-motion";
 import type { ReactNode } from "react";
 
-// Loads Framer features once for the whole tree so components can use the
-// lightweight `m.*` primitives instead of the full `motion.*` bundle → less
-// JS shipped/parsed. domMax includes layout animations (portfolio grid).
+// Loads Framer features once for the whole tree so components use the light
+// `m.*` primitives instead of the full `motion.*` bundle. domAnimation is the
+// smaller feature set (no layout/drag) — enough for all our animations now
+// that the portfolio grid uses CSS instead of layout animations.
 export default function MotionProvider({ children }: { children: ReactNode }) {
-  return <LazyMotion features={domMax}>{children}</LazyMotion>;
+  return <LazyMotion features={domAnimation}>{children}</LazyMotion>;
 }

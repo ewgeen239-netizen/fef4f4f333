@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, LayoutGroup, m } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { works, type Category, type Work } from "@/lib/portfolio";
@@ -41,33 +41,32 @@ export default function FilterableGallery({
             )}
           >
             {filters[key]}
-            {active === key && (
-              <m.span
-                layoutId="filter-underline"
-                className="absolute -bottom-1 left-0 h-px w-full bg-brass"
-              />
-            )}
+            {/* CSS underline (no layout animation → lighter Framer bundle) */}
+            <span
+              className={cn(
+                "absolute -bottom-1 left-0 h-px w-full origin-left bg-brass transition-transform duration-300 ease-editorial",
+                active === key ? "scale-x-100" : "scale-x-0"
+              )}
+            />
           </button>
         ))}
       </div>
 
       {/* Masonry-ish columns */}
-      <LayoutGroup>
-        <m.div layout className="columns-2 gap-3 sm:gap-6 lg:columns-3">
-          <AnimatePresence mode="popLayout">
-            {visible.map((w, i) => (
-              <m.button
-                key={w.id}
-                layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: (i % 6) * 0.04 }}
-                onClick={() => setOpen(works.indexOf(w))}
-                className="group relative mb-3 block w-full overflow-hidden bg-ink-soft sm:mb-6"
-                data-cursor="hover"
-                aria-label={w.alt}
-              >
+      <div className="columns-2 gap-3 sm:gap-6 lg:columns-3">
+        <AnimatePresence>
+          {visible.map((w, i) => (
+            <m.button
+              key={w.id}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: (i % 6) * 0.04 }}
+              onClick={() => setOpen(works.indexOf(w))}
+              className="group relative mb-3 block w-full overflow-hidden bg-ink-soft sm:mb-6"
+              data-cursor="hover"
+              aria-label={w.alt}
+            >
                 <Image
                   src={w.src}
                   alt={w.alt}
@@ -86,10 +85,9 @@ export default function FilterableGallery({
                   <span className="mt-1 block text-[10px] uppercase tracking-editorial text-brass">{w.meta}</span>
                 </span>
               </m.button>
-            ))}
-          </AnimatePresence>
-        </m.div>
-      </LayoutGroup>
+          ))}
+        </AnimatePresence>
+      </div>
 
       {/* Lightbox operates on the full works list for prev/next continuity */}
       <Lightbox
