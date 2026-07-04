@@ -54,6 +54,26 @@
     "approach": "Naturalne światło, minimalna reżyseria, maksymalna obecność. Nie ustawiam — obserwuję i czekam na moment, w którym człowiek staje się sobą.",
     "philosophyTitle": "Filozofia",
     "philosophy": "Wierzę w quiet luxury: mniej, ale lepiej. Kadr pozbawiony szumu. Emocja, która nie krzyczy.",
+    "storyTitle": "Historia",
+    "story": [
+      "Jestem Karina Krasnovska — fotografka editorialna i portretowa z siedzibą w Szczecinie. Fotografia zaczęła się od nastoletniej fascynacji starym aparatem na film; z hobby powoli stała się rzemiosłem, a potem sposobem, w jaki patrzę na ludzi.",
+      "Po ośmiu latach pracuję niemal wyłącznie w naturalnym świetle, powoli i uważnie. Najpierw samouk, potem warsztaty i setki sesji — zawsze w pogoni za tym samym: szczerym kadrem, który po latach wciąż jest tą osobą."
+    ],
+    "journeyTitle": "Droga",
+    "journey": [
+      { "year": "2017", "title": "Pierwszy aparat", "body": "Początek na filmie — ulica i pierwsze portrety znajomych. Nauka patrzenia na światło, zanim przyszedł sprzęt." },
+      { "year": "2019", "title": "Pierwsze sesje", "body": "Portrety dla znajomych zamieniły się w pracę i pierwsze portfolio portretu editorialnego." },
+      { "year": "2021", "title": "Studio i światło", "body": "Świadomy styl editorialny — praca ze światłem naturalnym i studyjnym, kolorem i nastrojem." },
+      { "year": "2023", "title": "Love story i rodzina", "body": "Specjalizacja w parach i rodzinach — ponad 100 sesji w Polsce i na wybrzeżu." },
+      { "year": "2025", "title": "Krasnovska PH", "body": "Studio na pełen etat w Szczecinie pod własnym nazwiskiem — portret, love story, rodzina i branding." }
+    ],
+    "specialtiesTitle": "Co fotografuję",
+    "specialties": [
+      { "name": "Portret", "body": "Kameralne portrety editorialne — dla tych, którzy wolą być zobaczeni niż ustawieni." },
+      { "name": "Love story", "body": "Pary, naturalnie i bez pośpiechu, w świetle dnia i prawdziwych miejscach." },
+      { "name": "Rodzina", "body": "Ciepłe, szczere historie rodzinne, w których chce się zostać." },
+      { "name": "Branding", "body": "Wizerunek marki osobistej i biznesu — spójny, ponadczasowy nastrój." }
+    ],
     "stats": [
       { "value": "8", "label": "lat praktyki" },
       { "value": "260+", "label": "zrealizowanych sesji" },

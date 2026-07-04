@@ -54,6 +54,26 @@
     "approach": "Natural light, minimal direction, maximum presence. I don't stage — I observe and wait for the moment a person becomes themselves.",
     "philosophyTitle": "Philosophy",
     "philosophy": "I believe in quiet luxury: less, but better. A frame free of noise. Emotion that doesn't shout.",
+    "storyTitle": "The story",
+    "story": [
+      "I'm Karina Krasnovska — an editorial and portrait photographer based in Szczecin. Photography began as a teenage obsession with an old film camera; it slowly turned from a hobby into a craft, and then into the way I see people.",
+      "Eight years in, I work almost entirely with natural light and a quiet, unhurried process. Self-taught at first, then sharpened through workshops and hundreds of sessions — always chasing the same thing: an honest frame that still feels like the person years later."
+    ],
+    "journeyTitle": "The path",
+    "journey": [
+      { "year": "2017", "title": "First camera", "body": "Began on film — street scenes and first portraits of friends. Learned to see light before learning the gear." },
+      { "year": "2019", "title": "First sessions", "body": "Portraits for friends turned into paid work and a first body of editorial portrait photography." },
+      { "year": "2021", "title": "Studio & light", "body": "Moved into a deliberate editorial style — mastering natural and studio light, colour and mood." },
+      { "year": "2023", "title": "Love story & family", "body": "Specialised in couples and families — over 100 sessions across Poland and the coast." },
+      { "year": "2025", "title": "Krasnovska PH", "body": "A full-time studio in Szczecin under my own name — portrait, love story, family and branding." }
+    ],
+    "specialtiesTitle": "What I shoot",
+    "specialties": [
+      { "name": "Portrait", "body": "Intimate editorial portraits — for people who'd rather be seen than posed." },
+      { "name": "Love story", "body": "Couples, natural and unhurried, in daylight and real places." },
+      { "name": "Family", "body": "Warm, honest family stories you'll want to live inside." },
+      { "name": "Branding", "body": "Personal-brand and business imagery with a coherent, timeless mood." }
+    ],
     "stats": [
       { "value": "8", "label": "years of practice" },
       { "value": "260+", "label": "sessions delivered" },

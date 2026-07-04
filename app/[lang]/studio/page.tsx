@@ -65,6 +65,65 @@ export default async function StudioPage({
           </div>
         </div>
 
+        {/* Story */}
+        <section className="mt-28 grid grid-cols-1 gap-10 border-t border-white/5 pt-16 md:grid-cols-12 md:gap-16">
+          <Reveal className="md:col-span-4">
+            <h2 className="text-[11px] uppercase tracking-editorial text-brass">
+              {dict.studio.storyTitle}
+            </h2>
+          </Reveal>
+          <div className="space-y-6 md:col-span-8">
+            {dict.studio.story.map((p, i) => (
+              <Reveal key={i} delay={i * 0.08}>
+                <p className="text-lg leading-relaxed text-bone-dim text-pretty">{p}</p>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* Journey — timeline of development */}
+        <section className="mt-28 border-t border-white/5 pt-16">
+          <Reveal>
+            <h2 className="text-[11px] uppercase tracking-editorial text-brass">
+              {dict.studio.journeyTitle}
+            </h2>
+          </Reveal>
+          <ol className="mt-10">
+            {dict.studio.journey.map((j, i) => (
+              <Reveal as="li" key={j.year} delay={(i % 3) * 0.06}>
+                <div className="grid grid-cols-1 gap-2 border-t border-white/5 py-8 first:border-t-0 md:grid-cols-12 md:gap-6">
+                  <div className="font-serif text-3xl text-brass md:col-span-3 sm:text-4xl">
+                    {j.year}
+                  </div>
+                  <div className="md:col-span-9">
+                    <h3 className="font-serif text-xl sm:text-2xl">{j.title}</h3>
+                    <p className="mt-2 max-w-2xl text-bone-dim text-pretty">{j.body}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
+        </section>
+
+        {/* Specialties */}
+        <section className="mt-28 border-t border-white/5 pt-16">
+          <Reveal>
+            <h2 className="text-[11px] uppercase tracking-editorial text-brass">
+              {dict.studio.specialtiesTitle}
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden border border-white/5 bg-white/5 sm:grid-cols-2">
+            {dict.studio.specialties.map((s, i) => (
+              <Reveal key={s.name} delay={(i % 2) * 0.08}>
+                <div className="flex h-full flex-col bg-ink p-8 transition-colors duration-500 hover:bg-ink-soft sm:p-10">
+                  <h3 className="font-serif text-2xl sm:text-3xl">{s.name}</h3>
+                  <p className="mt-3 text-bone-dim text-pretty">{s.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
         {/* Stats */}
         <div className="mt-28 grid grid-cols-2 gap-8 border-t border-white/5 pt-12 md:grid-cols-4">
           {dict.studio.stats.map((s, i) => (
