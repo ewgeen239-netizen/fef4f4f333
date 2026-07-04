@@ -32,7 +32,7 @@ export default function PageWatermark({
       aria-hidden
       className="pointer-events-none fixed inset-0 -z-10 flex items-center justify-center overflow-hidden"
     >
-      <span className="select-none whitespace-nowrap font-serif uppercase leading-none tracking-tight text-bone/[0.028] text-[26vw] md:text-[20vw]">
+      <span className="max-w-[92vw] select-none break-words text-center font-serif uppercase leading-none tracking-tight text-bone/[0.028] text-[13vw] md:text-[20vw]">
         {label}
       </span>
     </div>

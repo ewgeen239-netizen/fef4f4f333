@@ -155,7 +155,12 @@ export const works: Work[] = [
     "title": "Rider — portret wizerunkowy",
     "meta": "Branding · 2025",
     "alt": "Rider — portret wizerunkowy"
-  }
+  },
+  {"id":"k13","category":"branding","src":"/images/portfolio/portfolio-13.webp","blurDataURL":"data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADQAwCdASoMABIAPu1iqU2ppaOiMAgBMB2JZwAAXHKzabUXvlCN4AAA+yJX2LNr5qTNWsgCz7qEl9BBxoOdl2sl1JDh7f1lviaszOvcDBET8t/sgmGZMdZ+uWf+F89RxiswQHgT6/kW1QNBdjG0AA==","width":853,"height":1280,"title":"Rider w skórze","meta":"Branding · 2025","alt":"Rider w skórze"},
+  {"id":"k14","category":"loveStory","src":"/images/portfolio/portfolio-14.webp","blurDataURL":"data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABwAwCdASoMABIAPu1oqk6ppiQiMAgBMB2JaQAAW+spdOlDDoAA/ucEgyFAcyTxoDLHN7oNUieWYnP2O69v9YixckdIRIAAAAA=","width":853,"height":1280,"title":"Para nad morzem","meta":"Love story · 2025","alt":"Para nad morzem"},
+  {"id":"k15","category":"lifestyle","src":"/images/portfolio/portfolio-15.webp","blurDataURL":"data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoMABIAPu1iqU2ppaOiMAgBMB2JYwDE2BKSEil8TfnaLcAA/tGVIYcMxYJBiTpQNlwRLlQf8tvsxjhZJcdLnNZgcPsb6DM+Kgl5hMOpstDf/p8m4D6T4sgA","width":853,"height":1280,"title":"W parku","meta":"Lifestyle · 2025","alt":"W parku"},
+  {"id":"k16","category":"portrait","src":"/images/portfolio/portfolio-16.webp","blurDataURL":"data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABwBACdASoMABIAPu1iqU2ppaOiMAgBMB2JYgCdMoADJ8eqKKJHxrRApjbTYAD+AA11ifkNocIDxbUGdPHPPrRYq2VHpQEWs7pIiWPd0AjnFT6+k4buWmfWXUvFJNREFPd+UnFvUYgKTr90NBwXn/7uDgAAAA==","width":853,"height":1280,"title":"Editorialny portret","meta":"Portret · 2025","alt":"Editorialny portret"},
+  {"id":"k17","category":"lifestyle","src":"/images/portfolio/portfolio-17.webp","blurDataURL":"data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoMAAwAA4BaJYwCdAEVwnkjb1QAAP7prvtIFxQLguuWgppC4j5IrmE7bPLJh6XWkiiAAA==","width":1280,"height":1270,"title":"Wśród tulipanów","meta":"Lifestyle · 2025","alt":"Wśród tulipanów"}
 ];
 
 /** First N works for the Home "selected works" strip. */
