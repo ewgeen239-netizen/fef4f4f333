@@ -83,7 +83,7 @@
   "portfolio": {
     "kicker": "Archiwum",
     "title": "Portfolio",
-    "intro": "Wybór prac z ostatnich lat. Filtruj według kategorii.",
+    "intro": "Rozproszone archiwum prac z ostatnich lat — przewijaj kadry.",
     "filters": {
       "all": "Wszystko",
       "portrait": "Portret",

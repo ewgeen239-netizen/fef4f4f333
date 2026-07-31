@@ -83,6 +83,17 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  /* Scroll-driven archive gallery cards */
+  .bp-card {
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp-card {
+    will-change: auto;
+  }
 }
 
 /* Respect reduced motion everywhere */

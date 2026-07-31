@@ -83,7 +83,7 @@
   "portfolio": {
     "kicker": "Archive",
     "title": "Portfolio",
-    "intro": "A selection of work from recent years. Filter by category.",
+    "intro": "A scattered archive of work from recent years — scroll through the frames.",
     "filters": {
       "all": "All",
       "portrait": "Portrait",

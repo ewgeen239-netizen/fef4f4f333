@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import SectionHeading from "@/components/ui/SectionHeading";
-import FilterableGallery from "@/components/gallery/FilterableGallery";
+import { works } from "@/lib/portfolio";
+import ArchiveScroll from "@/components/gallery/ArchiveScroll";
+
+const SCROLL: Record<Locale, string> = {
+  en: "Scroll",
+  pl: "Przewiń",
+  ru: "Листайте",
+  ua: "Гортайте",
+};
 
 export async function generateMetadata({
   params,
@@ -20,31 +27,26 @@ export default async function PortfolioPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const dict = await getDictionary((isLocale(lang) ? lang : "pl") as Locale);
-  const f = dict.portfolio.filters;
+  const locale = (isLocale(lang) ? lang : "pl") as Locale;
+  const dict = await getDictionary(locale);
 
   return (
-    <div className="px-5 pb-32 pt-36 sm:px-8 sm:pt-48">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading kicker={dict.portfolio.kicker} title={dict.portfolio.title} intro={dict.portfolio.intro} />
-        <div className="mt-20">
-          <FilterableGallery
-            filters={{
-              all: f.all,
-              portrait: f.portrait,
-              branding: f.branding,
-              loveStory: f.loveStory,
-              reportage: f.reportage,
-              lifestyle: f.lifestyle,
-            }}
-            lightboxLabels={{
-              close: dict.portfolio.close,
-              prev: dict.portfolio.prev,
-              next: dict.portfolio.next,
-            }}
-          />
-        </div>
-      </div>
-    </div>
+    <ArchiveScroll
+      works={works}
+      heroSrc="/images/portfolio/portfolio-16.webp"
+      ctaHref={`/${locale}/contact`}
+      labels={{
+        kicker: dict.portfolio.kicker,
+        title: dict.portfolio.title,
+        intro: dict.portfolio.intro,
+        scroll: SCROLL[locale],
+        cta: dict.common.bookSession,
+        lightbox: {
+          close: dict.portfolio.close,
+          prev: dict.portfolio.prev,
+          next: dict.portfolio.next,
+        },
+      }}
+    />
   );
 }
